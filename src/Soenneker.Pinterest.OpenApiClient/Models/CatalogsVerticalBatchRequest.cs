@@ -24,13 +24,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string CatalogId { get; set; }
 #endif
         /// <summary>The catalog_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CatalogType { get; set; }
-#nullable restore
-#else
-        public string CatalogType { get; set; }
-#endif
+        public global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType? CatalogType { get; set; }
         /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.Country? Country { get; set; }
         /// <summary>Array with catalogs item operations</summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
-                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+                { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>(); } },
                 { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "language", n => { Language = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestLanguage>(); } },
@@ -83,7 +77,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("catalog_id", CatalogId);
-            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>("catalog_type", CatalogType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems>("items", Items);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestLanguage>("language", Language);

@@ -30,10 +30,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Array of operation results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalOperationResult>? OperationResults { get; private set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationResult>? OperationResults { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalOperationResult> OperationResults { get; private set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationResult> OperationResults { get; private set; }
 #endif
         /// <summary>The status of the batch operation</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemsBatchResponseStatus? Status { get; private set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "batch_id", n => { BatchId = n.GetStringValue(); } },
                 { "completed_time", n => { CompletedTime = n.GetDateTimeOffsetValue(); } },
                 { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
-                { "operation_results", n => { OperationResults = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalOperationResult>(global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalOperationResult.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "operation_results", n => { OperationResults = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationResult>(global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemsBatchResponseStatus>(); } },
             };
         }

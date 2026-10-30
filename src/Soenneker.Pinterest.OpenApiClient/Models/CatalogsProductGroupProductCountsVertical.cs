@@ -45,17 +45,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupProductCountsVertical CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupProductCountsVertical();
-            if("CREATIVE_ASSETS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CatalogsCreativeAssetsProductGroupProductCounts".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsCreativeAssetsProductGroupProductCounts = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupProductCounts();
             }
-            else if("HOTEL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsHotelProductGroupProductCounts".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsHotelProductGroupProductCounts = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupProductCounts();
             }
-            else if("RETAIL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsRetailProductGroupProductCounts".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsRetailProductGroupProductCounts = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupProductCounts();
             }

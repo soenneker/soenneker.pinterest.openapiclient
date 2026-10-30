@@ -9,7 +9,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CatalogsReportFeedIngestionStats : IAdditionalDataHolder, IParsable
+    public partial class CatalogsReportStatsOneOf1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -43,25 +43,25 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Number of occurrences of the issue</summary>
         public int? Occurrences { get; set; }
         /// <summary>The report_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.FeedIngestionIssuesReportType? ReportType { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1_report_type? ReportType { get; set; }
         /// <summary>An ERROR means that items have been dropped, while a WARN denotes that items have been ingested despite an issue</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity? Severity { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/> and sets the default values.
         /// </summary>
-        public CatalogsReportFeedIngestionStats()
+        public CatalogsReportStatsOneOf1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "code_label", n => { CodeLabel = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "occurrences", n => { Occurrences = n.GetIntValue(); } },
-                { "report_type", n => { ReportType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.FeedIngestionIssuesReportType>(); } },
+                { "report_type", n => { ReportType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1_report_type>(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity>(); } },
             };
         }
@@ -92,7 +92,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("code_label", CodeLabel);
             writer.WriteStringValue("message", Message);
             writer.WriteIntValue("occurrences", Occurrences);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.FeedIngestionIssuesReportType>("report_type", ReportType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1_report_type>("report_type", ReportType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity>("severity", Severity);
             writer.WriteAdditionalData(AdditionalData);
         }

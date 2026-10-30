@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CatalogsReportStats : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats? CatalogsReportDistributionStats { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1? CatalogsReportStatsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats CatalogsReportDistributionStats { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1 CatalogsReportStatsOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats? CatalogsReportFeedIngestionStats { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2? CatalogsReportStatsOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats CatalogsReportFeedIngestionStats { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2 CatalogsReportStatsOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +37,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("report_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats();
-            if("DISTRIBUTION_ISSUES".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CatalogsReportStatsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CatalogsReportDistributionStats = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats();
+                result.CatalogsReportStatsOneOf1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1();
             }
-            else if("FEED_INGESTION_ISSUES".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsReportStatsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CatalogsReportFeedIngestionStats = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats();
+                result.CatalogsReportStatsOneOf2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsReportDistributionStats != null)
+            if(CatalogsReportStatsOneOf1 != null)
             {
-                return CatalogsReportDistributionStats.GetFieldDeserializers();
+                return CatalogsReportStatsOneOf1.GetFieldDeserializers();
             }
-            else if(CatalogsReportFeedIngestionStats != null)
+            else if(CatalogsReportStatsOneOf2 != null)
             {
-                return CatalogsReportFeedIngestionStats.GetFieldDeserializers();
+                return CatalogsReportStatsOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsReportDistributionStats != null)
+            if(CatalogsReportStatsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats>(null, CatalogsReportDistributionStats);
+                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1>(null, CatalogsReportStatsOneOf1);
             }
-            else if(CatalogsReportFeedIngestionStats != null)
+            else if(CatalogsReportStatsOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStats>(null, CatalogsReportFeedIngestionStats);
+                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2>(null, CatalogsReportStatsOneOf2);
             }
         }
     }

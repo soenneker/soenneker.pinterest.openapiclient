@@ -28,13 +28,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>We recommend using the CatalogsLocale values.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemsUpdateBatchRequestLanguage? Language { get; set; }
         /// <summary>The operation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Operation { get; set; }
-#nullable restore
-#else
-        public string Operation { get; set; }
-#endif
+        public global::Soenneker.Pinterest.OpenApiClient.Models.UpdateOperation? Operation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemsBatchRequest"/> and sets the default values.
         /// </summary>
@@ -63,7 +57,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.ItemUpdateBatchRecord>(global::Soenneker.Pinterest.OpenApiClient.Models.ItemUpdateBatchRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "language", n => { Language = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemsUpdateBatchRequestLanguage>(); } },
-                { "operation", n => { Operation = n.GetStringValue(); } },
+                { "operation", n => { Operation = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdateOperation>(); } },
             };
         }
         /// <summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.ItemUpdateBatchRecord>("items", Items);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemsUpdateBatchRequestLanguage>("language", Language);
-            writer.WriteStringValue("operation", Operation);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdateOperation>("operation", Operation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

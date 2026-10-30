@@ -104,7 +104,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Campaign_ad_preview
         /// <summary>
         /// Create ad preview records for one or more ad groups that can be shared.Each ad group is processed independently; individual failures do not block other previews.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreate200ResponseSchemaItem&gt;</returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,11 +116,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Campaign_ad_preview
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreate200ResponseSchemaItem>?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateBody> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateSuccessResponse?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateBody> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreate200ResponseSchemaItem>> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateBody> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateSuccessResponse> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateBody> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -134,8 +134,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Campaign_ad_preview
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreate200ResponseSchemaItem>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreate200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateSuccessResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewCreateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete ad preview records for one or more ad groups.All ad groups are validated before deleting any records.

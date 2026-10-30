@@ -9,7 +9,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CatalogsReportDistributionStats : IAdditionalDataHolder, IParsable
+    public partial class CatalogsReportStatsOneOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,23 +47,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Number of occurrences of the issue</summary>
         public int? Occurrences { get; set; }
         /// <summary>The report_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.DistributionIssuesReportType? ReportType { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2_report_type? ReportType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/> and sets the default values.
         /// </summary>
-        public CatalogsReportDistributionStats()
+        public CatalogsReportStatsOneOf2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportDistributionStats();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +80,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "ineligible_for_organic", n => { IneligibleForOrganic = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "occurrences", n => { Occurrences = n.GetIntValue(); } },
-                { "report_type", n => { ReportType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DistributionIssuesReportType>(); } },
+                { "report_type", n => { ReportType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2_report_type>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("ineligible_for_organic", IneligibleForOrganic);
             writer.WriteStringValue("message", Message);
             writer.WriteIntValue("occurrences", Occurrences);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DistributionIssuesReportType>("report_type", ReportType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2_report_type>("report_type", ReportType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

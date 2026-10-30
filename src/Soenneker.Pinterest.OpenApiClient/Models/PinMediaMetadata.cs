@@ -37,13 +37,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("item_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata();
-            if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ImageMetadata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ImageMetadata = new global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata();
             }
-            else if("video".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("VideoMetadataWithItemType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.VideoMetadataWithItemType = new global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType();
             }

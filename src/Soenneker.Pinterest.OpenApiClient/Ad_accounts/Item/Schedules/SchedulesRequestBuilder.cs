@@ -105,7 +105,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Schedules
         /// <summary>
         /// Batch create schedules
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreate200ResponseSchemaItem&gt;</returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreateSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,11 +117,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Schedules
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreate200ResponseSchemaItem>?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreate> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreateSuccessResponse?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreate> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreate200ResponseSchemaItem>> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreate> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreateSuccessResponse> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreate> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -135,8 +135,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Schedules
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreate200ResponseSchemaItem>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreate200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreateSuccessResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.SchedulesCreateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get schedules for a specific advertiser

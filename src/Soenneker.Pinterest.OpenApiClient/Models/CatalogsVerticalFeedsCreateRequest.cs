@@ -24,13 +24,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string CatalogId { get; set; }
 #endif
         /// <summary>The catalog_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CatalogType { get; set; }
-#nullable restore
-#else
-        public string CatalogType { get; set; }
-#endif
+        public global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType? CatalogType { get; set; }
         /// <summary>This field is **OPTIONAL**. Use this if your feed file requires username and password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +101,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
-                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+                { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>(); } },
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials.CreateFromDiscriminatorValue); } },
                 { "default_availability", n => { DefaultAvailability = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(); } },
                 { "default_country", n => { DefaultCountry = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
@@ -128,7 +122,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("catalog_id", CatalogId);
-            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>("catalog_type", CatalogType);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>("credentials", Credentials);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("default_country", DefaultCountry);

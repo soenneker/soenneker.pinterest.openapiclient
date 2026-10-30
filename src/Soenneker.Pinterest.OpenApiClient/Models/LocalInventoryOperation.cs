@@ -53,21 +53,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation();
-            if("CREATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("LocalInventoryCreateOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LocalInventoryCreateOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation();
             }
-            else if("DELETE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LocalInventoryDeleteOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LocalInventoryDeleteOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation();
             }
-            else if("UPDATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LocalInventoryUpdateOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LocalInventoryUpdateOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation();
             }
-            else if("UPSERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LocalInventoryUpsertOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.LocalInventoryUpsertOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation();
             }

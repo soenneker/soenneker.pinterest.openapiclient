@@ -5222,6 +5222,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CampaignAdPreviewCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CampaignAdPreviewCreate200ResponseSchema"
                 }
               }
@@ -5232,6 +5235,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CampaignAdPreviewCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CampaignAdPreviewCreate201ResponseSchema"
                 }
               }
@@ -14035,6 +14041,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/SchedulesCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/SchedulesCreate200ResponseSchema"
                 }
               }
@@ -14045,6 +14054,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/SchedulesCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/SchedulesCreate201ResponseSchema"
                 }
               }
@@ -23765,6 +23777,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CatalogsLocalInventoryItemsBatchOperateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/SupplementalItemsBatchResponse"
                 }
               }
@@ -23775,6 +23790,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CatalogsLocalInventoryItemsBatchOperateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/LocalInventoryItemsBatch"
                 }
               }
@@ -24133,6 +24151,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CatalogsLocalStoresCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CatalogsLocalStoresCreate200ResponseSchema"
                 }
               }
@@ -24143,6 +24164,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/CatalogsLocalStoresCreateSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/CatalogsLocalStoresCreate201ResponseSchema"
                 }
               }
@@ -35752,10 +35776,6 @@
         }
       },
       "AdvancedAuctionItemsSubmitRecord": {
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/AdvancedAuctionItemsSubmitUpsertRecord"
@@ -35764,13 +35784,8 @@
             "$ref": "#/components/schemas/AdvancedAuctionItemsSubmitDeleteRecord"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
         "description": "Object describing an item bid option operation",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "UPSERT": "#/components/schemas/AdvancedAuctionItemsSubmitUpsertRecord",
@@ -42623,10 +42638,6 @@
       },
       "CatalogsAvailableFilterValuesBody": {
         "title": "catalogs_available_filter_values",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailAvailableFilterValues"
@@ -42638,13 +42649,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsAvailableFilterValues"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Object holding available filter values for each filter key",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailAvailableFilterValues",
@@ -42974,10 +42980,6 @@
         }
       },
       "CatalogsCreativeAssetsBatchItem": {
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsCreateCreativeAssetsItem"
@@ -42992,13 +42994,8 @@
             "$ref": "#/components/schemas/CatalogsDeleteCreativeAssetsItem"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
         "description": "Creative assets batch item",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "CREATE": "#/components/schemas/CatalogsCreateCreativeAssetsItem",
@@ -43791,10 +43788,6 @@
       },
       "CatalogsFeed": {
         "title": "catalogs_feed",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailFeed"
@@ -43806,13 +43799,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsFeed"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Catalogs Feed object",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailFeed",
@@ -47666,10 +47654,6 @@
         }
       },
       "CatalogsHotelBatchItem": {
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsCreateHotelItem"
@@ -47684,13 +47668,8 @@
             "$ref": "#/components/schemas/CatalogsDeleteHotelItem"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
         "description": "Hotel batch item",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "CREATE": "#/components/schemas/CatalogsCreateHotelItem",
@@ -48423,10 +48402,6 @@
         "description": "Parameters for hotel report"
       },
       "CatalogsHotelReportParametersReport": {
-        "required": [
-          "report_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportFeedIngestionFilter"
@@ -48435,12 +48410,7 @@
             "$ref": "#/components/schemas/CatalogsReportDistributionIssueFilter"
           }
         ],
-        "properties": {
-          "report_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "report_type",
           "mapping": {
             "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportFeedIngestionFilter",
@@ -48465,10 +48435,6 @@
         "description": "Parameters for hotel report"
       },
       "CatalogsHotelReportStatsParametersReport": {
-        "required": [
-          "report_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportFeedIngestionFilter"
@@ -48477,12 +48443,7 @@
             "$ref": "#/components/schemas/CatalogsReportDistributionIssueFilter"
           }
         ],
-        "properties": {
-          "report_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "report_type",
           "mapping": {
             "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportFeedIngestionFilter",
@@ -50389,10 +50350,6 @@
         }
       },
       "CatalogsItemsBatch": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailItemsBatch"
@@ -50404,13 +50361,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsItemsBatch"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Object describing the catalogs items batch",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailItemsBatch",
@@ -50431,10 +50383,6 @@
       },
       "CatalogsItemsBatchRequest": {
         "title": "legacy_retail_only",
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsItemsUpdateBatchRequest"
@@ -50452,13 +50400,8 @@
             "$ref": "#/components/schemas/CatalogsItemsDeleteBatchRequest"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
         "description": "Request object of catalogs items batch",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "UPDATE": "#/components/schemas/CatalogsItemsUpdateBatchRequest",
@@ -50556,10 +50499,6 @@
         "description": "Request object to discontinue catalogs items"
       },
       "CatalogsItemsPostFilters": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailItemsPostFilter"
@@ -50571,12 +50510,7 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsItemsPostFilter"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailItemsPostFilter",
@@ -50941,10 +50875,6 @@
         }
       },
       "CatalogsProduct": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailProduct"
@@ -50956,12 +50886,7 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsProduct"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailProduct",
@@ -51286,10 +51211,6 @@
         "additionalProperties": false
       },
       "CatalogsProductGroupProductCountsVertical": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailProductGroupProductCounts"
@@ -51301,13 +51222,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsProductGroupProductCounts"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Product counts for a CatalogsProductGroup",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailProductGroupProductCounts",
@@ -51661,10 +51577,6 @@
         }
       },
       "CatalogsReportParameters": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailReportParameters"
@@ -51673,13 +51585,8 @@
             "$ref": "#/components/schemas/CatalogsHotelReportParameters"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Report parameters",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailReportParameters",
@@ -51688,25 +51595,16 @@
         }
       },
       "CatalogsReportStats": {
-        "required": [
-          "report_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/CatalogsReportFeedIngestionStats"
+            "$ref": "#/components/schemas/CatalogsReportStatsOneOf1"
           },
           {
-            "$ref": "#/components/schemas/CatalogsReportDistributionStats"
+            "$ref": "#/components/schemas/CatalogsReportStatsOneOf2"
           }
         ],
-        "properties": {
-          "report_type": {
-            "type": "string"
-          }
-        },
         "description": "Diagnostics aggregated numbers",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "report_type",
           "mapping": {
             "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportFeedIngestionStats",
@@ -51715,10 +51613,6 @@
         }
       },
       "CatalogsReportStatsParameters": {
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailReportStatsParameters"
@@ -51727,13 +51621,8 @@
             "$ref": "#/components/schemas/CatalogsHotelReportStatsParameters"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Report stats parameters",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailReportStatsParameters",
@@ -51794,10 +51683,6 @@
         "description": "A request object that can have multiple operations on a single retail batch"
       },
       "CatalogsRetailBatchRequestItemsItems": {
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsCreateRetailItem"
@@ -51812,12 +51697,7 @@
             "$ref": "#/components/schemas/CatalogsDeleteRetailItem"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "CREATE": "#/components/schemas/CatalogsCreateRetailItem",
@@ -52601,10 +52481,6 @@
         "description": "Parameters for retail report"
       },
       "CatalogsRetailReportParametersReport": {
-        "required": [
-          "report_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportFeedIngestionFilter"
@@ -52616,12 +52492,7 @@
             "$ref": "#/components/schemas/CatalogsRetailReportAllItemsFilter"
           }
         ],
-        "properties": {
-          "report_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "report_type",
           "mapping": {
             "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportFeedIngestionFilter",
@@ -52647,10 +52518,6 @@
         "description": "Parameters for retail report"
       },
       "CatalogsRetailReportStatsParametersReport": {
-        "required": [
-          "report_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportFeedIngestionFilter"
@@ -52659,12 +52526,7 @@
             "$ref": "#/components/schemas/CatalogsReportDistributionIssueFilter"
           }
         ],
-        "properties": {
-          "report_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "report_type",
           "mapping": {
             "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportFeedIngestionFilter",
@@ -53015,10 +52877,6 @@
       },
       "CatalogsVerticalBatchRequest": {
         "title": "operate on item batch",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailBatchRequest"
@@ -53030,13 +52888,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsBatchRequest"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "A request object that can have multiple operations on a single batch",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailBatchRequest",
@@ -53047,10 +52900,6 @@
       },
       "CatalogsVerticalFeedsCreateRequest": {
         "title": "feeds_create_request",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailFeedsCreateRequest"
@@ -53062,13 +52911,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsFeedsCreateRequest"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Request object for creating a feed.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailFeedsCreateRequest",
@@ -53079,10 +52923,6 @@
       },
       "CatalogsVerticalFeedsUpdateRequest": {
         "title": "feeds_update_request",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailFeedsUpdateRequest"
@@ -53094,13 +52934,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsFeedsUpdateRequest"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Request object for updating a feed.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailFeedsUpdateRequest",
@@ -53111,10 +52946,6 @@
       },
       "CatalogsVerticalProductGroup": {
         "title": "product_group",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailProductGroup"
@@ -53126,12 +52957,7 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsProductGroup"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailProductGroup",
@@ -53142,10 +52968,6 @@
       },
       "CatalogsVerticalProductGroupCreateRequest": {
         "title": "catalog based",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailProductGroupCreateRequest"
@@ -53157,13 +52979,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsProductGroupCreateRequest"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Request object for creating a catalog based product group.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailProductGroupCreateRequest",
@@ -53206,10 +53023,6 @@
       },
       "CatalogsVerticalsListProductsByCatalogBasedFilterRequest": {
         "title": "catalog based product group",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailListProductsByCatalogBasedFilterRequest"
@@ -53221,13 +53034,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Request object to list products for a given catalog_id and product group filter.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailListProductsByCatalogBasedFilterRequest",
@@ -63348,10 +63156,6 @@
         }
       },
       "ItemResponse": {
-        "required": [
-          "item_response_kind"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/CatalogsRetailItemResponse"
@@ -63372,13 +63176,8 @@
             "$ref": "#/components/schemas/CatalogsCreativeAssetsItemErrorResponse"
           }
         ],
-        "properties": {
-          "item_response_kind": {
-            "type": "string"
-          }
-        },
         "description": "Object describing an item record or error. Discriminated by \u0060item_response_kind\u0060 (one unique value per leaf).",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "item_response_kind",
           "mapping": {
             "retail_item": "#/components/schemas/CatalogsRetailItemResponse",
@@ -65446,10 +65245,6 @@
         "description": "Resource create operation model."
       },
       "LocalInventoryOperation": {
-        "required": [
-          "operation"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/LocalInventoryCreateOperation"
@@ -65464,12 +65259,7 @@
             "$ref": "#/components/schemas/LocalInventoryDeleteOperation"
           }
         ],
-        "properties": {
-          "operation": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "operation",
           "mapping": {
             "CREATE": "#/components/schemas/LocalInventoryCreateOperation",
@@ -70425,10 +70215,6 @@
       },
       "PinMedia": {
         "title": "Pin media response object.",
-        "required": [
-          "media_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/PinMediaWithImage"
@@ -70446,13 +70232,8 @@
             "$ref": "#/components/schemas/PinMediaWithImageAndVideo"
           }
         ],
-        "properties": {
-          "media_type": {
-            "type": "string"
-          }
-        },
         "description": "Pin media that can be an image, video, or a mix of both.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "media_type",
           "mapping": {
             "image": "#/components/schemas/PinMediaWithImage",
@@ -70464,10 +70245,6 @@
         }
       },
       "PinMediaMetadata": {
-        "required": [
-          "item_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/ImageMetadata"
@@ -70476,13 +70253,8 @@
             "$ref": "#/components/schemas/VideoMetadataWithItemType"
           }
         ],
-        "properties": {
-          "item_type": {
-            "type": "string"
-          }
-        },
         "description": "Per-item entry inside \u0060PinMedia.items\u0060 for mixed image/video pins. Discriminated by \u0060item_type\u0060.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "item_type",
           "mapping": {
             "image": "#/components/schemas/ImageMetadata",
@@ -70491,10 +70263,6 @@
         }
       },
       "PinMediaSource": {
-        "required": [
-          "source_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/PinMediaSourceImageBase64"
@@ -70515,13 +70283,8 @@
             "$ref": "#/components/schemas/PinMediaSourcePinUrl"
           }
         ],
-        "properties": {
-          "source_type": {
-            "type": "string"
-          }
-        },
         "description": "Pin media source that can be an image, video, or a mix of both passed in as a request.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "source_type",
           "mapping": {
             "image_base64": "#/components/schemas/PinMediaSourceImageBase64",
@@ -95853,22 +95616,13 @@
         "description": "Response model for supplemental items batch operation"
       },
       "SupplementalOperationResult": {
-        "required": [
-          "supplemental_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/LocalInventoryOperationResult"
           }
         ],
-        "properties": {
-          "supplemental_type": {
-            "type": "string"
-          }
-        },
         "description": "Result of a supplemental item operation, discriminated by supplemental_type",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "supplemental_type",
           "mapping": {
             "LOCAL_INVENTORY": "#/components/schemas/LocalInventoryOperationResult"
@@ -96684,10 +96438,6 @@
         }
       },
       "TargetingSpecOperations": {
-        "required": [
-          "field"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TargetingSpecOperationAudienceExclude"
@@ -96732,12 +96482,7 @@
             "$ref": "#/components/schemas/TargetingSpecOperationMinimumAge"
           }
         ],
-        "properties": {
-          "field": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "field",
           "mapping": {
             "AUDIENCE_EXCLUDE": "#/components/schemas/TargetingSpecOperationAudienceExclude",
@@ -119746,36 +119491,10 @@
         "description": "Object containing the targets of the conversion deletion request. Users can be identified with user_emails, epiks, or both within the same request.",
         "anyOf": [
           {
-            "type": "object",
-            "properties": {
-              "user_emails": {
-                "minItems": 1,
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "Array of plain text user emails."
-              }
-            },
-            "required": [
-              "user_emails"
-            ]
+            "$ref": "#/components/schemas/ConversionDeletionRequestCreateBodyDeletionTargetsAnyOf1"
           },
           {
-            "type": "object",
-            "properties": {
-              "epiks": {
-                "minItems": 1,
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "Array of EPIKs (Encrypted Pinterest ID Keys). An EPIK is a user match type that utilizes 3P browser localStorage (similar to a third-party cookie)."
-              }
-            },
-            "required": [
-              "epiks"
-            ]
+            "$ref": "#/components/schemas/ConversionDeletionRequestCreateBodyDeletionTargetsAnyOf2"
           }
         ]
       },
@@ -132304,6 +132023,186 @@
             }
           ]
         }
+      },
+      "CatalogsReportStatsOneOf1": {
+        "type": "object",
+        "properties": {
+          "catalog_id": {
+            "pattern": "^\\d\u002B$",
+            "type": "string",
+            "description": "ID of the catalog entity."
+          },
+          "code": {
+            "type": "integer",
+            "description": "The event code that a diagnostics aggregated number references",
+            "example": 112
+          },
+          "code_label": {
+            "type": "string",
+            "description": "A human-friendly label for the event code (e.g, \u0027AVAILABILITY_INVALID\u0027)",
+            "example": "AVAILABILITY_INVALID"
+          },
+          "message": {
+            "type": "string",
+            "description": "Title message describing the diagnostic issue"
+          },
+          "occurrences": {
+            "type": "integer",
+            "description": "Number of occurrences of the issue",
+            "example": 10
+          },
+          "report_type": {
+            "enum": [
+              "FEED_INGESTION_ISSUES"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ReportType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "FEED_INGESTION_ISSUES",
+                  "name": "FeedIngestionIssues"
+                }
+              ]
+            }
+          },
+          "severity": {
+            "$ref": "#/components/schemas/CatalogsReportFeedIngestionStatsSeverity"
+          }
+        },
+        "required": [
+          "report_type"
+        ]
+      },
+      "CatalogsReportStatsOneOf2": {
+        "type": "object",
+        "properties": {
+          "catalog_id": {
+            "pattern": "^\\d\u002B$",
+            "type": "string",
+            "description": "ID of the catalog entity."
+          },
+          "code": {
+            "type": "integer",
+            "description": "The event code that a diagnostics aggregated number references"
+          },
+          "code_label": {
+            "type": "string",
+            "description": "A human-friendly label for the event code (e.g, \u0027SPAM\u0027)",
+            "example": "SPAM"
+          },
+          "ineligible_for_ads": {
+            "type": "boolean",
+            "description": "Indicates if issue makes items ineligible for ads distribution",
+            "example": true
+          },
+          "ineligible_for_organic": {
+            "type": "boolean",
+            "description": "Indicates if issue makes items ineligible for organic distribution",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "description": "Title message describing the diagnostic issue"
+          },
+          "occurrences": {
+            "type": "integer",
+            "description": "Number of occurrences of the issue",
+            "example": 10
+          },
+          "report_type": {
+            "enum": [
+              "DISTRIBUTION_ISSUES"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ReportType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "DISTRIBUTION_ISSUES",
+                  "name": "DistributionIssues"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "report_type"
+        ]
+      },
+      "ConversionDeletionRequestCreateBodyDeletionTargetsAnyOf1": {
+        "type": "object",
+        "properties": {
+          "user_emails": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of plain text user emails."
+          }
+        },
+        "required": [
+          "user_emails"
+        ]
+      },
+      "ConversionDeletionRequestCreateBodyDeletionTargetsAnyOf2": {
+        "type": "object",
+        "properties": {
+          "epiks": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Array of EPIKs (Encrypted Pinterest ID Keys). An EPIK is a user match type that utilizes 3P browser localStorage (similar to a third-party cookie)."
+          }
+        },
+        "required": [
+          "epiks"
+        ]
+      },
+      "CampaignAdPreviewCreateSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CampaignAdPreviewCreate200ResponseSchema"
+          },
+          {
+            "$ref": "#/components/schemas/CampaignAdPreviewCreate201ResponseSchema"
+          }
+        ]
+      },
+      "SchedulesCreateSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SchedulesCreate200ResponseSchema"
+          },
+          {
+            "$ref": "#/components/schemas/SchedulesCreate201ResponseSchema"
+          }
+        ]
+      },
+      "CatalogsLocalInventoryItemsBatchOperateSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/SupplementalItemsBatchResponse"
+          },
+          {
+            "$ref": "#/components/schemas/LocalInventoryItemsBatch"
+          }
+        ]
+      },
+      "CatalogsLocalStoresCreateSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CatalogsLocalStoresCreate200ResponseSchema"
+          },
+          {
+            "$ref": "#/components/schemas/CatalogsLocalStoresCreate201ResponseSchema"
+          }
+        ]
       }
     },
     "parameters": {

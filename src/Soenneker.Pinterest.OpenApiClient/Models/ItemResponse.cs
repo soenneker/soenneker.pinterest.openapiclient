@@ -69,29 +69,29 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("item_response_kind")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse();
-            if("creative_assets_item_error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CatalogsCreativeAssetsItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsCreativeAssetsItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse();
             }
-            else if("creative_assets_item".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsCreativeAssetsItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsCreativeAssetsItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse();
             }
-            else if("hotel_item_error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsHotelItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsHotelItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse();
             }
-            else if("hotel_item".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsHotelItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsHotelItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse();
             }
-            else if("retail_item_error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsRetailItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsRetailItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse();
             }
-            else if("retail_item".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsRetailItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsRetailItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse();
             }

@@ -37,13 +37,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord();
-            if("DELETE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("AdvancedAuctionItemsSubmitDeleteRecord".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AdvancedAuctionItemsSubmitDeleteRecord = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord();
             }
-            else if("UPSERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("AdvancedAuctionItemsSubmitUpsertRecord".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.AdvancedAuctionItemsSubmitUpsertRecord = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord();
             }

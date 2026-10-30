@@ -133,61 +133,61 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("field")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations();
-            if("AGE_BUCKET".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TargetingSpecOperationAgeBucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationAgeBucket = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket();
             }
-            else if("APPTYPE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationAppType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationAppType = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType();
             }
-            else if("AUDIENCE_EXCLUDE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationAudienceExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationAudienceExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude();
             }
-            else if("AUDIENCE_INCLUDE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationAudienceInclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationAudienceInclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude();
             }
-            else if("GENDER".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationGender".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationGender = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender();
             }
-            else if("GEO".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationGeo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationGeo = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo();
             }
-            else if("GEO_EXCLUDE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationGeoExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationGeoExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude();
             }
-            else if("INTEREST".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationInterest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationInterest = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest();
             }
-            else if("LOCALE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationLocale".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationLocale = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale();
             }
-            else if("LOCATION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationLocation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationLocation = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation();
             }
-            else if("LOCATION_EXCLUDE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationLocationExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationLocationExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude();
             }
-            else if("MAXIMUM_AGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationMaximumAge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationMaximumAge = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge();
             }
-            else if("MINIMUM_AGE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationMinimumAge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationMinimumAge = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge();
             }
-            else if("SHOPPING_RETARGETING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TargetingSpecOperationShoppingRetargeting".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TargetingSpecOperationShoppingRetargeting = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting();
             }

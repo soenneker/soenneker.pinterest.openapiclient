@@ -69,29 +69,29 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("source_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource();
-            if("image_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("PinMediaSourceImageBase64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourceImageBase64 = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64();
             }
-            else if("image_url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PinMediaSourceImageUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourceImageUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl();
             }
-            else if("multiple_image_base64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PinMediaSourceImagesBase64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourceImagesBase64 = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64();
             }
-            else if("multiple_image_urls".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PinMediaSourceImagesUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourceImagesUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl();
             }
-            else if("pin_url".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PinMediaSourcePinUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourcePinUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl();
             }
-            else if("video_id".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("PinMediaSourceVideoId".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaSourceVideoId = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId();
             }

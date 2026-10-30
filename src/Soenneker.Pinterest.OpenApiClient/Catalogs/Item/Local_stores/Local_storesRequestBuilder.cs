@@ -139,7 +139,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores
         /// <summary>
         /// Create a local store for a catalog owned by the &quot;operation user_account&quot;.- By default, the &quot;operation user_account&quot; is the token user_account.- Supports optional filtering by store codes.Optional: Business Access: Specify an ad_account_id (obtained via [List ad accounts](/docs/api/v5/#operation/ad_accounts/list)) to use the owner of that ad_account as the &quot;operation user_account&quot;. In order to do this, the token user_account must have one of the following [Business Access](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts) roles on the ad_account: Owner, Admin, Catalogs Manager.[Learn more](/docs/api-features/shopping-overview/)
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreate200ResponseSchemaItem&gt;</returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreateSuccessResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,11 +151,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreate200ResponseSchemaItem>?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalStoreCreate> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores.Local_storesRequestBuilder.Local_storesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreateSuccessResponse?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalStoreCreate> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores.Local_storesRequestBuilder.Local_storesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreate200ResponseSchemaItem>> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalStoreCreate> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores.Local_storesRequestBuilder.Local_storesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreateSuccessResponse> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.LocalStoreCreate> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores.Local_storesRequestBuilder.Local_storesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -169,8 +169,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Item.Local_stores
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreate200ResponseSchemaItem>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreate200ResponseSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreateSuccessResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresCreateSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         ///   Delete multiple local stores for a catalog owned by the &quot;operation user_account&quot;.  - By default, the &quot;operation user_account&quot; is the token user_account.  - Supports optional filtering by store codes.  Optional: Business Access: Specify an ad_account_id (obtained via [List ad accounts](/docs/api/v5/#operation/ad_accounts/list)) to use the owner of that ad_account as the &quot;operation user_account&quot;. In order to do this, the token user_account must have one of the following [Business Access](https://help.pinterest.com/en/business/article/share-and-manage-access-to-your-ad-accounts) roles on the ad_account: Owner, Admin, Catalogs Manager.  [Learn more](/docs/api-features/shopping-overview/)

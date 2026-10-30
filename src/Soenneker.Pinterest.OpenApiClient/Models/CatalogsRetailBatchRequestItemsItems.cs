@@ -53,21 +53,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems();
-            if("CREATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CatalogsCreateRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsCreateRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem();
             }
-            else if("DELETE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsDeleteRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsDeleteRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem();
             }
-            else if("UPDATE".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsUpdateRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsUpdateRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem();
             }
-            else if("UPSERT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsUpsertRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsUpsertRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem();
             }

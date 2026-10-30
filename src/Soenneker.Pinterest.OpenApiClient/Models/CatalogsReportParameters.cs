@@ -37,13 +37,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters();
-            if("HOTEL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CatalogsHotelReportParameters".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsHotelReportParameters = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters();
             }
-            else if("RETAIL".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CatalogsRetailReportParameters".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CatalogsRetailReportParameters = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters();
             }
