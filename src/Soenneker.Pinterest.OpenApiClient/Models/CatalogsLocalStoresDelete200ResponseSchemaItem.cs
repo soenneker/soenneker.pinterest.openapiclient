@@ -25,10 +25,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseItemStatus? Status { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewDelete200ResponseItemStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseItemStatus Status { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewDelete200ResponseItemStatus Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseSchemaItem"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseItemStatus>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseItemStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewDelete200ResponseItemStatus>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewDelete200ResponseItemStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocalStoresDelete200ResponseItemStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAdPreviewDelete200ResponseItemStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

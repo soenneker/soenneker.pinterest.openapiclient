@@ -18,10 +18,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>The value of the scheduled adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateDeltaValue? DeltaValue { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBatchUpdateDeltaValue? DeltaValue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateDeltaValue DeltaValue { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBatchUpdateDeltaValue DeltaValue { get; set; }
 #endif
         /// <summary>Schedule end time. Unix timestamp in seconds.</summary>
         public int? EndTimestamp { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delta_value", n => { DeltaValue = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateDeltaValue>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateDeltaValue.CreateFromDiscriminatorValue); } },
+                { "delta_value", n => { DeltaValue = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBatchUpdateDeltaValue>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBatchUpdateDeltaValue.CreateFromDiscriminatorValue); } },
                 { "end_timestamp", n => { EndTimestamp = n.GetIntValue(); } },
                 { "entity_id", n => { EntityId = n.GetStringValue(); } },
                 { "entity_type", n => { EntityType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateEntityType>(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateDeltaValue>("delta_value", DeltaValue);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBatchUpdateDeltaValue>("delta_value", DeltaValue);
             writer.WriteIntValue("end_timestamp", EndTimestamp);
             writer.WriteStringValue("entity_id", EntityId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleCreateEntityType>("entity_type", EntityType);

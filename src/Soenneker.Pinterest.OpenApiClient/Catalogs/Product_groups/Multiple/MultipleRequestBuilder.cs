@@ -80,11 +80,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<string>?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateManyRequestItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<string>?> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<string>> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateManyRequestItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<string>> PostAsync(List<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -128,11 +128,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateManyRequestItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateManyRequestItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems> body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Multiple.MultipleRequestBuilder.MultipleRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

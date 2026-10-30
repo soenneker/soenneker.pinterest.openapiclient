@@ -11,7 +11,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithImage"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithImageAndVideo"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithImages"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithVideo"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithVideos"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SummaryPinMedia : IComposedTypeWrapper, IParsable
+    public partial class AggregatedPinCommentMedia : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithImage"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,13 +56,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("media_type")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia();
+            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia();
             if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.PinMediaWithImage = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaWithImage();

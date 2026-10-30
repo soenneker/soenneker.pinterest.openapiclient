@@ -40,12 +40,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Currency Codes from ISO 4217.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency? DefaultCurrency { get; set; }
         /// <summary>The locale used within a feed for product descriptions.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeedsCreateRequestDefaultLocale? DefaultLocale { get; set; }
+        public string? DefaultLocale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeedsCreateRequestDefaultLocale DefaultLocale { get; set; }
+        public string DefaultLocale { get; set; }
 #endif
         /// <summary>The file format of a feed.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat? Format { get; set; }
@@ -106,7 +107,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "default_availability", n => { DefaultAvailability = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(); } },
                 { "default_country", n => { DefaultCountry = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
                 { "default_currency", n => { DefaultCurrency = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(); } },
-                { "default_locale", n => { DefaultLocale = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeedsCreateRequestDefaultLocale>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeedsCreateRequestDefaultLocale.CreateFromDiscriminatorValue); } },
+                { "default_locale", n => { DefaultLocale = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -127,7 +128,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("default_country", DefaultCountry);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeedsCreateRequestDefaultLocale>("default_locale", DefaultLocale);
+            writer.WriteStringValue("default_locale", DefaultLocale);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>("format", Format);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);

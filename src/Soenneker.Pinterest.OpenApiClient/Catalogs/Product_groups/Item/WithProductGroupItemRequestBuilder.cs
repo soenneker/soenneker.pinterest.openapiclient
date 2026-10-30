@@ -126,11 +126,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup?> PatchAsync(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsUpdateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup?> PatchAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestUpdateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup> PatchAsync(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsUpdateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup> PatchAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestUpdateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -192,11 +192,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsUpdateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestUpdateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsUpdateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestUpdateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Item.WithProductGroupItemRequestBuilder.WithProductGroupItemRequestBuilderPatchQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

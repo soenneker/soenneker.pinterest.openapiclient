@@ -22450,7 +22450,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CatalogsProductGroupsCreateRequestSchema"
+                "$ref": "#/components/schemas/BulkUpsertRequestCreateCatalogProductGroupsItems"
               }
             }
           },
@@ -22876,7 +22876,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CatalogsProductGroupsUpdateRequestSchema"
+                "$ref": "#/components/schemas/BulkUpsertRequestUpdateCatalogProductGroupsItems"
               }
             }
           },
@@ -43148,7 +43148,10 @@
             "$ref": "#/components/schemas/NullableCurrency"
           },
           "default_locale": {
-            "$ref": "#/components/schemas/CatalogsCreativeAssetsFeedsCreateRequestDefaultLocale"
+            "type": "string",
+            "description": "The locale used within a feed for product descriptions.",
+            "deprecated": true,
+            "x-client-inline-scalar": true
           },
           "format": {
             "$ref": "#/components/schemas/CatalogsFormat"
@@ -47405,7 +47408,10 @@
             "$ref": "#/components/schemas/NullableCurrency"
           },
           "default_locale": {
-            "$ref": "#/components/schemas/CatalogsFeedsCreateRequestDefaultLocale"
+            "type": "string",
+            "description": "The locale used within a feed for product descriptions.",
+            "deprecated": true,
+            "x-client-inline-scalar": true
           },
           "format": {
             "$ref": "#/components/schemas/CatalogsFormat"
@@ -47815,7 +47821,10 @@
             "$ref": "#/components/schemas/NullableCurrency"
           },
           "default_locale": {
-            "$ref": "#/components/schemas/CatalogsHotelFeedsCreateRequestDefaultLocale"
+            "type": "string",
+            "description": "The locale used within a feed for product descriptions.",
+            "deprecated": true,
+            "x-client-inline-scalar": true
           },
           "format": {
             "$ref": "#/components/schemas/CatalogsFormat"
@@ -48429,7 +48438,7 @@
             "$ref": "#/components/schemas/HotelCatalogType"
           },
           "report": {
-            "$ref": "#/components/schemas/CatalogsHotelReportStatsParametersReport"
+            "$ref": "#/components/schemas/CatalogsHotelReportParametersReport"
           }
         },
         "description": "Parameters for hotel report"
@@ -51416,7 +51425,7 @@
         "minItems": 1,
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatalogsProductGroupsCreateManyRequestItems"
+          "$ref": "#/components/schemas/BulkUpsertRequestCreateCatalogProductGroupsItems"
         }
       },
       "CatalogsProductGroupsCreateManyResponse201Items": {
@@ -51814,7 +51823,10 @@
             "$ref": "#/components/schemas/NullableCurrency"
           },
           "default_locale": {
-            "$ref": "#/components/schemas/CatalogsRetailFeedsCreateRequestDefaultLocale"
+            "type": "string",
+            "description": "The locale used within a feed for product descriptions.",
+            "deprecated": true,
+            "x-client-inline-scalar": true
           },
           "format": {
             "$ref": "#/components/schemas/CatalogsFormat"
@@ -52512,7 +52524,7 @@
             "$ref": "#/components/schemas/RetailCatalogType"
           },
           "report": {
-            "$ref": "#/components/schemas/CatalogsRetailReportStatsParametersReport"
+            "$ref": "#/components/schemas/CatalogsHotelReportParametersReport"
           }
         },
         "description": "Parameters for retail report"
@@ -70000,7 +70012,7 @@
             "readOnly": true
           },
           "media": {
-            "$ref": "#/components/schemas/PinBaseMedia"
+            "$ref": "#/components/schemas/AggregatedPinCommentMedia"
           },
           "parent_pin_id": {
             "pattern": "^\\d\u002B$",
@@ -70114,7 +70126,7 @@
             "readOnly": true
           },
           "media": {
-            "$ref": "#/components/schemas/PinBaseMedia"
+            "$ref": "#/components/schemas/AggregatedPinCommentMedia"
           },
           "parent_pin_id": {
             "pattern": "^\\d\u002B$",
@@ -70748,7 +70760,7 @@
             "readOnly": true
           },
           "media": {
-            "$ref": "#/components/schemas/PinBaseMedia"
+            "$ref": "#/components/schemas/AggregatedPinCommentMedia"
           },
           "parent_pin_id": {
             "pattern": "^\\d\u002B$",
@@ -94666,7 +94678,7 @@
         "type": "object",
         "properties": {
           "delta_value": {
-            "$ref": "#/components/schemas/ScheduleDeltaValue"
+            "$ref": "#/components/schemas/ScheduleBatchUpdateDeltaValue"
           },
           "end_timestamp": {
             "type": "integer",
@@ -94898,7 +94910,7 @@
         "type": "object",
         "properties": {
           "delta_value": {
-            "$ref": "#/components/schemas/ScheduleCreateDeltaValue"
+            "$ref": "#/components/schemas/ScheduleBatchUpdateDeltaValue"
           },
           "end_timestamp": {
             "type": "integer",
@@ -95429,7 +95441,7 @@
             "nullable": true
           },
           "media": {
-            "$ref": "#/components/schemas/SummaryPinMedia"
+            "$ref": "#/components/schemas/AggregatedPinCommentMedia"
           },
           "title": {
             "maxLength": 100,
@@ -108112,17 +108124,10 @@
         }
       },
       "CatalogsCreativeAssetsFeedsCreateRequestDefaultLocale": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CatalogsLocale"
-          },
-          {
-            "type": "string",
-            "description": "The locale used within a feed for product descriptions. This free text string version is deprecated in favor of official list of supported locales defined by CatalogsLocale.",
-            "deprecated": true
-          }
-        ],
-        "description": "The locale used within a feed for product descriptions."
+        "type": "string",
+        "description": "The locale used within a feed for product descriptions.",
+        "deprecated": true,
+        "x-client-inline-scalar": true
       },
       "CatalogsCreativeAssetsFeedsCreateRequestStatus": {
         "enum": [
@@ -110153,17 +110158,10 @@
         }
       },
       "CatalogsFeedsCreateRequestDefaultLocale": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CatalogsLocale"
-          },
-          {
-            "type": "string",
-            "description": "The locale used within a feed for product descriptions. This free text string version is deprecated in favor of official list of supported locales defined by CatalogsLocale.",
-            "deprecated": true
-          }
-        ],
-        "description": "The locale used within a feed for product descriptions."
+        "type": "string",
+        "description": "The locale used within a feed for product descriptions.",
+        "deprecated": true,
+        "x-client-inline-scalar": true
       },
       "CatalogsFeedsCreateRequestStatus": {
         "enum": [
@@ -110759,17 +110757,10 @@
         }
       },
       "CatalogsHotelFeedsCreateRequestDefaultLocale": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CatalogsLocale"
-          },
-          {
-            "type": "string",
-            "description": "The locale used within a feed for product descriptions. This free text string version is deprecated in favor of official list of supported locales defined by CatalogsLocale.",
-            "deprecated": true
-          }
-        ],
-        "description": "The locale used within a feed for product descriptions."
+        "type": "string",
+        "description": "The locale used within a feed for product descriptions.",
+        "deprecated": true,
+        "x-client-inline-scalar": true
       },
       "CatalogsHotelFeedsCreateRequestStatus": {
         "enum": [
@@ -119320,17 +119311,10 @@
         }
       },
       "CatalogsRetailFeedsCreateRequestDefaultLocale": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CatalogsLocale"
-          },
-          {
-            "type": "string",
-            "description": "The locale used within a feed for product descriptions. This free text string version is deprecated in favor of official list of supported locales defined by CatalogsLocale.",
-            "deprecated": true
-          }
-        ],
-        "description": "The locale used within a feed for product descriptions."
+        "type": "string",
+        "description": "The locale used within a feed for product descriptions.",
+        "deprecated": true,
+        "x-client-inline-scalar": true
       },
       "CatalogsRetailFeedsCreateRequestStatus": {
         "enum": [
@@ -129221,7 +129205,7 @@
         "minItems": 1,
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/CatalogsProductGroupsCreateManyRequestItems"
+          "$ref": "#/components/schemas/BulkUpsertRequestCreateCatalogProductGroupsItems"
         }
       },
       "CatalogsProductGroupsCreateMany201ResponseSchema": {
@@ -130447,7 +130431,7 @@
             "example": "1234567890"
           },
           "status": {
-            "$ref": "#/components/schemas/CatalogsLocalStoresDelete200ResponseItemStatus"
+            "$ref": "#/components/schemas/CampaignAdPreviewDelete200ResponseItemStatus"
           }
         }
       },
@@ -130540,7 +130524,7 @@
             "example": "1234567890"
           },
           "status": {
-            "$ref": "#/components/schemas/CatalogsLocalStoresDelete200ResponseItemStatus"
+            "$ref": "#/components/schemas/CampaignAdPreviewDelete200ResponseItemStatus"
           }
         }
       },

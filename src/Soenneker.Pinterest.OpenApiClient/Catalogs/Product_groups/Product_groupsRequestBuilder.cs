@@ -100,11 +100,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroup> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -147,11 +147,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupsCreateRequestSchema body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequestCreateCatalogProductGroupsItems body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups.Product_groupsRequestBuilder.Product_groupsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

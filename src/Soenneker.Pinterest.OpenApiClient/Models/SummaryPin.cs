@@ -50,10 +50,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Pin media that can be an image, video, or a mix of both.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia? Media { get; private set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia? Media { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia Media { get; private set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia Media { get; private set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia>(global::Soenneker.Pinterest.OpenApiClient.Models.SummaryPinMedia.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia>(global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
