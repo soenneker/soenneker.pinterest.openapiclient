@@ -16,13 +16,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The catalog_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CatalogType { get; set; }
-#nullable restore
-#else
-        public string CatalogType { get; set; }
-#endif
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest_catalog_type? CatalogType { get; set; }
         /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.Country? Country { get; set; }
         /// <summary>The description property</summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+                { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest_catalog_type>(); } },
                 { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest.CreateFromDiscriminatorValue); } },
@@ -91,7 +85,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest_catalog_type>("catalog_type", CatalogType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest>("filters", Filters);

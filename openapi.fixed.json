@@ -11590,7 +11590,18 @@
         },
         "responses": {
           "200": {
-            "description": "The request has succeeded."
+            "description": "Resource create operation completed successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionMsotEventsSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201",
+            "x-client-original-response": {
+              "description": "The request has succeeded."
+            }
           },
           "201": {
             "description": "Resource create operation completed successfully.",
@@ -22732,6 +22743,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CatalogsProductGroupsCreateMany201ResponseSchema"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -27234,6 +27256,17 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pin"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -53003,28 +53036,19 @@
       },
       "CatalogsVerticalProductGroupUpdateRequest": {
         "title": "catalog based",
-        "required": [
-          "catalog_type"
-        ],
-        "type": "object",
         "oneOf": [
           {
-            "$ref": "#/components/schemas/CatalogsRetailProductGroupUpdateRequest"
+            "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf1"
           },
           {
-            "$ref": "#/components/schemas/CatalogsHotelProductGroupUpdateRequest"
+            "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf2"
           },
           {
-            "$ref": "#/components/schemas/CatalogsCreativeAssetsProductGroupUpdateRequest"
+            "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf3"
           }
         ],
-        "properties": {
-          "catalog_type": {
-            "type": "string"
-          }
-        },
         "description": "Request object for updating a catalog based product group.",
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
             "RETAIL": "#/components/schemas/CatalogsRetailProductGroupUpdateRequest",
@@ -132115,6 +132139,123 @@
         "required": [
           "report_type"
         ]
+      },
+      "CatalogsVerticalProductGroupUpdateRequestOneOf1": {
+        "type": "object",
+        "properties": {
+          "catalog_type": {
+            "enum": [
+              "RETAIL"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "CatalogType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "RETAIL",
+                  "name": "Retail"
+                }
+              ]
+            }
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "filters": {
+            "$ref": "#/components/schemas/CatalogsProductGroupFiltersRequest"
+          },
+          "locale": {
+            "$ref": "#/components/schemas/CatalogsLocale"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of catalog product group",
+            "example": "Most Popular"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogsVerticalProductGroupUpdateRequestOneOf2": {
+        "type": "object",
+        "properties": {
+          "catalog_type": {
+            "enum": [
+              "HOTEL"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "CatalogType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "HOTEL",
+                  "name": "Hotel"
+                }
+              ]
+            }
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "filters": {
+            "$ref": "#/components/schemas/CatalogsHotelProductGroupFilters"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of catalog product group",
+            "example": "Most Popular"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogsVerticalProductGroupUpdateRequestOneOf3": {
+        "type": "object",
+        "properties": {
+          "catalog_type": {
+            "enum": [
+              "CREATIVE_ASSETS"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "CatalogType",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "CREATIVE_ASSETS",
+                  "name": "CreativeAssets"
+                }
+              ]
+            }
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "filters": {
+            "$ref": "#/components/schemas/CatalogsCreativeAssetsProductGroupFilters"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of catalog product group",
+            "example": "Most Popular"
+          }
+        },
+        "required": [
+          "catalog_type"
+        ],
+        "additionalProperties": false
       },
       "ConversionDeletionRequestCreateBodyDeletionTargetsAnyOf1": {
         "type": "object",
