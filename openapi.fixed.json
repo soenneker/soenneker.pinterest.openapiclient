@@ -98715,7 +98715,8 @@
             "$ref": "#/components/schemas/UpdatableItemAttributesGtinInteger"
           }
         ],
-        "description": "The unique universal product identifier."
+        "description": "The unique universal product identifier.",
+        "nullable": true
       },
       "UpdatableItemAttributesGtinInteger": {
         "type": "integer",
@@ -104320,6 +104321,7 @@
         "type": "string",
         "description": "Ad creative type enum.\n**Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.",
         "readOnly": true,
+        "nullable": true,
         "x-ms-enum": {
           "name": "AggregatedPinCommentCreativeType",
           "modelAsString": false,
@@ -107555,6 +107557,7 @@
         ],
         "type": "string",
         "description": "Advertiser campaign objective type.\nYou can only update objectives for draft campaigns.\n\u0060CTV_CONSIDERATION\u0060 is in BETA.\n\u0060WEB_SESSIONS\u0060 and \u0060VIDEO_VIEW\u0060 objectives are deprecated. We recommend using \u0060VIDEO_COMPLETION\u0060 as an alternative for the latter.",
+        "nullable": true,
         "x-ms-enum": {
           "name": "CampaignUpdateRequestAllOf2ObjectiveType",
           "modelAsString": false,
@@ -120385,6 +120388,7 @@
         "description": "The enhanced match status of the tag",
         "readOnly": true,
         "example": "VALIDATION_COMPLETE",
+        "nullable": true,
         "x-ms-enum": {
           "name": "ConversionTagCommonEnhancedMatchStatus",
           "modelAsString": false,
@@ -120832,6 +120836,7 @@
         "type": "string",
         "description": "Label parent entity type.",
         "example": "CAMPAIGN",
+        "nullable": true,
         "x-ms-enum": {
           "name": "EntityLabelEntityType",
           "modelAsString": false,
@@ -120850,6 +120855,7 @@
           "NULL"
         ],
         "type": "string",
+        "nullable": true,
         "x-ms-enum": {
           "name": "EntityLabelStatusComposed",
           "modelAsString": false,
@@ -121428,6 +121434,7 @@
         "type": "string",
         "description": "Keyword match type",
         "example": "BROAD",
+        "nullable": true,
         "x-ms-enum": {
           "name": "KeywordMatchType",
           "modelAsString": false,
@@ -121466,6 +121473,7 @@
         "type": "string",
         "description": "Keyword match type",
         "example": "BROAD",
+        "nullable": true,
         "x-ms-enum": {
           "name": "KeywordCreateItemMatchType",
           "modelAsString": false,
@@ -125769,6 +125777,7 @@
         "type": "string",
         "description": "Ad creative type enum.\n**Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.",
         "readOnly": true,
+        "nullable": true,
         "x-ms-enum": {
           "name": "PinBaseCreativeType",
           "modelAsString": false,
@@ -127425,6 +127434,7 @@
         ],
         "type": "string",
         "description": "Advertiser campaign objective type.\nYou can only update objectives for draft campaigns.\n\u0060CTV_CONSIDERATION\u0060 is in BETA.\n\u0060WEB_SESSIONS\u0060 and \u0060VIDEO_VIEW\u0060 objectives are deprecated. We recommend using \u0060VIDEO_COMPLETION\u0060 as an alternative for the latter.",
+        "nullable": true,
         "x-ms-enum": {
           "name": "CampaignUpdateRequestAllOf1ObjectiveType",
           "modelAsString": false,
