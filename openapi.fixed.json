@@ -45343,8 +45343,8 @@
         "discriminator": {
           "propertyName": "report_type",
           "mapping": {
-            "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportStatsCatalogsReportStatsOneOf1",
-            "DISTRIBUTION_ISSUES": "#/components/schemas/CatalogsReportStatsCatalogsReportStatsOneOf2"
+            "FEED_INGESTION_ISSUES": "#/components/schemas/CatalogsReportStatsOneOf1Variant",
+            "DISTRIBUTION_ISSUES": "#/components/schemas/CatalogsReportStatsOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -46253,9 +46253,9 @@
         "discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
-            "RETAIL": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf1",
-            "HOTEL": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf2",
-            "CREATIVE_ASSETS": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3"
+            "RETAIL": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf1Variant",
+            "HOTEL": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf2Variant",
+            "CREATIVE_ASSETS": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequestOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -46313,9 +46313,9 @@
         "discriminator": {
           "propertyName": "catalog_type",
           "mapping": {
-            "RETAIL": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsRetailListProductsByCatalogBasedFilterRequest",
-            "HOTEL": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsHotelListProductsByCatalogBasedFilterRequest",
-            "CREATIVE_ASSETS": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest"
+            "RETAIL": "#/components/schemas/TaggedRETAILVariantF5FE3472B9B9A8CD",
+            "HOTEL": "#/components/schemas/TaggedHOTELVariant4FAD8F11133C5029",
+            "CREATIVE_ASSETS": "#/components/schemas/TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0"
           }
         },
         "x-client-original-tagged-union": {
@@ -60750,12 +60750,12 @@
         "discriminator": {
           "propertyName": "source_type",
           "mapping": {
-            "image_base64": "#/components/schemas/PinMediaSourcePinMediaSourceImageBase64",
-            "image_url": "#/components/schemas/PinMediaSourcePinMediaSourceImageUrl",
-            "video_id": "#/components/schemas/PinMediaSourcePinMediaSourceVideoId",
-            "multiple_image_base64": "#/components/schemas/PinMediaSourcePinMediaSourceImagesBase64",
-            "multiple_image_urls": "#/components/schemas/PinMediaSourcePinMediaSourceImagesUrl",
-            "pin_url": "#/components/schemas/PinMediaSourcePinMediaSourcePinUrl"
+            "image_base64": "#/components/schemas/PinMediaSourceImageBase64Variant",
+            "image_url": "#/components/schemas/PinMediaSourceImageUrlVariant",
+            "video_id": "#/components/schemas/PinMediaSourceVideoIdVariant",
+            "multiple_image_base64": "#/components/schemas/PinMediaSourceImagesBase64Variant",
+            "multiple_image_urls": "#/components/schemas/PinMediaSourceImagesUrlVariant",
+            "pin_url": "#/components/schemas/PinMediaSourcePinUrlVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -85920,7 +85920,7 @@
             "APPTYPE": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationAppType",
             "GENDER": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationGender",
             "AGE_BUCKET": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationAgeBucket",
-            "SHOPPING_RETARGETING": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting",
+            "SHOPPING_RETARGETING": "#/components/schemas/TargetingSpecOperationShoppingRetargetingVariant",
             "MAXIMUM_AGE": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationMaximumAge",
             "MINIMUM_AGE": "#/components/schemas/TargetingSpecOperationsTargetingSpecOperationMinimumAge"
           }
@@ -120660,7 +120660,7 @@
           }
         ]
       },
-      "CatalogsReportStatsCatalogsReportStatsOneOf1": {
+      "CatalogsReportStatsOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportStats"
@@ -120718,7 +120718,7 @@
           }
         ]
       },
-      "CatalogsReportStatsCatalogsReportStatsOneOf2": {
+      "CatalogsReportStatsOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsReportStats"
@@ -121744,7 +121744,7 @@
           }
         ]
       },
-      "CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf1": {
+      "CatalogsVerticalProductGroupUpdateRequestOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequest"
@@ -121794,7 +121794,7 @@
           }
         ]
       },
-      "CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf2": {
+      "CatalogsVerticalProductGroupUpdateRequestOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequest"
@@ -121838,7 +121838,7 @@
           }
         ]
       },
-      "CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3": {
+      "CatalogsVerticalProductGroupUpdateRequestOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalProductGroupUpdateRequest"
@@ -121882,7 +121882,7 @@
           }
         ]
       },
-      "CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsRetailListProductsByCatalogBasedFilterRequest": {
+      "TaggedRETAILVariantF5FE3472B9B9A8CD": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequest"
@@ -121922,7 +121922,7 @@
           }
         ]
       },
-      "CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsHotelListProductsByCatalogBasedFilterRequest": {
+      "TaggedHOTELVariant4FAD8F11133C5029": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequest"
@@ -121954,7 +121954,7 @@
           }
         ]
       },
-      "CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest": {
+      "TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CatalogsVerticalsListProductsByCatalogBasedFilterRequest"
@@ -122443,7 +122443,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourceImageBase64": {
+      "PinMediaSourceImageBase64Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122477,7 +122477,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourceImageUrl": {
+      "PinMediaSourceImageUrlVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122506,7 +122506,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourceVideoId": {
+      "PinMediaSourceVideoIdVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122552,7 +122552,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourceImagesBase64": {
+      "PinMediaSourceImagesBase64Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122586,7 +122586,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourceImagesUrl": {
+      "PinMediaSourceImagesUrlVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122620,7 +122620,7 @@
           }
         ]
       },
-      "PinMediaSourcePinMediaSourcePinUrl": {
+      "PinMediaSourcePinUrlVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PinMediaSource"
@@ -122964,7 +122964,7 @@
           }
         ]
       },
-      "TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting": {
+      "TargetingSpecOperationShoppingRetargetingVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TargetingSpecOperations"
@@ -136680,11 +136680,11 @@
       "discriminator": {
         "propertyName": "media_type",
         "mapping": {
-          "image": "#/components/schemas/PinMediaPinMediaWithImage",
-          "video": "#/components/schemas/PinMediaPinMediaWithVideo",
-          "multiple_images": "#/components/schemas/PinMediaPinMediaWithImages",
-          "multiple_videos": "#/components/schemas/PinMediaPinMediaWithVideos",
-          "multiple_mixed": "#/components/schemas/PinMediaPinMediaWithImageAndVideo"
+          "image": "#/components/schemas/PinMediaWithImageVariant",
+          "video": "#/components/schemas/PinMediaWithVideoVariant",
+          "multiple_images": "#/components/schemas/PinMediaWithImagesVariant",
+          "multiple_videos": "#/components/schemas/PinMediaWithVideosVariant",
+          "multiple_mixed": "#/components/schemas/PinMediaWithImageAndVideoVariant"
         }
       },
       "x-client-original-tagged-union": {
@@ -140528,7 +140528,7 @@
       ],
       "additionalProperties": false
     },
-    "PinMediaPinMediaWithImage": {
+    "PinMediaWithImageVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/PinMedia"
@@ -140551,7 +140551,7 @@
         }
       ]
     },
-    "PinMediaPinMediaWithVideo": {
+    "PinMediaWithVideoVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/PinMedia"
@@ -140602,7 +140602,7 @@
         }
       ]
     },
-    "PinMediaPinMediaWithImages": {
+    "PinMediaWithImagesVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/PinMedia"
@@ -140628,7 +140628,7 @@
         }
       ]
     },
-    "PinMediaPinMediaWithVideos": {
+    "PinMediaWithVideosVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/PinMedia"
@@ -140654,7 +140654,7 @@
         }
       ]
     },
-    "PinMediaPinMediaWithImageAndVideo": {
+    "PinMediaWithImageAndVideoVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/PinMedia"

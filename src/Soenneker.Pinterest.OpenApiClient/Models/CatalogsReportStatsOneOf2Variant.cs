@@ -9,7 +9,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CatalogsReportStatsCatalogsReportStatsOneOf1 : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats, IParsable
+    public partial class CatalogsReportStatsOneOf2Variant : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the catalog entity.</summary>
@@ -22,7 +22,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>The event code that a diagnostics aggregated number references</summary>
         public int? Code { get; set; }
-        /// <summary>A human-friendly label for the event code (e.g, &apos;AVAILABILITY_INVALID&apos;)</summary>
+        /// <summary>A human-friendly label for the event code (e.g, &apos;SPAM&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CodeLabel { get; set; }
@@ -30,6 +30,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string CodeLabel { get; set; }
 #endif
+        /// <summary>Indicates if issue makes items ineligible for ads distribution</summary>
+        public bool? IneligibleForAds { get; set; }
+        /// <summary>Indicates if issue makes items ineligible for organic distribution</summary>
+        public bool? IneligibleForOrganic { get; set; }
         /// <summary>Title message describing the diagnostic issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,17 +44,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Number of occurrences of the issue</summary>
         public int? Occurrences { get; set; }
-        /// <summary>An ERROR means that items have been dropped, while a WARN denotes that items have been ingested despite an issue</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity? Severity { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2Variant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2Variant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf1();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2Variant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +65,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetIntValue(); } },
                 { "code_label", n => { CodeLabel = n.GetStringValue(); } },
+                { "ineligible_for_ads", n => { IneligibleForAds = n.GetBoolValue(); } },
+                { "ineligible_for_organic", n => { IneligibleForOrganic = n.GetBoolValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "occurrences", n => { Occurrences = n.GetIntValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity>(); } },
             };
         }
         /// <summary>
@@ -79,9 +82,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("catalog_id", CatalogId);
             writer.WriteIntValue("code", Code);
             writer.WriteStringValue("code_label", CodeLabel);
+            writer.WriteBoolValue("ineligible_for_ads", IneligibleForAds);
+            writer.WriteBoolValue("ineligible_for_organic", IneligibleForOrganic);
             writer.WriteStringValue("message", Message);
             writer.WriteIntValue("occurrences", Occurrences);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportFeedIngestionStatsSeverity>("severity", Severity);
         }
     }
 }

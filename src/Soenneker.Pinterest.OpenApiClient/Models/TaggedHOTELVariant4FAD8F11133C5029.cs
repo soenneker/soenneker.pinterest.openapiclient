@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Request object to list products for a given creative assets catalog_id and product group filter.
+    /// Request object to list products for a given hotel catalog_id and product group filter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequest, IParsable
+    public partial class TaggedHOTELVariant4FAD8F11133C5029 : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequest, IParsable
     {
         /// <summary>Catalog ID pertaining to the product group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,23 +21,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string CatalogId { get; set; }
 #endif
-        /// <summary>Object holding a group of filters for a creative assets product group</summary>
+        /// <summary>Object holding a group of filters for a hotel product group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters? Filters { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters Filters { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupFilters Filters { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TaggedHOTELVariant4FAD8F11133C5029"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.TaggedHOTELVariant4FAD8F11133C5029 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequestCatalogsCreativeAssetsListProductsByCatalogBasedFilterRequest();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.TaggedHOTELVariant4FAD8F11133C5029();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +48,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupFilters>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupFilters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("catalog_id", CatalogId);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelProductGroupFilters>("filters", Filters);
         }
     }
 }

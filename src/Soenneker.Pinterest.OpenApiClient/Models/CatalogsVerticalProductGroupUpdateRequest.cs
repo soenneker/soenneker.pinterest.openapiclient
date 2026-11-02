@@ -41,9 +41,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
             return mappingValue switch
             {
-                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3(),
-                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf2(),
-                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf1(),
+                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestOneOf3Variant(),
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestOneOf2Variant(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestOneOf1Variant(),
                 _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest(),
             };
         }

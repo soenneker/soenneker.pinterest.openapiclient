@@ -11,7 +11,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     /// Video ID-based media source.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaSourcePinMediaSourceVideoId : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
+    public partial class PinMediaSourceVideoIdVariant : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
     {
         /// <summary>Content type for cover image Base64.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdCoverImageContentType? CoverImageContentType { get; set; }
@@ -44,21 +44,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string MediaId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdVariant"/> and sets the default values.
         /// </summary>
-        public PinMediaSourcePinMediaSourceVideoId() : base()
+        public PinMediaSourceVideoIdVariant() : base()
         {
             IsStandard = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdVariant();
         }
         /// <summary>
         /// The deserialization information for the current model

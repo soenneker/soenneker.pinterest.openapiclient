@@ -8,30 +8,30 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Multiple Base64-based images media source
+    /// Multiple URL-based images media source
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaSourcePinMediaSourceImagesBase64 : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
+    public partial class PinMediaSourceImagesUrlVariant : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
     {
         /// <summary>The index property</summary>
         public int? Index { get; set; }
         /// <summary>Array with image objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>? Items { get; set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item> Items { get; set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem> Items { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesBase64"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesBase64 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesBase64();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlVariant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "index", n => { Index = n.GetIntValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>(global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>(global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("index", Index);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>("items", Items);
         }
     }
 }

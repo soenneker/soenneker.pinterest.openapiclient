@@ -5,12 +5,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum CatalogsReportStatsCatalogsReportStatsOneOf1_report_type
+    public enum CatalogsVerticalProductGroupUpdateRequestOneOf1Variant_catalog_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "FEED_INGESTION_ISSUES")]
+        [EnumMember(Value = "RETAIL")]
         #pragma warning disable CS1591
-        FeedIngestionIssues,
+        Retail,
         #pragma warning restore CS1591
     }
 }

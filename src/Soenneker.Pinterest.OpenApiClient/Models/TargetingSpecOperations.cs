@@ -53,7 +53,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 "LOCATION_EXCLUDE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationLocationExclude(),
                 "MAXIMUM_AGE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationMaximumAge(),
                 "MINIMUM_AGE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationMinimumAge(),
-                "SHOPPING_RETARGETING" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting(),
+                "SHOPPING_RETARGETING" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargetingVariant(),
                 _ => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations(),
             };
         }

@@ -8,30 +8,29 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Multiple URL-based images media source
+    /// Pin URL-based media source for product pin creation. Currently the field is only available to a list of beta users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaSourcePinMediaSourceImagesUrl : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
+    public partial class PinMediaSourcePinUrlVariant : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
     {
-        /// <summary>The index property</summary>
-        public int? Index { get; set; }
-        /// <summary>Array with image objects.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>? Items { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem> Items { get; set; }
-#endif
+        /// <summary>This is an affiliate link or sponsored product. The FTC requires disclosure for paid partnerships and affiliate products.</summary>
+        public bool? IsAffiliateLink { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrlVariant"/> and sets the default values.
+        /// </summary>
+        public PinMediaSourcePinUrlVariant() : base()
+        {
+            IsAffiliateLink = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesUrl"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrlVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesUrl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrlVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesUrl();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrlVariant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,8 +40,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "index", n => { Index = n.GetIntValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>(global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "is_affiliate_link", n => { IsAffiliateLink = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -53,8 +51,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("index", Index);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlItem>("items", Items);
+            writer.WriteBoolValue("is_affiliate_link", IsAffiliateLink);
         }
     }
 }

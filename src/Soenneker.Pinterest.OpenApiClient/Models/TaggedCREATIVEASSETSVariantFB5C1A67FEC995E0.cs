@@ -7,18 +7,19 @@ using System.IO;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
+    /// <summary>
+    /// Request object to list products for a given creative assets catalog_id and product group filter.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3 : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest, IParsable
-    #pragma warning restore CS1591
+    public partial class TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0 : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalsListProductsByCatalogBasedFilterRequest, IParsable
     {
-        /// <summary>The description property</summary>
+        /// <summary>Catalog ID pertaining to the product group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? CatalogId { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string CatalogId { get; set; }
 #endif
         /// <summary>Object holding a group of filters for a creative assets product group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,23 +29,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters Filters { get; set; }
 #endif
-        /// <summary>Name of catalog product group</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequestCatalogsVerticalProductGroupUpdateRequestOneOf3();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.TaggedCREATIVEASSETSVariantFB5C1A67FEC995E0();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,9 +47,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,9 +59,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("catalog_id", CatalogId);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsProductGroupFilters>("filters", Filters);
-            writer.WriteStringValue("name", Name);
         }
     }
 }

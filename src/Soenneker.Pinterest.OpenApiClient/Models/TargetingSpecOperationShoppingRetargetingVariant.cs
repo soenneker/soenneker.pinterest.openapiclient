@@ -9,7 +9,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting : global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations, IParsable
+    public partial class TargetingSpecOperationShoppingRetargetingVariant : global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The operation property</summary>
@@ -25,12 +25,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargetingVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargetingVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargetingVariant();
         }
         /// <summary>
         /// The deserialization information for the current model

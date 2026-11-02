@@ -41,8 +41,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("report_type")?.GetStringValue();
             return mappingValue switch
             {
-                "DISTRIBUTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf2(),
-                "FEED_INGESTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf1(),
+                "DISTRIBUTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2Variant(),
+                "FEED_INGESTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1Variant(),
                 _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats(),
             };
         }

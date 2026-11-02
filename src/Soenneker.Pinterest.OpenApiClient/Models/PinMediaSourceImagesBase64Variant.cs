@@ -8,29 +8,30 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Pin URL-based media source for product pin creation. Currently the field is only available to a list of beta users.
+    /// Multiple Base64-based images media source
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaSourcePinMediaSourcePinUrl : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
+    public partial class PinMediaSourceImagesBase64Variant : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
     {
-        /// <summary>This is an affiliate link or sponsored product. The FTC requires disclosure for paid partnerships and affiliate products.</summary>
-        public bool? IsAffiliateLink { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl"/> and sets the default values.
-        /// </summary>
-        public PinMediaSourcePinMediaSourcePinUrl() : base()
-        {
-            IsAffiliateLink = false;
-        }
+        /// <summary>The index property</summary>
+        public int? Index { get; set; }
+        /// <summary>Array with image objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>? Items { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item> Items { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Variant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Variant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Variant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,7 +41,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "is_affiliate_link", n => { IsAffiliateLink = n.GetBoolValue(); } },
+                { "index", n => { Index = n.GetIntValue(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>(global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -51,7 +53,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("is_affiliate_link", IsAffiliateLink);
+            writer.WriteIntValue("index", Index);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Item>("items", Items);
         }
     }
 }

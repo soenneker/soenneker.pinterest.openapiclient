@@ -41,12 +41,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("source_type")?.GetStringValue();
             return mappingValue switch
             {
-                "image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImageBase64(),
-                "image_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImageUrl(),
-                "multiple_image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesBase64(),
-                "multiple_image_urls" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesUrl(),
-                "pin_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl(),
-                "video_id" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId(),
+                "image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64Variant(),
+                "image_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrlVariant(),
+                "multiple_image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64Variant(),
+                "multiple_image_urls" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrlVariant(),
+                "pin_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrlVariant(),
+                "video_id" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoIdVariant(),
                 _ => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource(),
             };
         }
