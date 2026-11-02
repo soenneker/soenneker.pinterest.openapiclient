@@ -8,35 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed"/>
+    /// Catalogs Feed object
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsFeed : IComposedTypeWrapper, IParsable
+    public partial class CatalogsFeed : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The catalog_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed? CatalogsCreativeAssetsFeed { get; set; }
+        public string? CatalogType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed CatalogsCreativeAssetsFeed { get; set; }
+        public string CatalogType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed? CatalogsHotelFeed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed CatalogsHotelFeed { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed? CatalogsRetailFeed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed CatalogsRetailFeed { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeed"/> and sets the default values.
+        /// </summary>
+        public CatalogsFeed()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +38,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeed();
-            if("CatalogsCreativeAssetsFeed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsCreativeAssetsFeed = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed();
-            }
-            else if("CatalogsHotelFeed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsHotelFeed = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed();
-            }
-            else if("CatalogsRetailFeed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsRetailFeed = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed();
-            }
-            return result;
+                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCatalogsCreativeAssetsFeed(),
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCatalogsHotelFeed(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCatalogsRetailFeed(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeed(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +53,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsCreativeAssetsFeed != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsCreativeAssetsFeed.GetFieldDeserializers();
-            }
-            else if(CatalogsHotelFeed != null)
-            {
-                return CatalogsHotelFeed.GetFieldDeserializers();
-            }
-            else if(CatalogsRetailFeed != null)
-            {
-                return CatalogsRetailFeed.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +65,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsCreativeAssetsFeed != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsFeed>(null, CatalogsCreativeAssetsFeed);
-            }
-            else if(CatalogsHotelFeed != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelFeed>(null, CatalogsHotelFeed);
-            }
-            else if(CatalogsRetailFeed != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailFeed>(null, CatalogsRetailFeed);
-            }
+            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

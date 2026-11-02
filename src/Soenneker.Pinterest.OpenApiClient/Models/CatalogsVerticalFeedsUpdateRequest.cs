@@ -16,47 +16,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The catalog_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType? CatalogType { get; set; }
-        /// <summary>This field is **OPTIONAL**. Use this if your feed file requires username and password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials? Credentials { get; set; }
+        public string? CatalogType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials Credentials { get; set; }
+        public string CatalogType { get; set; }
 #endif
-        /// <summary>Default availability for products in a feed.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType? DefaultAvailability { get; set; }
-        /// <summary>Currency Codes from ISO 4217.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency? DefaultCurrency { get; set; }
-        /// <summary>The file format of a feed.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat? Format { get; set; }
-        /// <summary>The URL where a feed is available for download. This URL is what Pinterest will use to download a feed for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Location { get; set; }
-#nullable restore
-#else
-        public string Location { get; set; }
-#endif
-        /// <summary>A human-friendly name associated to a given feed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>Daily processing schedule. This field is **OPTIONAL**. Use this to configure the preferred time for processing a feed (otherwise random).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule? PreferredProcessingSchedule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule PreferredProcessingSchedule { get; set; }
-#endif
-        /// <summary>Status for catalogs entities. Present in catalogs_feed values. When a feed is deleted, the response will inform DELETED as status.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -72,7 +38,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequest();
+            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequestCatalogsCreativeAssetsFeedsUpdateRequest(),
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequestCatalogsHotelFeedsUpdateRequest(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequestCatalogsRetailFeedsUpdateRequest(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalFeedsUpdateRequest(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,15 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>(); } },
-                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials.CreateFromDiscriminatorValue); } },
-                { "default_availability", n => { DefaultAvailability = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(); } },
-                { "default_currency", n => { DefaultCurrency = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "preferred_processing_schedule", n => { PreferredProcessingSchedule = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsStatus>(); } },
+                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -100,15 +65,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>("catalog_type", CatalogType);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>("credentials", Credentials);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>("format", Format);
-            writer.WriteStringValue("location", Location);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule>("preferred_processing_schedule", PreferredProcessingSchedule);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsStatus>("status", Status);
+            writer.WriteStringValue("catalog_type", CatalogType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

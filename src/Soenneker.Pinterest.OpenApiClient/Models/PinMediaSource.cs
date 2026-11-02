@@ -8,59 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId"/>
+    /// Pin media source that can be an image, video, or a mix of both passed in as a request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaSource : IComposedTypeWrapper, IParsable
+    public partial class PinMediaSource : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The source_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64? PinMediaSourceImageBase64 { get; set; }
+        public string? SourceType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64 PinMediaSourceImageBase64 { get; set; }
+        public string SourceType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64? PinMediaSourceImagesBase64 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64 PinMediaSourceImagesBase64 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl? PinMediaSourceImagesUrl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl PinMediaSourceImagesUrl { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl? PinMediaSourceImageUrl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl PinMediaSourceImageUrl { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl? PinMediaSourcePinUrl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl PinMediaSourcePinUrl { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId? PinMediaSourceVideoId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId PinMediaSourceVideoId { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource"/> and sets the default values.
+        /// </summary>
+        public PinMediaSource()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,33 +38,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource();
-            if("PinMediaSourceImageBase64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("source_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.PinMediaSourceImageBase64 = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64();
-            }
-            else if("PinMediaSourceImageUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PinMediaSourceImageUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl();
-            }
-            else if("PinMediaSourceImagesBase64".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PinMediaSourceImagesBase64 = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64();
-            }
-            else if("PinMediaSourceImagesUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PinMediaSourceImagesUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl();
-            }
-            else if("PinMediaSourcePinUrl".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PinMediaSourcePinUrl = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl();
-            }
-            else if("PinMediaSourceVideoId".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.PinMediaSourceVideoId = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId();
-            }
-            return result;
+                "image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImageBase64(),
+                "image_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImageUrl(),
+                "multiple_image_base64" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesBase64(),
+                "multiple_image_urls" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceImagesUrl(),
+                "pin_url" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourcePinUrl(),
+                "video_id" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinMediaSourceVideoId(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,31 +56,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(PinMediaSourceImageBase64 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return PinMediaSourceImageBase64.GetFieldDeserializers();
-            }
-            else if(PinMediaSourceImagesBase64 != null)
-            {
-                return PinMediaSourceImagesBase64.GetFieldDeserializers();
-            }
-            else if(PinMediaSourceImagesUrl != null)
-            {
-                return PinMediaSourceImagesUrl.GetFieldDeserializers();
-            }
-            else if(PinMediaSourceImageUrl != null)
-            {
-                return PinMediaSourceImageUrl.GetFieldDeserializers();
-            }
-            else if(PinMediaSourcePinUrl != null)
-            {
-                return PinMediaSourcePinUrl.GetFieldDeserializers();
-            }
-            else if(PinMediaSourceVideoId != null)
-            {
-                return PinMediaSourceVideoId.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "source_type", n => { SourceType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -136,30 +68,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(PinMediaSourceImageBase64 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageBase64>(null, PinMediaSourceImageBase64);
-            }
-            else if(PinMediaSourceImagesBase64 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesBase64>(null, PinMediaSourceImagesBase64);
-            }
-            else if(PinMediaSourceImagesUrl != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImagesUrl>(null, PinMediaSourceImagesUrl);
-            }
-            else if(PinMediaSourceImageUrl != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceImageUrl>(null, PinMediaSourceImageUrl);
-            }
-            else if(PinMediaSourcePinUrl != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourcePinUrl>(null, PinMediaSourcePinUrl);
-            }
-            else if(PinMediaSourceVideoId != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSourceVideoId>(null, PinMediaSourceVideoId);
-            }
+            writer.WriteStringValue("source_type", SourceType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

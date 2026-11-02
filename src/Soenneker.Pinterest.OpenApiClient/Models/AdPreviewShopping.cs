@@ -26,7 +26,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Ad format of the shopping ad preview.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCreativeType? CreativeType { get; set; }
         /// <summary>Select a call to action (CTA) to display below your ad. Available only for ads with direct links enabled. CTA options for consideration and conversion campaigns are LEARN_MORE, SHOP_NOW, BOOK_NOW, SIGN_UP, VISIT_SITE, BUY_NOW, GET_OFFER, ORDER_NOW, ADD_TO_CART (for conversion campaigns with add to cart conversion events only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType? CustomizableCtaType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType CustomizableCtaType { get; set; }
+#endif
         /// <summary>Title displayed below ad.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +112,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "catalog_product_group_id", n => { CatalogProductGroupId = n.GetStringValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCreativeType>(); } },
-                { "customizable_cta_type", n => { CustomizableCtaType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType>(); } },
+                { "customizable_cta_type", n => { CustomizableCtaType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType.CreateFromDiscriminatorValue); } },
                 { "hero_image_title", n => { HeroImageTitle = n.GetStringValue(); } },
                 { "hero_image_url", n => { HeroImageUrl = n.GetStringValue(); } },
                 { "hero_pin_id", n => { HeroPinId = n.GetStringValue(); } },
@@ -126,7 +132,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("catalog_product_group_id", CatalogProductGroupId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCreativeType>("creative_type", CreativeType);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdPreviewShoppingCustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
             writer.WriteStringValue("hero_image_title", HeroImageTitle);
             writer.WriteStringValue("hero_image_url", HeroImageUrl);
             writer.WriteStringValue("hero_pin_id", HeroPinId);

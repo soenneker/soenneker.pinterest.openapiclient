@@ -7,124 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TargetingSpecOperations : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class TargetingSpecOperations : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The field property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket? TargetingSpecOperationAgeBucket { get; set; }
+        public string? Field { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket TargetingSpecOperationAgeBucket { get; set; }
+        public string Field { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType? TargetingSpecOperationAppType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType TargetingSpecOperationAppType { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude? TargetingSpecOperationAudienceExclude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude TargetingSpecOperationAudienceExclude { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude? TargetingSpecOperationAudienceInclude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude TargetingSpecOperationAudienceInclude { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender? TargetingSpecOperationGender { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender TargetingSpecOperationGender { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo? TargetingSpecOperationGeo { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo TargetingSpecOperationGeo { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude? TargetingSpecOperationGeoExclude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude TargetingSpecOperationGeoExclude { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest? TargetingSpecOperationInterest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest TargetingSpecOperationInterest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale? TargetingSpecOperationLocale { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale TargetingSpecOperationLocale { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation? TargetingSpecOperationLocation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation TargetingSpecOperationLocation { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude? TargetingSpecOperationLocationExclude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude TargetingSpecOperationLocationExclude { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge? TargetingSpecOperationMaximumAge { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge TargetingSpecOperationMaximumAge { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge? TargetingSpecOperationMinimumAge { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge TargetingSpecOperationMinimumAge { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting? TargetingSpecOperationShoppingRetargeting { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting TargetingSpecOperationShoppingRetargeting { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations"/> and sets the default values.
+        /// </summary>
+        public TargetingSpecOperations()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -133,65 +37,25 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations();
-            if("TargetingSpecOperationAgeBucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("field")?.GetStringValue();
+            return mappingValue switch
             {
-                result.TargetingSpecOperationAgeBucket = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket();
-            }
-            else if("TargetingSpecOperationAppType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationAppType = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType();
-            }
-            else if("TargetingSpecOperationAudienceExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationAudienceExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude();
-            }
-            else if("TargetingSpecOperationAudienceInclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationAudienceInclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude();
-            }
-            else if("TargetingSpecOperationGender".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationGender = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender();
-            }
-            else if("TargetingSpecOperationGeo".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationGeo = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo();
-            }
-            else if("TargetingSpecOperationGeoExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationGeoExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude();
-            }
-            else if("TargetingSpecOperationInterest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationInterest = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest();
-            }
-            else if("TargetingSpecOperationLocale".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationLocale = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale();
-            }
-            else if("TargetingSpecOperationLocation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationLocation = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation();
-            }
-            else if("TargetingSpecOperationLocationExclude".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationLocationExclude = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude();
-            }
-            else if("TargetingSpecOperationMaximumAge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationMaximumAge = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge();
-            }
-            else if("TargetingSpecOperationMinimumAge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationMinimumAge = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge();
-            }
-            else if("TargetingSpecOperationShoppingRetargeting".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TargetingSpecOperationShoppingRetargeting = new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting();
-            }
-            return result;
+                "AGE_BUCKET" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationAgeBucket(),
+                "APPTYPE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationAppType(),
+                "AUDIENCE_EXCLUDE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationAudienceExclude(),
+                "AUDIENCE_INCLUDE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationAudienceInclude(),
+                "GENDER" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationGender(),
+                "GEO" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationGeo(),
+                "GEO_EXCLUDE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationGeoExclude(),
+                "INTEREST" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationInterest(),
+                "LOCALE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationLocale(),
+                "LOCATION" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationLocation(),
+                "LOCATION_EXCLUDE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationLocationExclude(),
+                "MAXIMUM_AGE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationMaximumAge(),
+                "MINIMUM_AGE" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationMinimumAge(),
+                "SHOPPING_RETARGETING" => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationsTargetingSpecOperationShoppingRetargeting(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,63 +63,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TargetingSpecOperationAgeBucket != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return TargetingSpecOperationAgeBucket.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationAppType != null)
-            {
-                return TargetingSpecOperationAppType.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationAudienceExclude != null)
-            {
-                return TargetingSpecOperationAudienceExclude.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationAudienceInclude != null)
-            {
-                return TargetingSpecOperationAudienceInclude.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationGender != null)
-            {
-                return TargetingSpecOperationGender.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationGeo != null)
-            {
-                return TargetingSpecOperationGeo.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationGeoExclude != null)
-            {
-                return TargetingSpecOperationGeoExclude.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationInterest != null)
-            {
-                return TargetingSpecOperationInterest.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationLocale != null)
-            {
-                return TargetingSpecOperationLocale.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationLocation != null)
-            {
-                return TargetingSpecOperationLocation.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationLocationExclude != null)
-            {
-                return TargetingSpecOperationLocationExclude.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationMaximumAge != null)
-            {
-                return TargetingSpecOperationMaximumAge.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationMinimumAge != null)
-            {
-                return TargetingSpecOperationMinimumAge.GetFieldDeserializers();
-            }
-            else if(TargetingSpecOperationShoppingRetargeting != null)
-            {
-                return TargetingSpecOperationShoppingRetargeting.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "field", n => { Field = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -264,62 +75,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TargetingSpecOperationAgeBucket != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAgeBucket>(null, TargetingSpecOperationAgeBucket);
-            }
-            else if(TargetingSpecOperationAppType != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAppType>(null, TargetingSpecOperationAppType);
-            }
-            else if(TargetingSpecOperationAudienceExclude != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceExclude>(null, TargetingSpecOperationAudienceExclude);
-            }
-            else if(TargetingSpecOperationAudienceInclude != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationAudienceInclude>(null, TargetingSpecOperationAudienceInclude);
-            }
-            else if(TargetingSpecOperationGender != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGender>(null, TargetingSpecOperationGender);
-            }
-            else if(TargetingSpecOperationGeo != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeo>(null, TargetingSpecOperationGeo);
-            }
-            else if(TargetingSpecOperationGeoExclude != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationGeoExclude>(null, TargetingSpecOperationGeoExclude);
-            }
-            else if(TargetingSpecOperationInterest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationInterest>(null, TargetingSpecOperationInterest);
-            }
-            else if(TargetingSpecOperationLocale != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocale>(null, TargetingSpecOperationLocale);
-            }
-            else if(TargetingSpecOperationLocation != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocation>(null, TargetingSpecOperationLocation);
-            }
-            else if(TargetingSpecOperationLocationExclude != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationLocationExclude>(null, TargetingSpecOperationLocationExclude);
-            }
-            else if(TargetingSpecOperationMaximumAge != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMaximumAge>(null, TargetingSpecOperationMaximumAge);
-            }
-            else if(TargetingSpecOperationMinimumAge != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationMinimumAge>(null, TargetingSpecOperationMinimumAge);
-            }
-            else if(TargetingSpecOperationShoppingRetargeting != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperationShoppingRetargeting>(null, TargetingSpecOperationShoppingRetargeting);
-            }
+            writer.WriteStringValue("field", Field);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

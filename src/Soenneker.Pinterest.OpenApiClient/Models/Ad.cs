@@ -97,13 +97,25 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string CollectionItemsDestinationUrlTemplate { get; set; }
 #endif
         /// <summary>Collections ad header type for ads</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed? CollectionsHeaderType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed CollectionsHeaderType { get; set; }
+#endif
         /// <summary>Pin creation time. Unix timestamp in seconds.</summary>
         public int? CreatedTime { get; private set; }
         /// <summary>Ad creative type enum.**Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType? CreativeType { get; set; }
         /// <summary>Select a call to action (CTA) to display below your ad. Available only for ads with direct links enabled. CTA options for consideration and conversion campaigns are LEARN_MORE, SHOP_NOW, BOOK_NOW, SIGN_UP, VISIT_SITE, BUY_NOW, GET_OFFER, ORDER_NOW, ADD_TO_CART (for conversion campaigns with add to cart conversion events only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType? CustomizableCtaType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType CustomizableCtaType { get; set; }
+#endif
         /// <summary>Destination URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +125,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string DestinationUrl { get; set; }
 #endif
         /// <summary>Type of information in the page referenced by `disclosure_url`, provided either by the Food and Drug Administration (FDA) or the manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType? DisclosureType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType DisclosureType { get; set; }
+#endif
         /// <summary>URL for a page that provides disclosures about a pharmaceutical product, such as potential side effects. Make sure the URL takes the user directly to the disclosure content and the referenced site is secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -266,12 +284,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "carting_products", n => { CartingProducts = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.CartingProduct>(global::Soenneker.Pinterest.OpenApiClient.Models.CartingProduct.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "click_tracking_url", n => { ClickTrackingUrl = n.GetStringValue(); } },
                 { "collection_items_destination_url_template", n => { CollectionItemsDestinationUrlTemplate = n.GetStringValue(); } },
-                { "collections_header_type", n => { CollectionsHeaderType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed>(); } },
+                { "collections_header_type", n => { CollectionsHeaderType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetIntValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>(); } },
-                { "customizable_cta_type", n => { CustomizableCtaType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>(); } },
+                { "customizable_cta_type", n => { CustomizableCtaType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>(global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType.CreateFromDiscriminatorValue); } },
                 { "destination_url", n => { DestinationUrl = n.GetStringValue(); } },
-                { "disclosure_type", n => { DisclosureType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>(); } },
+                { "disclosure_type", n => { DisclosureType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>(global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType.CreateFromDiscriminatorValue); } },
                 { "disclosure_url", n => { DisclosureUrl = n.GetStringValue(); } },
                 { "grid_click_type", n => { GridClickType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.GridClickType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -310,11 +328,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("carousel_ios_deep_links", CarouselIosDeepLinks);
             writer.WriteStringValue("click_tracking_url", ClickTrackingUrl);
             writer.WriteStringValue("collection_items_destination_url_template", CollectionItemsDestinationUrlTemplate);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed>("collections_header_type", CollectionsHeaderType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdCollectionsHeaderTypeComposed>("collections_header_type", CollectionsHeaderType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>("creative_type", CreativeType);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
             writer.WriteStringValue("destination_url", DestinationUrl);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>("disclosure_type", DisclosureType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>("disclosure_type", DisclosureType);
             writer.WriteStringValue("disclosure_url", DisclosureUrl);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.GridClickType>("grid_click_type", GridClickType);
             writer.WriteStringValue("id", Id);

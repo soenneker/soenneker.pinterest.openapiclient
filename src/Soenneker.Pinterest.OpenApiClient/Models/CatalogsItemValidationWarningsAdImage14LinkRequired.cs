@@ -16,7 +16,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Product item fields</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName? AttributeName { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName AttributeName { get; set; }
+#endif
         /// <summary>Provided value that caused the validation issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +56,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attribute_name", n => { AttributeName = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName>(); } },
+                { "attribute_name", n => { AttributeName = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName.CreateFromDiscriminatorValue); } },
                 { "provided_value", n => { ProvidedValue = n.GetStringValue(); } },
             };
         }
@@ -61,7 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName>("attribute_name", AttributeName);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsItemValidationDetailsAttributeName>("attribute_name", AttributeName);
             writer.WriteStringValue("provided_value", ProvidedValue);
             writer.WriteAdditionalData(AdditionalData);
         }

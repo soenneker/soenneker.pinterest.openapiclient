@@ -8,27 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/>
+    /// Diagnostics aggregated numbers
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsReportStats : IComposedTypeWrapper, IParsable
+    public partial class CatalogsReportStats : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The report_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1? CatalogsReportStatsOneOf1 { get; set; }
+        public string? ReportType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1 CatalogsReportStatsOneOf1 { get; set; }
+        public string ReportType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2? CatalogsReportStatsOneOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2 CatalogsReportStatsOneOf2 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats"/> and sets the default values.
+        /// </summary>
+        public CatalogsReportStats()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +38,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats();
-            if("CatalogsReportStatsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("report_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsReportStatsOneOf1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1();
-            }
-            else if("CatalogsReportStatsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsReportStatsOneOf2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2();
-            }
-            return result;
+                "DISTRIBUTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf2(),
+                "FEED_INGESTION_ISSUES" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsCatalogsReportStatsOneOf1(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStats(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +52,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsReportStatsOneOf1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsReportStatsOneOf1.GetFieldDeserializers();
-            }
-            else if(CatalogsReportStatsOneOf2 != null)
-            {
-                return CatalogsReportStatsOneOf2.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "report_type", n => { ReportType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +64,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsReportStatsOneOf1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf1>(null, CatalogsReportStatsOneOf1);
-            }
-            else if(CatalogsReportStatsOneOf2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportStatsOneOf2>(null, CatalogsReportStatsOneOf2);
-            }
+            writer.WriteStringValue("report_type", ReportType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

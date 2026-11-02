@@ -23,9 +23,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Category for the labeled items. You can apply one BRAND label to a campaign. You can apply 30 CUSTOM labels to a campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType? LabelType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType LabelType { get; set; }
+#endif
         /// <summary>The new status you want to give the label, either `ACTIVE` (in use) or no longer in use (`ARCHIVED`).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus Status { get; set; }
+#endif
         /// <summary>Label name. 100-character limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,8 +72,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "label_type", n => { LabelType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus>(); } },
+                { "label_type", n => { LabelType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType>(global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus>(global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -73,8 +85,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType>("label_type", LabelType);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelType>("label_type", LabelType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableLabelStatus>("status", Status);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

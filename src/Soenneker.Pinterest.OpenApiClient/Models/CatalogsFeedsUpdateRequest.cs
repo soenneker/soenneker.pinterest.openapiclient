@@ -22,9 +22,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials Credentials { get; set; }
 #endif
         /// <summary>Default availability for products in a feed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType? DefaultAvailability { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType DefaultAvailability { get; set; }
+#endif
         /// <summary>Currency Codes from ISO 4217.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency? DefaultCurrency { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency DefaultCurrency { get; set; }
+#endif
         /// <summary>The file format of a feed.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat? Format { get; set; }
         /// <summary>The URL where a feed is available for download. This URL is what Pinterest will use to download a feed for processing.</summary>
@@ -72,8 +84,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials.CreateFromDiscriminatorValue); } },
-                { "default_availability", n => { DefaultAvailability = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(); } },
-                { "default_currency", n => { DefaultCurrency = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(); } },
+                { "default_availability", n => { DefaultAvailability = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType.CreateFromDiscriminatorValue); } },
+                { "default_currency", n => { DefaultCurrency = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency.CreateFromDiscriminatorValue); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -89,8 +101,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>("credentials", Credentials);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>("format", Format);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);

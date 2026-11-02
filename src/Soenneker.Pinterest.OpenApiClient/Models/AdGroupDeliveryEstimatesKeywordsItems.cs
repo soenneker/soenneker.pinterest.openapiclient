@@ -15,7 +15,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Keyword match type allowing null</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType? MatchType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType MatchType { get; set; }
+#endif
         /// <summary>Keyword value (120 chars max).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "match_type", n => { MatchType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType>(); } },
+                { "match_type", n => { MatchType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -60,7 +66,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType>("match_type", MatchType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItemsMatchType>("match_type", MatchType);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

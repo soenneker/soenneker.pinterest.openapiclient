@@ -8,27 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType"/>
+    /// Per-item entry inside `PinMedia.items` for mixed image/video pins. Discriminated by `item_type`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PinMediaMetadata : IComposedTypeWrapper, IParsable
+    public partial class PinMediaMetadata : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The item_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata? ImageMetadata { get; set; }
+        public string? ItemType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata ImageMetadata { get; set; }
+        public string ItemType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType? VideoMetadataWithItemType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType VideoMetadataWithItemType { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata"/> and sets the default values.
+        /// </summary>
+        public PinMediaMetadata()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +38,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata();
-            if("ImageMetadata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("item_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.ImageMetadata = new global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata();
-            }
-            else if("VideoMetadataWithItemType".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.VideoMetadataWithItemType = new global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType();
-            }
-            return result;
+                "image" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadataImageMetadata(),
+                "video" => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadataVideoMetadataWithItemType(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaMetadata(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +52,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ImageMetadata != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ImageMetadata.GetFieldDeserializers();
-            }
-            else if(VideoMetadataWithItemType != null)
-            {
-                return VideoMetadataWithItemType.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "item_type", n => { ItemType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +64,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ImageMetadata != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ImageMetadata>(null, ImageMetadata);
-            }
-            else if(VideoMetadataWithItemType != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.VideoMetadataWithItemType>(null, VideoMetadataWithItemType);
-            }
+            writer.WriteStringValue("item_type", ItemType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

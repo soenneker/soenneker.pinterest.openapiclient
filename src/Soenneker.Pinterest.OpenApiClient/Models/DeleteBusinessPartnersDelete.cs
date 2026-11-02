@@ -23,7 +23,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public List<string> PartnerIds { get; set; }
 #endif
         /// <summary>The partner_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType? PartnerType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType PartnerType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDelete"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "partner_ids", n => { PartnerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "partner_type", n => { PartnerType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType>(); } },
+                { "partner_type", n => { PartnerType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType>(global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("partner_ids", PartnerIds);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType>("partner_type", PartnerType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeleteBusinessPartnersDeletePartnerType>("partner_type", PartnerType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

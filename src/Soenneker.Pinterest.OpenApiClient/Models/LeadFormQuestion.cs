@@ -15,7 +15,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lead form question field type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType? CustomQuestionFieldType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType CustomQuestionFieldType { get; set; }
+#endif
         /// <summary>Question label for a custom question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +65,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_question_field_type", n => { CustomQuestionFieldType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType>(); } },
+                { "custom_question_field_type", n => { CustomQuestionFieldType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType>(global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType.CreateFromDiscriminatorValue); } },
                 { "custom_question_label", n => { CustomQuestionLabel = n.GetStringValue(); } },
                 { "custom_question_options", n => { CustomQuestionOptions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "question_type", n => { QuestionType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionType>(); } },
@@ -72,7 +78,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType>("custom_question_field_type", CustomQuestionFieldType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionFieldType>("custom_question_field_type", CustomQuestionFieldType);
             writer.WriteStringValue("custom_question_label", CustomQuestionLabel);
             writer.WriteCollectionOfPrimitiveValues<string>("custom_question_options", CustomQuestionOptions);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.LeadFormQuestionType>("question_type", QuestionType);

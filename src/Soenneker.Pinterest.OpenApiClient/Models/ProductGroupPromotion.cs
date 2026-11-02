@@ -41,7 +41,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string CatalogProductGroupName { get; set; }
 #endif
         /// <summary>Collections ad header type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType? CollectionsHeaderType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType CollectionsHeaderType { get; set; }
+#endif
         /// <summary>Collections Hero Destination Url</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +103,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string ParentId { get; set; }
 #endif
         /// <summary>Select whether to promote the image or video pin by default for items in the promoted product group. If selecting IMAGE, image will be promoted for all ads in the product group, and when selecting VIDEO, video will be promoted when present, otherwise fall back to image. This is applicable for standard shopping ads only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType? PreferredMediaType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType PreferredMediaType { get; set; }
+#endif
         /// <summary>The definition of the product group, relative to its parent - an attribute name/value pair</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,7 +189,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "bid_in_micro_currency", n => { BidInMicroCurrency = n.GetIntValue(); } },
                 { "catalog_product_group_id", n => { CatalogProductGroupId = n.GetStringValue(); } },
                 { "catalog_product_group_name", n => { CatalogProductGroupName = n.GetStringValue(); } },
-                { "collections_header_type", n => { CollectionsHeaderType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType>(); } },
+                { "collections_header_type", n => { CollectionsHeaderType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType>(global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType.CreateFromDiscriminatorValue); } },
                 { "collections_hero_destination_url", n => { CollectionsHeroDestinationUrl = n.GetStringValue(); } },
                 { "collections_hero_pin_id", n => { CollectionsHeroPinId = n.GetStringValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>(); } },
@@ -190,7 +202,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "is_image_auto_resizing", n => { IsImageAutoResizing = n.GetBoolValue(); } },
                 { "is_mdl", n => { IsMdl = n.GetBoolValue(); } },
                 { "parent_id", n => { ParentId = n.GetStringValue(); } },
-                { "preferred_media_type", n => { PreferredMediaType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType>(); } },
+                { "preferred_media_type", n => { PreferredMediaType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType>(global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType.CreateFromDiscriminatorValue); } },
                 { "relative_definition", n => { RelativeDefinition = n.GetStringValue(); } },
                 { "selected_image_tag", n => { SelectedImageTag = n.GetStringValue(); } },
                 { "selected_video_tag", n => { SelectedVideoTag = n.GetStringValue(); } },
@@ -211,7 +223,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteIntValue("bid_in_micro_currency", BidInMicroCurrency);
             writer.WriteStringValue("catalog_product_group_id", CatalogProductGroupId);
             writer.WriteStringValue("catalog_product_group_name", CatalogProductGroupName);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType>("collections_header_type", CollectionsHeaderType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CollectionsHeaderType>("collections_header_type", CollectionsHeaderType);
             writer.WriteStringValue("collections_hero_destination_url", CollectionsHeroDestinationUrl);
             writer.WriteStringValue("collections_hero_pin_id", CollectionsHeroPinId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>("creative_type", CreativeType);
@@ -224,7 +236,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("is_image_auto_resizing", IsImageAutoResizing);
             writer.WriteBoolValue("is_mdl", IsMdl);
             writer.WriteStringValue("parent_id", ParentId);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType>("preferred_media_type", PreferredMediaType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PreferredMediaType>("preferred_media_type", PreferredMediaType);
             writer.WriteStringValue("relative_definition", RelativeDefinition);
             writer.WriteStringValue("selected_image_tag", SelectedImageTag);
             writer.WriteStringValue("selected_video_tag", SelectedVideoTag);

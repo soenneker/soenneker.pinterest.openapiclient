@@ -29,7 +29,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>[Open beta](https://help.pinterest.com/en/business/article/beta-features) Bid multiplier for ad group. This value is a double between 0.1 and 10.0. Enter 0 to remove the bid multiplier. - Not currently supported for [Performance+ campaigns](https://help.pinterest.com/en/business/article/performance-plus-campaigns).</summary>
         public double? BidMultiplier { get; set; }
         /// <summary>Bid strategy type. For Campaigns with Video Completion objectives, the only supported bid strategy type is AUTOMATIC_BID, also known as &quot;Pinterest Performance+ bidding&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType? BidStrategyType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType BidStrategyType { get; set; }
+#endif
         /// <summary>Ad group billable event type. For update, only draft ad groups may update billable event.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.ActionType? BillableEvent { get; set; }
         /// <summary>Budget in micro currency. This field is **REQUIRED** for non-CBO (campaign budget optimization) campaigns.  A CBO campaign automatically generates ad group budgets from its campaign budget to maximize campaign outcome. A CBO campaign is limited to 70 or less ad groups.</summary>
@@ -45,7 +51,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string CampaignId { get; set; }
 #endif
         /// <summary>oCPM learn mode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBaseConversionLearningModeType? ConversionLearningModeType { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBaseConversionLearningModeType ConversionLearningModeType { get; private set; }
+#endif
         /// <summary>Ad group creation time. Unix timestamp in seconds.</summary>
         public int? CreatedTime { get; private set; }
         /// <summary>Customer segment ID applied to the ad group. We currently only support 1 customer segment per ad group. To use customer segments, do not set the `targeting_template_ids` field as well as the `AUDIENCE_INCLUDE` field of the `targeting_spec`. To clear the customer segment ID, set this field to &apos;0&apos;.</summary>
@@ -127,9 +139,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Campaign placement group type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementGroup? PlacementGroup { get; set; }
         /// <summary>A targeting option that enables advertisers to choose whether to run ads in fullscreen feed, two column feed, or both.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType? PlacementTrafficType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType PlacementTrafficType { get; set; }
+#endif
         /// <summary>Specify if the promotion is applied at ad group or item level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel? PromotionApplicationLevel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel PromotionApplicationLevel { get; set; }
+#endif
         /// <summary>Promotion ID. To clear this field, set to null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,12 +241,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "auto_targeting_enabled", n => { AutoTargetingEnabled = n.GetBoolValue(); } },
                 { "bid_in_micro_currency", n => { BidInMicroCurrency = n.GetIntValue(); } },
                 { "bid_multiplier", n => { BidMultiplier = n.GetDoubleValue(); } },
-                { "bid_strategy_type", n => { BidStrategyType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>(); } },
+                { "bid_strategy_type", n => { BidStrategyType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>(global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType.CreateFromDiscriminatorValue); } },
                 { "billable_event", n => { BillableEvent = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ActionType>(); } },
                 { "budget_in_micro_currency", n => { BudgetInMicroCurrency = n.GetIntValue(); } },
                 { "budget_type", n => { BudgetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
-                { "conversion_learning_mode_type", n => { ConversionLearningModeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBaseConversionLearningModeType>(); } },
+                { "conversion_learning_mode_type", n => { ConversionLearningModeType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBaseConversionLearningModeType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBaseConversionLearningModeType.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetIntValue(); } },
                 { "customer_segment_id", n => { CustomerSegmentId = n.GetStringValue(); } },
                 { "dca_assets", n => { DcaAssets = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -239,8 +263,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "pacing_delivery_type", n => { PacingDeliveryType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>(); } },
                 { "performance_plus_campaign_settings", n => { PerformancePlusCampaignSettings = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePerformancePlusCampaignSettings>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePerformancePlusCampaignSettings.CreateFromDiscriminatorValue); } },
                 { "placement_group", n => { PlacementGroup = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementGroup>(); } },
-                { "placement_traffic_type", n => { PlacementTrafficType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType>(); } },
-                { "promotion_application_level", n => { PromotionApplicationLevel = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel>(); } },
+                { "placement_traffic_type", n => { PlacementTrafficType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType.CreateFromDiscriminatorValue); } },
+                { "promotion_application_level", n => { PromotionApplicationLevel = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel.CreateFromDiscriminatorValue); } },
                 { "promotion_id", n => { PromotionId = n.GetStringValue(); } },
                 { "promotion_ids", n => { PromotionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "start_time", n => { StartTime = n.GetIntValue(); } },
@@ -263,7 +287,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("auto_targeting_enabled", AutoTargetingEnabled);
             writer.WriteIntValue("bid_in_micro_currency", BidInMicroCurrency);
             writer.WriteDoubleValue("bid_multiplier", BidMultiplier);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>("bid_strategy_type", BidStrategyType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>("bid_strategy_type", BidStrategyType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ActionType>("billable_event", BillableEvent);
             writer.WriteIntValue("budget_in_micro_currency", BudgetInMicroCurrency);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>("budget_type", BudgetType);
@@ -282,8 +306,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>("pacing_delivery_type", PacingDeliveryType);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePerformancePlusCampaignSettings>("performance_plus_campaign_settings", PerformancePlusCampaignSettings);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementGroup>("placement_group", PlacementGroup);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType>("placement_traffic_type", PlacementTrafficType);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel>("promotion_application_level", PromotionApplicationLevel);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePlacementTrafficType>("placement_traffic_type", PlacementTrafficType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBasePromotionApplicationLevel>("promotion_application_level", PromotionApplicationLevel);
             writer.WriteStringValue("promotion_id", PromotionId);
             writer.WriteCollectionOfPrimitiveValues<string>("promotion_ids", PromotionIds);
             writer.WriteIntValue("start_time", StartTime);

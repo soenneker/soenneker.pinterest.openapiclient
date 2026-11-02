@@ -7,44 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LocalInventoryOperation : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class LocalInventoryOperation : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation? LocalInventoryCreateOperation { get; set; }
+        public string? Operation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation LocalInventoryCreateOperation { get; set; }
+        public string Operation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation? LocalInventoryDeleteOperation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation LocalInventoryDeleteOperation { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation? LocalInventoryUpdateOperation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation LocalInventoryUpdateOperation { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation? LocalInventoryUpsertOperation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation LocalInventoryUpsertOperation { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation"/> and sets the default values.
+        /// </summary>
+        public LocalInventoryOperation()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,25 +37,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation();
-            if("LocalInventoryCreateOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            return mappingValue switch
             {
-                result.LocalInventoryCreateOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation();
-            }
-            else if("LocalInventoryDeleteOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.LocalInventoryDeleteOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation();
-            }
-            else if("LocalInventoryUpdateOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.LocalInventoryUpdateOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation();
-            }
-            else if("LocalInventoryUpsertOperation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.LocalInventoryUpsertOperation = new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation();
-            }
-            return result;
+                "CREATE" => new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationLocalInventoryCreateOperation(),
+                "DELETE" => new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationLocalInventoryDeleteOperation(),
+                "UPDATE" => new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationLocalInventoryUpdateOperation(),
+                "UPSERT" => new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperationLocalInventoryUpsertOperation(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryOperation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,23 +53,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LocalInventoryCreateOperation != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return LocalInventoryCreateOperation.GetFieldDeserializers();
-            }
-            else if(LocalInventoryDeleteOperation != null)
-            {
-                return LocalInventoryDeleteOperation.GetFieldDeserializers();
-            }
-            else if(LocalInventoryUpdateOperation != null)
-            {
-                return LocalInventoryUpdateOperation.GetFieldDeserializers();
-            }
-            else if(LocalInventoryUpsertOperation != null)
-            {
-                return LocalInventoryUpsertOperation.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "operation", n => { Operation = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -104,22 +65,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LocalInventoryCreateOperation != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryCreateOperation>(null, LocalInventoryCreateOperation);
-            }
-            else if(LocalInventoryDeleteOperation != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryDeleteOperation>(null, LocalInventoryDeleteOperation);
-            }
-            else if(LocalInventoryUpdateOperation != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpdateOperation>(null, LocalInventoryUpdateOperation);
-            }
-            else if(LocalInventoryUpsertOperation != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.LocalInventoryUpsertOperation>(null, LocalInventoryUpsertOperation);
-            }
+            writer.WriteStringValue("operation", Operation);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

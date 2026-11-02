@@ -40,7 +40,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAudienceMultipliers AudienceMultipliers { get; set; }
 #endif
         /// <summary>The time window for frequency bid multipliers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow? FreqBidMultiplierTimeWindow { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow FreqBidMultiplierTimeWindow { get; set; }
+#endif
         /// <summary>Frequency multipliers for bid adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +99,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "age_bucket_multipliers", n => { AgeBucketMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAgeBucketMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAgeBucketMultipliers.CreateFromDiscriminatorValue); } },
                 { "app_type_multipliers", n => { AppTypeMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAppTypeMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAppTypeMultipliers.CreateFromDiscriminatorValue); } },
                 { "audience_multipliers", n => { AudienceMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAudienceMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAudienceMultipliers.CreateFromDiscriminatorValue); } },
-                { "freq_bid_multiplier_time_window", n => { FreqBidMultiplierTimeWindow = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow>(); } },
+                { "freq_bid_multiplier_time_window", n => { FreqBidMultiplierTimeWindow = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow.CreateFromDiscriminatorValue); } },
                 { "frequency_multipliers", n => { FrequencyMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFrequencyMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFrequencyMultipliers.CreateFromDiscriminatorValue); } },
                 { "gender_multipliers", n => { GenderMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsGenderMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsGenderMultipliers.CreateFromDiscriminatorValue); } },
                 { "placement_multipliers", n => { PlacementMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsPlacementMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsPlacementMultipliers.CreateFromDiscriminatorValue); } },
@@ -109,7 +115,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAgeBucketMultipliers>("age_bucket_multipliers", AgeBucketMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAppTypeMultipliers>("app_type_multipliers", AppTypeMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsAudienceMultipliers>("audience_multipliers", AudienceMultipliers);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow>("freq_bid_multiplier_time_window", FreqBidMultiplierTimeWindow);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFreqBidMultiplierTimeWindow>("freq_bid_multiplier_time_window", FreqBidMultiplierTimeWindow);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsFrequencyMultipliers>("frequency_multipliers", FrequencyMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsGenderMultipliers>("gender_multipliers", GenderMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsPlacementMultipliers>("placement_multipliers", PlacementMultipliers);

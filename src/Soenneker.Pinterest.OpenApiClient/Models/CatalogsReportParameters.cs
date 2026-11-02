@@ -8,27 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters"/>
+    /// Report parameters
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsReportParameters : IComposedTypeWrapper, IParsable
+    public partial class CatalogsReportParameters : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The catalog_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters? CatalogsHotelReportParameters { get; set; }
+        public string? CatalogType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters CatalogsHotelReportParameters { get; set; }
+        public string CatalogType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters? CatalogsRetailReportParameters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters CatalogsRetailReportParameters { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters"/> and sets the default values.
+        /// </summary>
+        public CatalogsReportParameters()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +38,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters();
-            if("CatalogsHotelReportParameters".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsHotelReportParameters = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters();
-            }
-            else if("CatalogsRetailReportParameters".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsRetailReportParameters = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters();
-            }
-            return result;
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParametersCatalogsHotelReportParameters(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParametersCatalogsRetailReportParameters(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsReportParameters(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +52,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsHotelReportParameters != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsHotelReportParameters.GetFieldDeserializers();
-            }
-            else if(CatalogsRetailReportParameters != null)
-            {
-                return CatalogsRetailReportParameters.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +64,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsHotelReportParameters != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelReportParameters>(null, CatalogsHotelReportParameters);
-            }
-            else if(CatalogsRetailReportParameters != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailReportParameters>(null, CatalogsRetailReportParameters);
-            }
+            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

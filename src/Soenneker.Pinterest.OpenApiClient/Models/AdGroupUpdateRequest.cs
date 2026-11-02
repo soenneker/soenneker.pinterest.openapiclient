@@ -21,7 +21,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>&lt;a href=&quot;/docs/getting-started/using-beta-and-restricted-features/&quot; target=&quot;blank&gt;Open beta&lt;/a&gt;Bid multiplier for ad group. This value is a double between 0.1and 10.0. Enter 0 to remove the bid multiplier.- Make sure the `bid_strategy` type for your ad group is set to `AUTOMATIC_BID`.- Not currently supported for &lt;a href=&quot;/docs/api-features/pinterest-performance-plus-setup/&quot; target=&quot;blank&quot;&gt;Pinterest Performance+ campaigns&lt;/a&gt;.</summary>
         public double? BidMultiplier { get; set; }
         /// <summary>Bid strategy type. For Campaigns with Video Completion objectives, the only supported bid strategy type is AUTOMATIC_BID, also known as &quot;Pinterest Performance+ bidding&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType? BidStrategyType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType BidStrategyType { get; set; }
+#endif
         /// <summary>Ad group billable event type. For update, only draft ad groups may update billable event.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.ActionType? BillableEvent { get; set; }
         /// <summary>Budget in micro currency. This field is **REQUIRED** for non-CBO (campaign budget optimization) campaigns.  A CBO campaign automatically generates ad group budgets from its campaign budget to maximize campaign outcome. A CBO campaign is limited to 70 or less ad groups.</summary>
@@ -71,7 +77,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Campaign placement group type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPlacementGroup? PlacementGroup { get; set; }
         /// <summary>Specify if the promotion is applied at ad group or item level</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel? PromotionApplicationLevel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel PromotionApplicationLevel { get; set; }
+#endif
         /// <summary>Promotion ID. To clear this field, set to null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,7 +165,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "auto_targeting_enabled", n => { AutoTargetingEnabled = n.GetBoolValue(); } },
                 { "bid_in_micro_currency", n => { BidInMicroCurrency = n.GetIntValue(); } },
                 { "bid_multiplier", n => { BidMultiplier = n.GetDoubleValue(); } },
-                { "bid_strategy_type", n => { BidStrategyType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>(); } },
+                { "bid_strategy_type", n => { BidStrategyType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>(global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType.CreateFromDiscriminatorValue); } },
                 { "billable_event", n => { BillableEvent = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ActionType>(); } },
                 { "budget_in_micro_currency", n => { BudgetInMicroCurrency = n.GetIntValue(); } },
                 { "budget_type", n => { BudgetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>(); } },
@@ -166,7 +178,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "optimization_goal_metadata", n => { OptimizationGoalMetadata = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata.CreateFromDiscriminatorValue); } },
                 { "pacing_delivery_type", n => { PacingDeliveryType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>(); } },
                 { "placement_group", n => { PlacementGroup = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPlacementGroup>(); } },
-                { "promotion_application_level", n => { PromotionApplicationLevel = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel>(); } },
+                { "promotion_application_level", n => { PromotionApplicationLevel = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel.CreateFromDiscriminatorValue); } },
                 { "promotion_id", n => { PromotionId = n.GetStringValue(); } },
                 { "promotion_ids", n => { PromotionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "start_time", n => { StartTime = n.GetLongValue(); } },
@@ -187,7 +199,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("auto_targeting_enabled", AutoTargetingEnabled);
             writer.WriteIntValue("bid_in_micro_currency", BidInMicroCurrency);
             writer.WriteDoubleValue("bid_multiplier", BidMultiplier);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>("bid_strategy_type", BidStrategyType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>("bid_strategy_type", BidStrategyType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ActionType>("billable_event", BillableEvent);
             writer.WriteIntValue("budget_in_micro_currency", BudgetInMicroCurrency);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>("budget_type", BudgetType);
@@ -200,7 +212,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata>("optimization_goal_metadata", OptimizationGoalMetadata);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>("pacing_delivery_type", PacingDeliveryType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPlacementGroup>("placement_group", PlacementGroup);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel>("promotion_application_level", PromotionApplicationLevel);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestPromotionApplicationLevel>("promotion_application_level", PromotionApplicationLevel);
             writer.WriteStringValue("promotion_id", PromotionId);
             writer.WriteCollectionOfPrimitiveValues<string>("promotion_ids", PromotionIds);
             writer.WriteLongValue("start_time", StartTime);

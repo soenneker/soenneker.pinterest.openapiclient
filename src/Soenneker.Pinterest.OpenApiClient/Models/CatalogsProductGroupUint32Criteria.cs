@@ -17,7 +17,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>The operator property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.NumericFilterOperatorType? Operator { get; set; }
         /// <summary>The value property</summary>
-        public int? Value { get; set; }
+        public long? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "negated", n => { Negated = n.GetBoolValue(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NumericFilterOperatorType>(); } },
-                { "value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("negated", Negated);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NumericFilterOperatorType>("operator", Operator);
-            writer.WriteIntValue("value", Value);
+            writer.WriteLongValue("value", Value);
         }
     }
 }

@@ -94,7 +94,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Timestamp in Unix format for scheduling when ads in the campaign start to appear. Must precede any start times set for child ad groups. Defaults to current time if no time is specified. Learn about [scheduling campaigns](/docs/api-features/managing-campaigns/#campaign-scheduling).Different start times can be set for the campaign&apos;s child ad groups, but they cannot occur before a `start_time` specified for the campaign.- If your campaign has a child ad group with a start time specified, and if you update that campaign with a `start_time` that is later than that of the ad group, the campaign `start_time` will supersede the ad group `start_time`, and the request will not return an error.- In this scenario, if you call [List campaigns](/docs/api/v5/campaigns-list) or [List ad groups](/docs/api/v5/ad_groups-list), the returned campaigns or ad groups are listed with the start and end times that you assigned them, regardless of supersedence.</summary>
         public int? StartTime { get; set; }
         /// <summary>Entity status</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus Status { get; set; }
+#endif
         /// <summary>Summary status for campaign</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataSummaryStatus? SummaryStatus { get; private set; }
         /// <summary>  Third-party tracking URLs. Up to three tracking URLs - with a max length of 2,000 - are supported for  each event type. Tracking URLs set at the ad group or ad level can override  those set at the campaign level. For more information, see [Third-party and dynamic tracking](https://help.pinterest.com/en/business/article/third-party-and-dynamic-tracking).</summary>
@@ -161,7 +167,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "order_line_id", n => { OrderLineId = n.GetStringValue(); } },
                 { "performance_plus_campaign_settings", n => { PerformancePlusCampaignSettings = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataPerformancePlusCampaignSettings>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataPerformancePlusCampaignSettings.CreateFromDiscriminatorValue); } },
                 { "start_time", n => { StartTime = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus.CreateFromDiscriminatorValue); } },
                 { "summary_status", n => { SummaryStatus = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataSummaryStatus>(); } },
                 { "tracking_urls", n => { TrackingUrls = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataTrackingUrls>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataTrackingUrls.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -194,7 +200,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("order_line_id", OrderLineId);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataPerformancePlusCampaignSettings>("performance_plus_campaign_settings", PerformancePlusCampaignSettings);
             writer.WriteIntValue("start_time", StartTime);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataTrackingUrls>("tracking_urls", TrackingUrls);
             writer.WriteAdditionalData(AdditionalData);
         }

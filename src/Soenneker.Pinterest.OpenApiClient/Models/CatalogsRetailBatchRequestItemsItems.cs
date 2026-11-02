@@ -7,44 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsRetailBatchRequestItemsItems : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class CatalogsRetailBatchRequestItemsItems : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem? CatalogsCreateRetailItem { get; set; }
+        public string? Operation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem CatalogsCreateRetailItem { get; set; }
+        public string Operation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem? CatalogsDeleteRetailItem { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem CatalogsDeleteRetailItem { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem? CatalogsUpdateRetailItem { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem CatalogsUpdateRetailItem { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem? CatalogsUpsertRetailItem { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem CatalogsUpsertRetailItem { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems"/> and sets the default values.
+        /// </summary>
+        public CatalogsRetailBatchRequestItemsItems()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,25 +37,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems();
-            if("CatalogsCreateRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsCreateRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem();
-            }
-            else if("CatalogsDeleteRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsDeleteRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem();
-            }
-            else if("CatalogsUpdateRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsUpdateRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem();
-            }
-            else if("CatalogsUpsertRetailItem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsUpsertRetailItem = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem();
-            }
-            return result;
+                "CREATE" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItemsCatalogsCreateRetailItem(),
+                "DELETE" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItemsCatalogsDeleteRetailItem(),
+                "UPDATE" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItemsCatalogsUpdateRetailItem(),
+                "UPSERT" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItemsCatalogsUpsertRetailItem(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,23 +53,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsCreateRetailItem != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsCreateRetailItem.GetFieldDeserializers();
-            }
-            else if(CatalogsDeleteRetailItem != null)
-            {
-                return CatalogsDeleteRetailItem.GetFieldDeserializers();
-            }
-            else if(CatalogsUpdateRetailItem != null)
-            {
-                return CatalogsUpdateRetailItem.GetFieldDeserializers();
-            }
-            else if(CatalogsUpsertRetailItem != null)
-            {
-                return CatalogsUpsertRetailItem.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "operation", n => { Operation = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -104,22 +65,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsCreateRetailItem != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreateRetailItem>(null, CatalogsCreateRetailItem);
-            }
-            else if(CatalogsDeleteRetailItem != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsDeleteRetailItem>(null, CatalogsDeleteRetailItem);
-            }
-            else if(CatalogsUpdateRetailItem != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpdateRetailItem>(null, CatalogsUpdateRetailItem);
-            }
-            else if(CatalogsUpsertRetailItem != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsUpsertRetailItem>(null, CatalogsUpsertRetailItem);
-            }
+            writer.WriteStringValue("operation", Operation);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,27 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord"/>
+    /// Object describing an item bid option operation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AdvancedAuctionItemsSubmitRecord : IComposedTypeWrapper, IParsable
+    public partial class AdvancedAuctionItemsSubmitRecord : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The operation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord? AdvancedAuctionItemsSubmitDeleteRecord { get; set; }
+        public string? Operation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord AdvancedAuctionItemsSubmitDeleteRecord { get; set; }
+        public string Operation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord? AdvancedAuctionItemsSubmitUpsertRecord { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord AdvancedAuctionItemsSubmitUpsertRecord { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord"/> and sets the default values.
+        /// </summary>
+        public AdvancedAuctionItemsSubmitRecord()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +38,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord();
-            if("AdvancedAuctionItemsSubmitDeleteRecord".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("operation")?.GetStringValue();
+            return mappingValue switch
             {
-                result.AdvancedAuctionItemsSubmitDeleteRecord = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord();
-            }
-            else if("AdvancedAuctionItemsSubmitUpsertRecord".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.AdvancedAuctionItemsSubmitUpsertRecord = new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord();
-            }
-            return result;
+                "DELETE" => new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecordAdvancedAuctionItemsSubmitDeleteRecord(),
+                "UPSERT" => new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecordAdvancedAuctionItemsSubmitUpsertRecord(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitRecord(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +52,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AdvancedAuctionItemsSubmitDeleteRecord != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return AdvancedAuctionItemsSubmitDeleteRecord.GetFieldDeserializers();
-            }
-            else if(AdvancedAuctionItemsSubmitUpsertRecord != null)
-            {
-                return AdvancedAuctionItemsSubmitUpsertRecord.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "operation", n => { Operation = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +64,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AdvancedAuctionItemsSubmitDeleteRecord != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitDeleteRecord>(null, AdvancedAuctionItemsSubmitDeleteRecord);
-            }
-            else if(AdvancedAuctionItemsSubmitUpsertRecord != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdvancedAuctionItemsSubmitUpsertRecord>(null, AdvancedAuctionItemsSubmitUpsertRecord);
-            }
+            writer.WriteStringValue("operation", Operation);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

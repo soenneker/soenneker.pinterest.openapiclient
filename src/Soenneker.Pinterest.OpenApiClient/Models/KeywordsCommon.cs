@@ -17,7 +17,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>&lt;/p&gt;&lt;strong&gt;Note:&lt;/strong&gt; bid field has been deprecated. Input will not be set and field will return null. Keyword custom bid in microcurrency - null if inherited from parent ad group.</summary>
         public int? Bid { get; set; }
         /// <summary>Keyword match type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse? MatchType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse MatchType { get; set; }
+#endif
         /// <summary>Keyword value (120 chars max).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,7 +58,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bid", n => { Bid = n.GetIntValue(); } },
-                { "match_type", n => { MatchType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse>(); } },
+                { "match_type", n => { MatchType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse>(global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -64,7 +70,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bid", Bid);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse>("match_type", MatchType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse>("match_type", MatchType);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

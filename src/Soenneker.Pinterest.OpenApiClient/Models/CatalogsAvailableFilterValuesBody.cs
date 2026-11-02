@@ -8,35 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues"/>
+    /// Object holding available filter values for each filter key
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsAvailableFilterValuesBody : IComposedTypeWrapper, IParsable
+    public partial class CatalogsAvailableFilterValuesBody : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The catalog_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues? CatalogsCreativeAssetsAvailableFilterValues { get; set; }
+        public string? CatalogType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues CatalogsCreativeAssetsAvailableFilterValues { get; set; }
+        public string CatalogType { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues? CatalogsHotelAvailableFilterValues { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues CatalogsHotelAvailableFilterValues { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues? CatalogsRetailAvailableFilterValues { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues CatalogsRetailAvailableFilterValues { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBody"/> and sets the default values.
+        /// </summary>
+        public CatalogsAvailableFilterValuesBody()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +38,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBody();
-            if("CatalogsCreativeAssetsAvailableFilterValues".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsCreativeAssetsAvailableFilterValues = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues();
-            }
-            else if("CatalogsHotelAvailableFilterValues".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsHotelAvailableFilterValues = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues();
-            }
-            else if("CatalogsRetailAvailableFilterValues".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsRetailAvailableFilterValues = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues();
-            }
-            return result;
+                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBodyCatalogsCreativeAssetsAvailableFilterValues(),
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBodyCatalogsHotelAvailableFilterValues(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBodyCatalogsRetailAvailableFilterValues(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsAvailableFilterValuesBody(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +53,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsCreativeAssetsAvailableFilterValues != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsCreativeAssetsAvailableFilterValues.GetFieldDeserializers();
-            }
-            else if(CatalogsHotelAvailableFilterValues != null)
-            {
-                return CatalogsHotelAvailableFilterValues.GetFieldDeserializers();
-            }
-            else if(CatalogsRetailAvailableFilterValues != null)
-            {
-                return CatalogsRetailAvailableFilterValues.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +65,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsCreativeAssetsAvailableFilterValues != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsAvailableFilterValues>(null, CatalogsCreativeAssetsAvailableFilterValues);
-            }
-            else if(CatalogsHotelAvailableFilterValues != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelAvailableFilterValues>(null, CatalogsHotelAvailableFilterValues);
-            }
-            else if(CatalogsRetailAvailableFilterValues != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailAvailableFilterValues>(null, CatalogsRetailAvailableFilterValues);
-            }
+            writer.WriteStringValue("catalog_type", CatalogType);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

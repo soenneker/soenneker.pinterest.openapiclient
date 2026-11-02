@@ -53,7 +53,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Order line paid budget in micro currency.</summary>
         public double? PaidBudget { get; set; }
         /// <summary>Order Line Paid Type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed? PaidType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed PaidType { get; set; }
+#endif
         /// <summary>Purchase order ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +112,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "paid_budget", n => { PaidBudget = n.GetDoubleValue(); } },
-                { "paid_type", n => { PaidType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed>(); } },
+                { "paid_type", n => { PaidType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed.CreateFromDiscriminatorValue); } },
                 { "purchase_order_id", n => { PurchaseOrderId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLineStatusComposed>(); } },
@@ -127,7 +133,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("paid_budget", PaidBudget);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed>("paid_type", PaidType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLinePaidTypeComposed>("paid_type", PaidType);
             writer.WriteStringValue("purchase_order_id", PurchaseOrderId);
             writer.WriteDoubleValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.OrderLineStatusComposed>("status", Status);

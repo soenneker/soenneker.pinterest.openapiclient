@@ -24,7 +24,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string Time { get; set; }
 #endif
         /// <summary>The timezone selected for the processing schedule time</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed? Timezone { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed Timezone { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingSchedule"/> and sets the default values.
         /// </summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "time", n => { Time = n.GetStringValue(); } },
-                { "timezone", n => { Timezone = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed>(); } },
+                { "timezone", n => { Timezone = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("time", Time);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed>("timezone", Timezone);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedProcessingScheduleTimezoneComposed>("timezone", Timezone);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

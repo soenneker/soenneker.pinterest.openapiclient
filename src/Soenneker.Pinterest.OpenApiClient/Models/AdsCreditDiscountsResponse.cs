@@ -35,7 +35,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>The discount applied in the offer&apos;s currency value.</summary>
         public double? DiscountInMicroCurrency { get; set; }
         /// <summary>The type of discount of this credit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType? DiscountType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType DiscountType { get; set; }
+#endif
         /// <summary>The credits left to spend.</summary>
         public double? RemainingDiscountInMicroCurrency { get; set; }
         /// <summary>Human readable title of the offer code.</summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "advertiser_id", n => { AdvertiserId = n.GetStringValue(); } },
                 { "discountCurrency", n => { DiscountCurrency = n.GetStringValue(); } },
                 { "discountInMicroCurrency", n => { DiscountInMicroCurrency = n.GetDoubleValue(); } },
-                { "discountType", n => { DiscountType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType>(); } },
+                { "discountType", n => { DiscountType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType.CreateFromDiscriminatorValue); } },
                 { "remainingDiscountInMicroCurrency", n => { RemainingDiscountInMicroCurrency = n.GetDoubleValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -91,7 +97,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("advertiser_id", AdvertiserId);
             writer.WriteStringValue("discountCurrency", DiscountCurrency);
             writer.WriteDoubleValue("discountInMicroCurrency", DiscountInMicroCurrency);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType>("discountType", DiscountType);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdsCreditDiscountsResponseDiscountType>("discountType", DiscountType);
             writer.WriteDoubleValue("remainingDiscountInMicroCurrency", RemainingDiscountInMicroCurrency);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

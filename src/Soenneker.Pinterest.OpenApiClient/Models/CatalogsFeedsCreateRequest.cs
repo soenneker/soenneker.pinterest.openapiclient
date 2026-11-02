@@ -22,11 +22,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials Credentials { get; set; }
 #endif
         /// <summary>Default availability for products in a feed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType? DefaultAvailability { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType DefaultAvailability { get; set; }
+#endif
         /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.Country? DefaultCountry { get; set; }
         /// <summary>Currency Codes from ISO 4217.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency? DefaultCurrency { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency DefaultCurrency { get; set; }
+#endif
         /// <summary>The locale used within a feed for product descriptions.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,9 +95,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials.CreateFromDiscriminatorValue); } },
-                { "default_availability", n => { DefaultAvailability = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(); } },
+                { "default_availability", n => { DefaultAvailability = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>(global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType.CreateFromDiscriminatorValue); } },
                 { "default_country", n => { DefaultCountry = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
-                { "default_currency", n => { DefaultCurrency = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(); } },
+                { "default_currency", n => { DefaultCurrency = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>(global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency.CreateFromDiscriminatorValue); } },
                 { "default_locale", n => { DefaultLocale = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
@@ -102,9 +114,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFeedCredentials>("credentials", Credentials);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductAvailabilityType>("default_availability", DefaultAvailability);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("default_country", DefaultCountry);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.NullableCurrency>("default_currency", DefaultCurrency);
             writer.WriteStringValue("default_locale", DefaultLocale);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsFormat>("format", Format);
             writer.WriteStringValue("location", Location);

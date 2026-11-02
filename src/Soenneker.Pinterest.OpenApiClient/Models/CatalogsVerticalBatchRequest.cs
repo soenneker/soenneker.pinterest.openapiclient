@@ -15,28 +15,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Catalog id pertaining to the retail item. If not provided, default to oldest retail catalog</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CatalogId { get; set; }
-#nullable restore
-#else
-        public string CatalogId { get; set; }
-#endif
         /// <summary>The catalog_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType? CatalogType { get; set; }
-        /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.Country? Country { get; set; }
-        /// <summary>Array with catalogs item operations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems>? Items { get; set; }
+        public string? CatalogType { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems> Items { get; set; }
+        public string CatalogType { get; set; }
 #endif
-        /// <summary>We recommend using the CatalogsLocale values.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestLanguage? Language { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequest"/> and sets the default values.
         /// </summary>
@@ -52,7 +38,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequest();
+            var mappingValue = parseNode.GetChildNode("catalog_type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "CREATIVE_ASSETS" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequestCatalogsCreativeAssetsBatchRequest(),
+                "HOTEL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequestCatalogsHotelBatchRequest(),
+                "RETAIL" => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequestCatalogsRetailBatchRequest(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalBatchRequest(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,11 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "catalog_id", n => { CatalogId = n.GetStringValue(); } },
-                { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>(); } },
-                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "language", n => { Language = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestLanguage>(); } },
+                { "catalog_type", n => { CatalogType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,11 +65,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("catalog_id", CatalogId);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.RetailCatalogType>("catalog_type", CatalogType);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems>("items", Items);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestLanguage>("language", Language);
+            writer.WriteStringValue("catalog_type", CatalogType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

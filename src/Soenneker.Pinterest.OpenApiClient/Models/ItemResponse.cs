@@ -8,59 +8,28 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse"/>, <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse"/>
+    /// Object describing an item record or error. Discriminated by `item_response_kind` (one unique value per leaf).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemResponse : IComposedTypeWrapper, IParsable
+    public partial class ItemResponse : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The item_response_kind property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse? CatalogsCreativeAssetsItemErrorResponse { get; set; }
+        public string? ItemResponseKind { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse CatalogsCreativeAssetsItemErrorResponse { get; set; }
+        public string ItemResponseKind { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse? CatalogsCreativeAssetsItemResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse CatalogsCreativeAssetsItemResponse { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse? CatalogsHotelItemErrorResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse CatalogsHotelItemErrorResponse { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse? CatalogsHotelItemResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse CatalogsHotelItemResponse { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse? CatalogsRetailItemErrorResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse CatalogsRetailItemErrorResponse { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse? CatalogsRetailItemResponse { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse CatalogsRetailItemResponse { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse"/> and sets the default values.
+        /// </summary>
+        public ItemResponse()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,33 +38,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse();
-            if("CatalogsCreativeAssetsItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            var mappingValue = parseNode.GetChildNode("item_response_kind")?.GetStringValue();
+            return mappingValue switch
             {
-                result.CatalogsCreativeAssetsItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse();
-            }
-            else if("CatalogsCreativeAssetsItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsCreativeAssetsItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse();
-            }
-            else if("CatalogsHotelItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsHotelItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse();
-            }
-            else if("CatalogsHotelItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsHotelItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse();
-            }
-            else if("CatalogsRetailItemErrorResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsRetailItemErrorResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse();
-            }
-            else if("CatalogsRetailItemResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.CatalogsRetailItemResponse = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse();
-            }
-            return result;
+                "creative_assets_item" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsCreativeAssetsItemResponse(),
+                "creative_assets_item_error" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsCreativeAssetsItemErrorResponse(),
+                "hotel_item" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsHotelItemResponse(),
+                "hotel_item_error" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsHotelItemErrorResponse(),
+                "retail_item" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsRetailItemResponse(),
+                "retail_item_error" => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponseCatalogsRetailItemErrorResponse(),
+                _ => new global::Soenneker.Pinterest.OpenApiClient.Models.ItemResponse(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,31 +56,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CatalogsCreativeAssetsItemErrorResponse != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return CatalogsCreativeAssetsItemErrorResponse.GetFieldDeserializers();
-            }
-            else if(CatalogsCreativeAssetsItemResponse != null)
-            {
-                return CatalogsCreativeAssetsItemResponse.GetFieldDeserializers();
-            }
-            else if(CatalogsHotelItemErrorResponse != null)
-            {
-                return CatalogsHotelItemErrorResponse.GetFieldDeserializers();
-            }
-            else if(CatalogsHotelItemResponse != null)
-            {
-                return CatalogsHotelItemResponse.GetFieldDeserializers();
-            }
-            else if(CatalogsRetailItemErrorResponse != null)
-            {
-                return CatalogsRetailItemErrorResponse.GetFieldDeserializers();
-            }
-            else if(CatalogsRetailItemResponse != null)
-            {
-                return CatalogsRetailItemResponse.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "item_response_kind", n => { ItemResponseKind = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -136,30 +68,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CatalogsCreativeAssetsItemErrorResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemErrorResponse>(null, CatalogsCreativeAssetsItemErrorResponse);
-            }
-            else if(CatalogsCreativeAssetsItemResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsCreativeAssetsItemResponse>(null, CatalogsCreativeAssetsItemResponse);
-            }
-            else if(CatalogsHotelItemErrorResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemErrorResponse>(null, CatalogsHotelItemErrorResponse);
-            }
-            else if(CatalogsHotelItemResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsHotelItemResponse>(null, CatalogsHotelItemResponse);
-            }
-            else if(CatalogsRetailItemErrorResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemErrorResponse>(null, CatalogsRetailItemErrorResponse);
-            }
-            else if(CatalogsRetailItemResponse != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailItemResponse>(null, CatalogsRetailItemResponse);
-            }
+            writer.WriteStringValue("item_response_kind", ItemResponseKind);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
