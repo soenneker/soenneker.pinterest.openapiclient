@@ -2,7 +2,7 @@
   "descriptionHash": "BDCC77A61A1E94D43301F7C04AFB0071639562E516F78CE7FB137E0B69C268F6D590FBE4658AB1C52366B023E39C5532C76570E862C31B084F5159A68B722F32",
   "descriptionLocation": "../../openapi.fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.37.0",
+  "kiotaVersion": "1.38.0",
   "clientClassName": "PinterestOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Pinterest.OpenApiClient",
