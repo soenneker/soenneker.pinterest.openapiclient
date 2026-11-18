@@ -31,6 +31,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         Sales,
         #pragma warning restore CS1591
+        [EnumMember(Value = "LEADS")]
+        #pragma warning disable CS1591
+        Leads,
+        #pragma warning restore CS1591
         [EnumMember(Value = "APP_INSTALL")]
         #pragma warning disable CS1591
         AppInstall,

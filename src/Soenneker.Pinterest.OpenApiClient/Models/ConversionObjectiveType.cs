@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
-    /// <summary>Intended result of the campaign.You can only update objectives for draft campaigns.`WEB_SESSIONS` and `VIDEO_VIEW` objectives are deprecated. We recommend using `VIDEO_COMPLETION` as an alternative for the latter.</summary>
+    /// <summary>Intended result of the campaign.As part of [objective simplification](/docs/work-with-ads/try-out-campaign-objective-type-simplification/), `WEB_CONVERSION` and `CATALOG_SALES` objectives are being deprecated and replaced by `SALES` and `LEADS`.Also, `WEB_SESSIONS` and `VIDEO_VIEW` objectives are deprecated. We recommend using `VIDEO_COMPLETION` as an alternative for the latter.You can only update objectives for draft campaigns.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ConversionObjectiveType
     {

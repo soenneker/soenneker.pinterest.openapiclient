@@ -36,7 +36,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Integrations.Logs
         /// <summary>
         /// This endpoint receives batched logs from integration applications on partner platforms.Note: If you&apos;re interested in joining the beta, please reach out to your Pinterest account manager.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsSuccessResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse"/></returns>
         /// <param name="body">Resource create operation model.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,11 +48,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Integrations.Logs
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsSuccessResponse?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsRequestCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsRequestCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsSuccessResponse> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsRequestCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsRequestCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -66,7 +66,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Integrations.Logs
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsSuccessResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.IntegrationLogsSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This endpoint receives batched logs from integration applications on partner platforms.Note: If you&apos;re interested in joining the beta, please reach out to your Pinterest account manager.

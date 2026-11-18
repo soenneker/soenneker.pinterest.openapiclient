@@ -17,6 +17,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Type of the catalog entity.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsType? CatalogType { get; set; }
+        /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogCountry? Country { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>ID of the catalog entity.</summary>
@@ -27,6 +29,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Catalog-level default locale (normalized BCP-47 tag) for RETAIL international (INTL)catalogs. Only set for `RETAIL` catalogs that opt into INTL behavior; requiredtogether with `country` to enable INTL supplemental feeds.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogLocale? Locale { get; set; }
         /// <summary>A human-friendly name associated to a catalog entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +67,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "catalog_type", n => { CatalogType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsType>(); } },
+                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogCountry>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogLocale>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -77,7 +83,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsType>("catalog_type", CatalogType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogCountry>("country", Country);
             writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -640,6 +640,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public int? NumberOfRatings { get; set; }
         /// <summary>The number of reviews available for the item.</summary>
         public int? NumberOfReviews { get; set; }
+        /// <summary>Pinterest creative overlay ID to attach to this catalog item. At most one overlay per item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OverlayId { get; set; }
+#nullable restore
+#else
+        public string OverlayId { get; set; }
+#endif
         /// <summary>The description of the pattern used for the product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -912,6 +920,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "mpn", n => { Mpn = n.GetStringValue(); } },
                 { "number_of_ratings", n => { NumberOfRatings = n.GetIntValue(); } },
                 { "number_of_reviews", n => { NumberOfReviews = n.GetIntValue(); } },
+                { "overlay_id", n => { OverlayId = n.GetStringValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetStringValue(); } },
                 { "product_type", n => { ProductType = n.GetStringValue(); } },
@@ -1028,6 +1037,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("mpn", Mpn);
             writer.WriteIntValue("number_of_ratings", NumberOfRatings);
             writer.WriteIntValue("number_of_reviews", NumberOfReviews);
+            writer.WriteStringValue("overlay_id", OverlayId);
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteStringValue("price", Price);
             writer.WriteStringValue("product_type", ProductType);

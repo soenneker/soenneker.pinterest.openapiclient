@@ -12,8 +12,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     public partial class CatalogsVerticalProductGroupUpdateRequestOneOf1Variant : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsVerticalProductGroupUpdateRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.Country? Country { get; set; }
+        /// <summary>The country property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestCountry? Country { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestCountry Country { get; set; }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,7 +37,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest Filters { get; set; }
 #endif
         /// <summary>The locale property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocale? Locale { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestLocale? Locale { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestLocale Locale { get; set; }
+#endif
         /// <summary>Name of catalog product group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,10 +70,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
+                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestCountry>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestCountry.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest.CreateFromDiscriminatorValue); } },
-                { "locale", n => { Locale = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocale>(); } },
+                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestLocale>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestLocale.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -73,10 +85,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestCountry>("country", Country);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFiltersRequest>("filters", Filters);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsLocale>("locale", Locale);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailProductGroupUpdateRequestLocale>("locale", Locale);
             writer.WriteStringValue("name", Name);
         }
     }

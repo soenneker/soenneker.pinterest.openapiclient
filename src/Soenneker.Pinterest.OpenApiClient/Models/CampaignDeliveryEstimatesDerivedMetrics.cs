@@ -27,6 +27,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public float? CpmLower { get; set; }
         /// <summary>Upper estimate of cost per thousand impressions.</summary>
         public float? CpmUpper { get; set; }
+        /// <summary>Estimated lifetime clicks.</summary>
+        public float? LifetimeClick { get; set; }
+        /// <summary>Lower estimate of lifetime clicks.</summary>
+        public float? LifetimeClickLower { get; set; }
+        /// <summary>Upper estimate of lifetime clicks.</summary>
+        public float? LifetimeClickUpper { get; set; }
         /// <summary>Estimated lifetime frequency.</summary>
         public float? LifetimeFrequency { get; set; }
         /// <summary>Lower estimate of lifetime frequency.</summary>
@@ -100,6 +106,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "cpm", n => { Cpm = n.GetFloatValue(); } },
                 { "cpm_lower", n => { CpmLower = n.GetFloatValue(); } },
                 { "cpm_upper", n => { CpmUpper = n.GetFloatValue(); } },
+                { "lifetime_click", n => { LifetimeClick = n.GetFloatValue(); } },
+                { "lifetime_click_lower", n => { LifetimeClickLower = n.GetFloatValue(); } },
+                { "lifetime_click_upper", n => { LifetimeClickUpper = n.GetFloatValue(); } },
                 { "lifetime_frequency", n => { LifetimeFrequency = n.GetFloatValue(); } },
                 { "lifetime_frequency_lower", n => { LifetimeFrequencyLower = n.GetFloatValue(); } },
                 { "lifetime_frequency_upper", n => { LifetimeFrequencyUpper = n.GetFloatValue(); } },
@@ -136,6 +145,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteFloatValue("cpm", Cpm);
             writer.WriteFloatValue("cpm_lower", CpmLower);
             writer.WriteFloatValue("cpm_upper", CpmUpper);
+            writer.WriteFloatValue("lifetime_click", LifetimeClick);
+            writer.WriteFloatValue("lifetime_click_lower", LifetimeClickLower);
+            writer.WriteFloatValue("lifetime_click_upper", LifetimeClickUpper);
             writer.WriteFloatValue("lifetime_frequency", LifetimeFrequency);
             writer.WriteFloatValue("lifetime_frequency_lower", LifetimeFrequencyLower);
             writer.WriteFloatValue("lifetime_frequency_upper", LifetimeFrequencyUpper);

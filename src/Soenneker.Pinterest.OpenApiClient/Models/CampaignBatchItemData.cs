@@ -23,6 +23,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)The store ID of the mobile app for `APP_INSTALL` campaigns.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppId { get; set; }
+#nullable restore
+#else
+        public string AppId { get; set; }
+#endif
+        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Platform of the mobile app for an `APP_INSTALL` campaign.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataAppPlatform? AppPlatform { get; set; }
         /// <summary>[Restricted](/docs/getting-started/using-beta-and-restricted-features/)Object describing the campaign level bid multipliers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +157,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
+                { "app_id", n => { AppId = n.GetStringValue(); } },
+                { "app_platform", n => { AppPlatform = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataAppPlatform>(); } },
                 { "bid_options", n => { BidOptions = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataBidOptions>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataBidOptions.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetIntValue(); } },
                 { "daily_spend_cap", n => { DailySpendCap = n.GetIntValue(); } },
@@ -182,6 +194,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ad_account_id", AdAccountId);
+            writer.WriteStringValue("app_id", AppId);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataAppPlatform>("app_platform", AppPlatform);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchResponseDataBidOptions>("bid_options", BidOptions);
             writer.WriteIntValue("daily_spend_cap", DailySpendCap);
             writer.WriteIntValue("default_ad_group_budget_in_micro_currency", DefaultAdGroupBudgetInMicroCurrency);

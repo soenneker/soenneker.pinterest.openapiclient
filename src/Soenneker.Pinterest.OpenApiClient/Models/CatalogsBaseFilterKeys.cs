@@ -279,6 +279,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE4 { get; set; }
 #endif
+        /// <summary>The SUPPLEMENTAL_ITEM_SEGMENTS property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria? SUPPLEMENTALITEMSEGMENTS { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria SUPPLEMENTALITEMSEGMENTS { get; set; }
+#endif
         /// <summary>The TITLE_KEYWORDS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -345,6 +353,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "PRODUCT_TYPE_2", n => { PRODUCTTYPE2 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
                 { "PRODUCT_TYPE_3", n => { PRODUCTTYPE3 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
                 { "PRODUCT_TYPE_4", n => { PRODUCTTYPE4 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
+                { "SUPPLEMENTAL_ITEM_SEGMENTS", n => { SUPPLEMENTALITEMSEGMENTS = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria.CreateFromDiscriminatorValue); } },
                 { "TITLE_KEYWORDS", n => { TITLEKEYWORDS = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
             };
         }
@@ -388,6 +397,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_2", PRODUCTTYPE2);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_3", PRODUCTTYPE3);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_4", PRODUCTTYPE4);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria>("SUPPLEMENTAL_ITEM_SEGMENTS", SUPPLEMENTALITEMSEGMENTS);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("TITLE_KEYWORDS", TITLEKEYWORDS);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -30,6 +30,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string PartnerId { get; set; }
 #endif
+        /// <summary>If partner_type=INTERNAL, the assigned/updated asset access is for the access the partner has to your business asset.If partner_type=EXTERNAL, the assigned/updated asset access is for the access you have to the partner&apos;s business asset.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.UpdatePartnerAssetAccessItemPartnerType? PartnerType { get; set; }
         /// <summary>A non-empty array of permissions to assign to the partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "asset_id", n => { AssetId = n.GetStringValue(); } },
                 { "partner_id", n => { PartnerId = n.GetStringValue(); } },
+                { "partner_type", n => { PartnerType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdatePartnerAssetAccessItemPartnerType>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.Permissions>()?.AsList(); } },
             };
         }
@@ -77,6 +80,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("asset_id", AssetId);
             writer.WriteStringValue("partner_id", PartnerId);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdatePartnerAssetAccessItemPartnerType>("partner_type", PartnerType);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.Permissions>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }

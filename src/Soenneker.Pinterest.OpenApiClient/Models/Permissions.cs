@@ -55,5 +55,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         BizPinnerListSharer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BIZ_CONVERSION_SEGMENT_SHARER")]
+        #pragma warning disable CS1591
+        BizConversionSegmentSharer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "BIZ_CONVERSION_SEGMENT_RESTRICTED_SHARER")]
+        #pragma warning disable CS1591
+        BizConversionSegmentRestrictedSharer,
+        #pragma warning restore CS1591
     }
 }

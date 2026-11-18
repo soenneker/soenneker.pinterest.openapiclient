@@ -28,5 +28,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         Consumer,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PINNER_LIST")]
+        #pragma warning disable CS1591
+        PinnerList,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CONVERSION_SEGMENT")]
+        #pragma warning disable CS1591
+        ConversionSegment,
+        #pragma warning restore CS1591
     }
 }

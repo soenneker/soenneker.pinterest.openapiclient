@@ -5,20 +5,20 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum TargetingSpecTargetingStrategyItem
+    public enum ScheduleGenderMultiplierGender
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "CHOOSE_YOUR_OWN")]
+        [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591
-        ChooseYourOwn,
+        Unknown,
         #pragma warning restore CS1591
-        [EnumMember(Value = "FIND_NEW_CUSTOMERS")]
+        [EnumMember(Value = "male")]
         #pragma warning disable CS1591
-        FindNewCustomers,
+        Male,
         #pragma warning restore CS1591
-        [EnumMember(Value = "RECONNECT_WITH_USERS")]
+        [EnumMember(Value = "female")]
         #pragma warning disable CS1591
-        ReconnectWithUsers,
+        Female,
         #pragma warning restore CS1591
     }
 }

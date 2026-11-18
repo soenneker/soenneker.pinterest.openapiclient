@@ -23,7 +23,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string MediaId { get; private set; }
 #endif
         /// <summary>The media_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaMediaType? MediaType { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaMediaType? MediaType { get; private set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.MediaStatus? Status { get; private set; }
         /// <summary>
@@ -63,7 +63,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MediaMediaType>("media_type", MediaType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

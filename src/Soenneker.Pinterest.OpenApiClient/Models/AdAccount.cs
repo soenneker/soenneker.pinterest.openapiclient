@@ -52,6 +52,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAccessRole?> Permissions { get; private set; }
 #endif
+        /// <summary>RMN business ID for the ad account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetingRmnBusinessId { get; private set; }
+#nullable restore
+#else
+        public string TargetingRmnBusinessId { get; private set; }
+#endif
         /// <summary>The time zone of the ad account, in IANA format (e.g., &quot;America/Los_Angeles&quot;). Adding your local time zone lets you view your campaigns and ad reporting in your preferred time zone. Future reports will be available in both your local time zone and default UTC time zone. Historical data takes 1-2 months to backfill. Your billing and order lines will remain in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +102,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdAccountOwnerComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.AdAccountOwnerComposed.CreateFromDiscriminatorValue); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAccessRole>()?.AsList(); } },
+                { "targeting_rmn_business_id", n => { TargetingRmnBusinessId = n.GetStringValue(); } },
                 { "time_zone", n => { TimeZone = n.GetStringValue(); } },
                 { "updated_time", n => { UpdatedTime = n.GetIntValue(); } },
             };

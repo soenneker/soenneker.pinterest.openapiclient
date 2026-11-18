@@ -13,6 +13,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CatalogsProductGroupProductCountsVerticalCatalogsRetailProductGroupProductCounts : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupProductCountsVertical, IParsable
     {
+        /// <summary>The images property</summary>
+        public double? Images { get; set; }
         /// <summary>The in_stock property</summary>
         public double? InStock { get; set; }
         /// <summary>The out_of_stock property</summary>
@@ -41,6 +43,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "images", n => { Images = n.GetDoubleValue(); } },
                 { "in_stock", n => { InStock = n.GetDoubleValue(); } },
                 { "out_of_stock", n => { OutOfStock = n.GetDoubleValue(); } },
                 { "preorder", n => { Preorder = n.GetDoubleValue(); } },
@@ -56,6 +59,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDoubleValue("images", Images);
             writer.WriteDoubleValue("in_stock", InStock);
             writer.WriteDoubleValue("out_of_stock", OutOfStock);
             writer.WriteDoubleValue("preorder", Preorder);

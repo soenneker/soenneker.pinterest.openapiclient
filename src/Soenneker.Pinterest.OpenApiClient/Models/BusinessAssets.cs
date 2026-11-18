@@ -13,6 +13,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessAssets : IAdditionalDataHolder, IParsable
     {
+        /// <summary>An object containing all the information specific to the provided ad account. This field will be populated only if asset_type equals &apos;AD_ACCOUNT&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsAdAccountInfo? AdAccountInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsAdAccountInfo AdAccountInfo { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An object containing all the information specific to the provided asset group. This field will be populated only if asset_type equals &apos;ASSET_GROUP&apos;.</summary>
@@ -74,6 +82,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ad_account_info", n => { AdAccountInfo = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsAdAccountInfo>(global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsAdAccountInfo.CreateFromDiscriminatorValue); } },
                 { "asset_group_info", n => { AssetGroupInfo = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BaseBusinessAssetsAssetGroupInfo>(global::Soenneker.Pinterest.OpenApiClient.Models.BaseBusinessAssetsAssetGroupInfo.CreateFromDiscriminatorValue); } },
                 { "asset_id", n => { AssetId = n.GetStringValue(); } },
                 { "asset_type", n => { AssetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AssetTypeResponse>(); } },
@@ -88,6 +97,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsAdAccountInfo>("ad_account_info", AdAccountInfo);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BaseBusinessAssetsAssetGroupInfo>("asset_group_info", AssetGroupInfo);
             writer.WriteStringValue("asset_id", AssetId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AssetTypeResponse>("asset_type", AssetType);

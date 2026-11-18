@@ -63,6 +63,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Currency { get; set; }
 #endif
+        /// <summary>A field for arbitrarily structured data. Accepted as a JSON string or a URL-encoded JSON string. Recognized keys are remapped to their corresponding standard fields; unknown shapes are ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomFields { get; set; }
+#nullable restore
+#else
+        public string CustomFields { get; set; }
+#endif
         /// <summary>Only use when instructed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +162,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "content_name", n => { ContentName = n.GetStringValue(); } },
                 { "contents", n => { Contents = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsDataItemsCustomDataContentsItems>(global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsDataItemsCustomDataContentsItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
+                { "custom_fields", n => { CustomFields = n.GetStringValue(); } },
                 { "external_measurement_id", n => { ExternalMeasurementId = n.GetStringValue(); } },
                 { "external_measurement_vendor_id", n => { ExternalMeasurementVendorId = n.GetIntValue(); } },
                 { "np", n => { Np = n.GetStringValue(); } },
@@ -178,6 +187,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("content_name", ContentName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsDataItemsCustomDataContentsItems>("contents", Contents);
             writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("custom_fields", CustomFields);
             writer.WriteStringValue("external_measurement_id", ExternalMeasurementId);
             writer.WriteIntValue("external_measurement_vendor_id", ExternalMeasurementVendorId);
             writer.WriteStringValue("np", Np);

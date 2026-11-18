@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Ad accounts and profiles the member/partner will be granted access to with this invite/request.
+    /// Assets the member/partner will be granted access to with this invite/request.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InviteAssetsSummary : IAdditionalDataHolder, IParsable
@@ -23,6 +23,30 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>List of audience IDs and respective permission levels that will be assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>? Audiences { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem> Audiences { get; set; }
+#endif
+        /// <summary>List of catalog IDs and respective permission levels that will be assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>? Catalogs { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem> Catalogs { get; set; }
+#endif
+        /// <summary>List of conversion segment IDs and respective permission levels that will be assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>? ConversionSegments { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem> ConversionSegments { get; set; }
+#endif
         /// <summary>List of profile IDs and respective permission levels that will be assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +81,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ad_accounts", n => { AdAccounts = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "audiences", n => { Audiences = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conversion_segments", n => { ConversionSegments = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "profiles", n => { Profiles = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,6 +95,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>("ad_accounts", AdAccounts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>("audiences", Audiences);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>("catalogs", Catalogs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>("conversion_segments", ConversionSegments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummaryItem>("profiles", Profiles);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Ad accounts and profiles the member/partner will be granted access to with this invite/request.</summary>
+        /// <summary>Assets the member/partner will be granted access to with this invite/request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummary? AssetsSummary { get; set; }
@@ -23,7 +23,15 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummary AssetsSummary { get; set; }
 #endif
-        /// <summary>The access level a user would be granted on the business if the invite/request is accepted. This can be EMPLOYEE, BIZ_ADMIN, or PARTNER.</summary>
+        /// <summary>Business partner type for partner invites and requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? BusinessPartnerType { get; set; }
+#nullable restore
+#else
+        public UntypedNode BusinessPartnerType { get; set; }
+#endif
+        /// <summary>The access level a user would be granted on the business if the invite/request is accepted. This can be EMPLOYEE, BIZ_ADMIN, PARTNER, or RMN_PARTNER.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BusinessRoles { get; set; }
@@ -67,6 +75,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Indicates whether the invite/request was received.</summary>
         public bool? IsReceivedInvite { get; set; }
+        /// <summary>RMN-specific invite data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseRmnInviteData? RmnInviteData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseRmnInviteData RmnInviteData { get; set; }
+#endif
         /// <summary>Metadata for the member/partner that was sent the invite/request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +117,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assets_summary", n => { AssetsSummary = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummary>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummary.CreateFromDiscriminatorValue); } },
+                { "business_partner_type", n => { BusinessPartnerType = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "business_roles", n => { BusinessRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_by_business", n => { CreatedByBusiness = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByBusiness>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByBusiness.CreateFromDiscriminatorValue); } },
                 { "created_by_user", n => { CreatedByUser = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByUser>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByUser.CreateFromDiscriminatorValue); } },
@@ -108,6 +125,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invite_data", n => { InviteData = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteDataResponse>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteDataResponse.CreateFromDiscriminatorValue); } },
                 { "is_received_invite", n => { IsReceivedInvite = n.GetBoolValue(); } },
+                { "rmn_invite_data", n => { RmnInviteData = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseRmnInviteData>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseRmnInviteData.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseUser>(global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseUser.CreateFromDiscriminatorValue); } },
             };
         }
@@ -119,6 +137,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteAssetsSummary>("assets_summary", AssetsSummary);
+            writer.WriteObjectValue<UntypedNode>("business_partner_type", BusinessPartnerType);
             writer.WriteCollectionOfPrimitiveValues<string>("business_roles", BusinessRoles);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByBusiness>("created_by_business", CreatedByBusiness);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseCreatedByUser>("created_by_user", CreatedByUser);
@@ -126,6 +145,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteDataResponse>("invite_data", InviteData);
             writer.WriteBoolValue("is_received_invite", IsReceivedInvite);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseRmnInviteData>("rmn_invite_data", RmnInviteData);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.InviteResponseUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

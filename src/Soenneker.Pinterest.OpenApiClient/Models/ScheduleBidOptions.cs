@@ -31,13 +31,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultipliers AppTypeMultipliers { get; set; }
 #endif
-        /// <summary>This represents a mapping from Audience ID to a bid price change value. This is paired with the bid_multipliers schedule type.Values represent the change in bid price and can be positive or negative. For percentage changes, a value of 500.0 means a 5% change. For value changes, the amount represents the direct bid adjustment. All audience multipliers must be set at the same time. If a multiplier is not provided it is assumed to be 0 (no bid adjustment). The change must still remain between the range of 0 and 10.</summary>
+        /// <summary>This represents a mapping from Audience ID to a bid price adjustment.Multiplier values must be between 0 and 10. A value of 10 represents a 900% increase in bid price (from $1 to $10 for example). A value of 0 will stop distribution for this item on the specified audience in `MAX_BID` ad groups in `CATALOG_SALES` campaigns. All audience multipliers must be set at the same time. If a multiplier is not provided it is assumed to be 1 (no bid adjustment).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers? AudienceMultipliers { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAudienceMultipliers? AudienceMultipliers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers AudienceMultipliers { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAudienceMultipliers AudienceMultipliers { get; set; }
 #endif
         /// <summary>This represents a mapping from gender targeting criteria to a bid price change value.Values represent the change in bid price and can be positive or negative. For percentage changes, a value of 500.0 means a 5% change. For value changes, the amount represents the direct bid adjustment. All gender multipliers must be set at the same time. If a multiplier is not provided it is assumed to be 0 (no bid adjustment). The change must still remain between the range of 0 and 10.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "age_bucket_multipliers", n => { AgeBucketMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAgeBucketMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAgeBucketMultipliers.CreateFromDiscriminatorValue); } },
                 { "app_type_multipliers", n => { AppTypeMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultipliers.CreateFromDiscriminatorValue); } },
-                { "audience_multipliers", n => { AudienceMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers.CreateFromDiscriminatorValue); } },
+                { "audience_multipliers", n => { AudienceMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAudienceMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAudienceMultipliers.CreateFromDiscriminatorValue); } },
                 { "gender_multipliers", n => { GenderMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsGenderMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsGenderMultipliers.CreateFromDiscriminatorValue); } },
                 { "placement_multipliers", n => { PlacementMultipliers = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsPlacementMultipliers>(global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsPlacementMultipliers.CreateFromDiscriminatorValue); } },
             };
@@ -96,7 +96,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAgeBucketMultipliers>("age_bucket_multipliers", AgeBucketMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultipliers>("app_type_multipliers", AppTypeMultipliers);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers>("audience_multipliers", AudienceMultipliers);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAudienceMultipliers>("audience_multipliers", AudienceMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsGenderMultipliers>("gender_multipliers", GenderMultipliers);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleBidOptionsPlacementMultipliers>("placement_multipliers", PlacementMultipliers);
             writer.WriteAdditionalData(AdditionalData);

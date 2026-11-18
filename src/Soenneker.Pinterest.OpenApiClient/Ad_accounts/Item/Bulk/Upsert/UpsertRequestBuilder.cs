@@ -34,43 +34,53 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Upsert
         {
         }
         /// <summary>
-        /// Either create or update any combination of campaigns, ad groups, product groups, ads, keywords, schedules, or labels.Note that this request will be processed asynchronously; the response will include a &lt;code&gt;request_id&lt;/code&gt;that can be used to obtain the status of the request.
+        /// Either create or update any combination of campaigns, ad groups, product groups, ads, keywords, schedules, or labels.Note that this request will be processed asynchronously; the response will include a `request_id`that can be used to obtain the status of the request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertResponse"/></returns>
-        /// <param name="body">Two set of objects to be managed asyncronusly by bulk. One for creations, one for modifications.</param>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsert"/></returns>
+        /// <param name="body">Resource create operation model.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertResponse?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsert?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkWriteJobCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertResponse> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsert> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.BulkWriteJobCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsert>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Either create or update any combination of campaigns, ad groups, product groups, ads, keywords, schedules, or labels.Note that this request will be processed asynchronously; the response will include a &lt;code&gt;request_id&lt;/code&gt;that can be used to obtain the status of the request.
+        /// Either create or update any combination of campaigns, ad groups, product groups, ads, keywords, schedules, or labels.Note that this request will be processed asynchronously; the response will include a `request_id`that can be used to obtain the status of the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Two set of objects to be managed asyncronusly by bulk. One for creations, one for modifications.</param>
+        /// <param name="body">Resource create operation model.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkWriteJobCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkUpsertRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.BulkWriteJobCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Request for creation of entities in bulk.
+    /// Request for updating entities in bulk.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkUpsertRequestUpdate : IAdditionalDataHolder, IParsable

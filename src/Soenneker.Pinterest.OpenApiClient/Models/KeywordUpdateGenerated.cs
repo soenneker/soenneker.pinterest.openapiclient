@@ -16,7 +16,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Is keyword archived?</summary>
         public bool? Archived { get; set; }
-        /// <summary>&lt;/p&gt;&lt;strong&gt;Note:&lt;/strong&gt; bid field has been deprecated. Input will not be set and field will return null. Keyword custom bid in microcurrency - null if inherited from parent ad group.</summary>
+        /// <summary>**Note:** bid field has been deprecated. Input will not be set and field will return null. Keyword custom bid in microcurrency - null if inherited from parent ad group.</summary>
         public int? Bid { get; set; }
         /// <summary>Keyword ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

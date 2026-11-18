@@ -43,10 +43,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Tag ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Time for the last event fired.</summary>
         public double? LastFiredTimeMs { get; private set; }
@@ -111,6 +111,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

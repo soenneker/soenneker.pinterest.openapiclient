@@ -23,8 +23,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Token { get; set; }
 #endif
-        /// <summary>The type of token to revoke.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TokenRevocationRequestCreateTokenTypeHint? TokenTypeHint { get; set; }
+        /// <summary>Optional hint about the token type. Accepted per RFC 7009 but ignored server-side; revocation proceeds based on the decoded token type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenTypeHint { get; set; }
+#nullable restore
+#else
+        public string TokenTypeHint { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TokenRevocationRequestCreate"/> and sets the default values.
         /// </summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "token", n => { Token = n.GetStringValue(); } },
-                { "token_type_hint", n => { TokenTypeHint = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.TokenRevocationRequestCreateTokenTypeHint>(); } },
+                { "token_type_hint", n => { TokenTypeHint = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("token", Token);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.TokenRevocationRequestCreateTokenTypeHint>("token_type_hint", TokenTypeHint);
+            writer.WriteStringValue("token_type_hint", TokenTypeHint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

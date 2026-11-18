@@ -28,7 +28,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Invites
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/invites{?bookmark*,invite_status*,invite_type*,is_member*,page_size*}", pathParameters)
+        public InvitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/invites{?assets_summary*,bookmark*,invite_status*,invite_type*,is_member*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Invites
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/invites{?bookmark*,invite_status*,invite_type*,is_member*,page_size*}", rawUrl)
+        public InvitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/invites{?assets_summary*,bookmark*,invite_status*,invite_type*,is_member*,page_size*}", rawUrl)
         {
         }
         /// <summary>
@@ -210,6 +210,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Invites
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvitesRequestBuilderGetQueryParameters 
         {
+            /// <summary>  Include assets summary in the response if this is true.  The assets summary returns a dictionary representing a summary of the assets  the member or partner will be granted access to.</summary>
+            [QueryParameter("assets_summary")]
+            public bool? AssetsSummary { get; set; }
             /// <summary>Cursor used to fetch the next page of items</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -8,37 +8,33 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// This represents a mapping from Audience ID to a bid price change value. This is paired with the bid_multipliers schedule type.Values represent the change in bid price and can be positive or negative. For percentage changes, a value of 500.0 means a 5% change. For value changes, the amount represents the direct bid adjustment. All audience multipliers must be set at the same time. If a multiplier is not provided it is assumed to be 0 (no bid adjustment). The change must still remain between the range of 0 and 10.
+    /// Merchant approval status and pending reason details.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ScheduleAudienceMultipliers : IAdditionalDataHolder, IParsable
+    public partial class MerchantStatusResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The AUDIENCE_ID property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AUDIENCEID { get; set; }
-#nullable restore
-#else
-        public string AUDIENCEID { get; set; }
-#endif
+        /// <summary>The merchant&apos;s high-level approval status.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponseMerchantApprovalStatus? MerchantApprovalStatus { get; set; }
+        /// <summary>The reason a merchant&apos;s status is pending.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponsePendingReasons? PendingReasons { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponse"/> and sets the default values.
         /// </summary>
-        public ScheduleAudienceMultipliers()
+        public MerchantStatusResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAudienceMultipliers();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +44,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AUDIENCE_ID", n => { AUDIENCEID = n.GetStringValue(); } },
+                { "merchant_approval_status", n => { MerchantApprovalStatus = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponseMerchantApprovalStatus>(); } },
+                { "pending_reasons", n => { PendingReasons = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponsePendingReasons>(); } },
             };
         }
         /// <summary>
@@ -58,7 +55,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("AUDIENCE_ID", AUDIENCEID);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponseMerchantApprovalStatus>("merchant_approval_status", MerchantApprovalStatus);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MerchantStatusResponsePendingReasons>("pending_reasons", PendingReasons);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

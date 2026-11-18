@@ -81,7 +81,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Intended result of the campaign.You can only update objectives for draft campaigns.`WEB_SESSIONS` and `VIDEO_VIEW` objectives are deprecated. We recommend using `VIDEO_COMPLETION` as an alternative for the latter.</summary>
+        /// <summary>Intended result of the campaign.As part of [objective simplification](/docs/work-with-ads/try-out-campaign-objective-type-simplification/), `WEB_CONVERSION` and `CATALOG_SALES` objectives are being deprecated and replaced by `SALES` and `LEADS`.Also, `WEB_SESSIONS` and `VIDEO_VIEW` objectives are deprecated. We recommend using `VIDEO_COMPLETION` as an alternative for the latter.You can only update objectives for draft campaigns.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.ConversionObjectiveType? ObjectiveType { get; set; }
         /// <summary>Note: To clear this field on update, set the order line ID to 0.Order line ID that appears on the invoice. The order line must not be expired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

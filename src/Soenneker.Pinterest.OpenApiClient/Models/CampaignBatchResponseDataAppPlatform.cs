@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
-    /// <summary>The type of token to revoke.</summary>
+    /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Platform of the mobile app for an `APP_INSTALL` campaign.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum TokenRevocationRequestCreateTokenTypeHint
+    public enum CampaignBatchResponseDataAppPlatform
     {
-        [EnumMember(Value = "access_token")]
+        [EnumMember(Value = "IOS")]
         #pragma warning disable CS1591
-        AccessToken,
+        Ios,
         #pragma warning restore CS1591
-        [EnumMember(Value = "refresh_token")]
+        [EnumMember(Value = "ANDROID")]
         #pragma warning disable CS1591
-        RefreshToken,
+        Android,
         #pragma warning restore CS1591
     }
 }

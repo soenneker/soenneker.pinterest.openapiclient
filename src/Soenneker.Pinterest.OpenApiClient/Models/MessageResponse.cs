@@ -8,31 +8,37 @@ using System;
 namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     /// <summary>
-    /// Resource create operation model.
+    /// A generic response carrying a human-readable message.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class MediaUploadCreate : IAdditionalDataHolder, IParsable
+    public partial class MessageResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The media_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreateMediaType? MediaType { get; set; }
+        /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get; set; }
+#nullable restore
+#else
+        public string Message { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreate"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse"/> and sets the default values.
         /// </summary>
-        public MediaUploadCreate()
+        public MessageResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreate"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreate();
+            return new global::Soenneker.Pinterest.OpenApiClient.Models.MessageResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +48,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreateMediaType>(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +58,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadCreateMediaType>("media_type", MediaType);
+            writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

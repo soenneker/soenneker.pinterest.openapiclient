@@ -16,7 +16,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The APP_TYPE property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecAppType? APPTYPE { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultiplierAppType? APPTYPE { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultipliers"/> and sets the default values.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "APP_TYPE", n => { APPTYPE = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecAppType>(); } },
+                { "APP_TYPE", n => { APPTYPE = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultiplierAppType>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecAppType>("APP_TYPE", APPTYPE);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ScheduleAppTypeMultiplierAppType>("APP_TYPE", APPTYPE);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

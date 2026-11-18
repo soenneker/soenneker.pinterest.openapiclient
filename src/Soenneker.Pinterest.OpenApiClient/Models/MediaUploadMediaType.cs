@@ -8,9 +8,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     public enum MediaUploadMediaType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "image")]
+        #pragma warning disable CS1591
+        Image,
+        #pragma warning restore CS1591
         [EnumMember(Value = "video")]
         #pragma warning disable CS1591
         Video,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "image_latent_disclosure")]
+        #pragma warning disable CS1591
+        ImageLatentDisclosure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "video_latent_disclosure")]
+        #pragma warning disable CS1591
+        VideoLatentDisclosure,
         #pragma warning restore CS1591
     }
 }

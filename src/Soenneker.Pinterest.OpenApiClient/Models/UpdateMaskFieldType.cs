@@ -203,5 +203,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         PromotionId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "overlay_id")]
+        #pragma warning disable CS1591
+        OverlayId,
+        #pragma warning restore CS1591
     }
 }

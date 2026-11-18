@@ -14,6 +14,7 @@ using Soenneker.Pinterest.OpenApiClient.Businesses;
 using Soenneker.Pinterest.OpenApiClient.Catalogs;
 using Soenneker.Pinterest.OpenApiClient.Integrations;
 using Soenneker.Pinterest.OpenApiClient.Media;
+using Soenneker.Pinterest.OpenApiClient.Merchant;
 using Soenneker.Pinterest.OpenApiClient.Notifications;
 using Soenneker.Pinterest.OpenApiClient.Oauth;
 using Soenneker.Pinterest.OpenApiClient.Pins;
@@ -74,6 +75,11 @@ namespace Soenneker.Pinterest.OpenApiClient
         public global::Soenneker.Pinterest.OpenApiClient.Media.MediaRequestBuilder Media
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The merchant property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Merchant.MerchantRequestBuilder Merchant
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Merchant.MerchantRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Notifications.NotificationsRequestBuilder Notifications

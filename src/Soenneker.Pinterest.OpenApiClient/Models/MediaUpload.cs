@@ -24,7 +24,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public string MediaId { get; private set; }
 #endif
         /// <summary>The media_type property</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadMediaType? MediaType { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadMediaType? MediaType { get; private set; }
         /// <summary>The list of parameter key/value pairs you will need to send with your POST request to upload your media file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +79,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.MediaUploadMediaType>("media_type", MediaType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,11 +14,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable auto-targeting for ad group. Default value is True. Also known as &lt;a href=&quot;https://help.pinterest.com/en/business/article/performance-plus-targeting&quot; target=&quot;_blank&quot;&gt;&quot;Pinterest Performance+ targeting&quot;&lt;/a&gt;.</summary>
+        /// <summary>Enable auto-targeting for ad group. Default value is True. Also known as [&quot;Pinterest Performance+ targeting&quot;](https://help.pinterest.com/en/business/article/performance-plus-targeting).</summary>
         public bool? AutoTargetingEnabled { get; set; }
         /// <summary>Bid price in micro currency. This field is **REQUIRED** for the following campaign objective_type/billable_event combinations: AWARENESS/IMPRESSION, CONSIDERATION/CLICKTHROUGH, CATALOG_SALES/CLICKTHROUGH.</summary>
         public int? BidInMicroCurrency { get; set; }
-        /// <summary>&lt;a href=&quot;/docs/getting-started/using-beta-and-restricted-features/&quot; target=&quot;blank&gt;Open beta&lt;/a&gt;Bid multiplier for ad group. This value is a double between 0.1and 10.0. Enter 0 to remove the bid multiplier.- Make sure the `bid_strategy` type for your ad group is set to `AUTOMATIC_BID`.- Not currently supported for &lt;a href=&quot;/docs/api-features/pinterest-performance-plus-setup/&quot; target=&quot;blank&quot;&gt;Pinterest Performance+ campaigns&lt;/a&gt;.</summary>
+        /// <summary>[Open beta](/docs/getting-started/using-beta-and-restricted-features/)Bid multiplier for ad group. This value is a double between 0.1and 10.0. Enter 0 to remove the bid multiplier.- Make sure the `bid_strategy` type for your ad group is set to `AUTOMATIC_BID`.- Not currently supported for [Pinterest Performance+ campaigns](/docs/api-features/pinterest-performance-plus-setup/).</summary>
         public double? BidMultiplier { get; set; }
         /// <summary>Bid strategy type. For Campaigns with Video Completion objectives, the only supported bid strategy type is AUTOMATIC_BID, also known as &quot;Pinterest Performance+ bidding&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,7 +42,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
-        /// <summary>Timestamp in Unix format for scheduling when ads in the ad group stop appearing. If not specified, ads run indefinitely unless you update the ad group by changing their status to `paused`. Cannot occur after `end_time` for parent campaign (if specified). Learn about &lt;a href=&quot;/docs/api-features/managing-ads/#step-2-create-an-ad-group&quot; target=&quot;blank&quot;&gt;scheduling ads&lt;/a&gt;.For certain organizations (&lt;a href=&quot;/docs/getting-started/using-beta-and-restricted-features/&quot; target=&quot;blank&quot; target=&quot;blank&quot;&gt;Closed beta&lt;/a&gt;): Supported for campaigns with Campaign Budget Optimization (CBO).For all organizations: Supported for campaigns without CBO.</summary>
+        /// <summary>Timestamp in Unix format for scheduling when ads in the ad group stop appearing. If not specified, ads run indefinitely unless you update the ad group by changing their status to `paused`. Cannot occur after `end_time` for parent campaign (if specified). Learn about [scheduling ads](/docs/api-features/managing-ads/#step-2-create-an-ad-group).For certain organizations ([Closed beta](/docs/getting-started/using-beta-and-restricted-features/)): Supported for campaigns with Campaign Budget Optimization (CBO).For all organizations: Supported for campaigns without CBO.</summary>
         public long? EndTime { get; set; }
         /// <summary>Ad group ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Enable creative optimization for the ad group, default value is FALSE. When enabled, you allow Pinterest to automatically turn your product Pins into ads in different formats (collections and shopping) and deliver those ads to users at scale.</summary>
         public bool? IsCreativeOptimization { get; set; }
-        /// <summary>Set a limit to the number of times a promoted pin from this campaign can be impressed by a pinner within the past rolling 30 days. Only available for CPM (cost per mille (1000 impressions))  ad groups. A CPM ad group has an IMPRESSION &lt;a href=&quot;/docs/redoc/#section/Billable-event&quot;&gt;billable_event&lt;/a&gt; value. This field **REQUIRES** the `end_time` field.</summary>
+        /// <summary>Set a limit to the number of times a promoted pin from this campaign can be impressed by a pinner within the past rolling 30 days. Only available for CPM (cost per mille (1000 impressions))  ad groups. A CPM ad group has an IMPRESSION [billable_event](/docs/redoc/#section/Billable-event) value. This field **REQUIRES** the `end_time` field.</summary>
         public int? LifetimeFrequencyCap { get; set; }
         /// <summary>Ad group name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,19 +100,19 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> PromotionIds { get; set; }
 #endif
-        /// <summary>Timestamp in Unix format for scheduling when ads in the ad group start to appear. If not specified, ads appear during parent campaign&apos;s `start_time`. Cannot precede `start_time` for parent campaign (if specified). Learn about &lt;a href=&quot;/docs/api-features/managing-ads/#step-2-create-an-ad-group&quot; target=&quot;blank&quot;&gt;scheduling ads&lt;/a&gt;.For certain organizations (&lt;a href=&quot;/docs/getting-started/using-beta-and-restricted-features/&quot; target=&quot;blank&quot; target=&quot;blank&quot;&gt;Closed beta&lt;/a&gt;): Supported for campaigns with Campaign Budget Optimization (CBO).For all organizations: Supported for campaigns without CBO.</summary>
+        /// <summary>Timestamp in Unix format for scheduling when ads in the ad group start to appear. If not specified, ads appear during parent campaign&apos;s `start_time`. Cannot precede `start_time` for parent campaign (if specified). Learn about [scheduling ads](/docs/api-features/managing-ads/#step-2-create-an-ad-group).For certain organizations ([Closed beta](/docs/getting-started/using-beta-and-restricted-features/)): Supported for campaigns with Campaign Budget Optimization (CBO).For all organizations: Supported for campaigns without CBO.</summary>
         public long? StartTime { get; set; }
         /// <summary>Entity status</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestStatus? Status { get; set; }
-        /// <summary>Ad group targeting specification defining the ad group target audience. For example, `{&quot;APPTYPE&quot;:[&quot;iphone&quot;], &quot;GENDER&quot;:[&quot;male&quot;], &quot;LOCALE&quot;:[&quot;en-US&quot;], &quot;LOCATION&quot;:[&quot;501&quot;], &quot;MINIMUM_AGE&quot;:&quot;18&quot;, &quot;MAXIMUM_AGE&quot;:&quot;65+&quot;}`</summary>
+        /// <summary>The targeting_spec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpec? TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal? TargetingSpec { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpec TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal TargetingSpec { get; set; }
 #endif
-        /// <summary>&lt;div&gt;Targeting spec operations define modifications to apply to the targeting spec.&lt;/div&gt;&lt;br /&gt;&lt;div&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; The &lt;code&gt;targeting_spec&lt;/code&gt; and &lt;code&gt;targeting_spec_operations&lt;/code&gt; cannot be sent at the same time.&lt;/div&gt;&lt;br /&gt;&lt;div&gt;The supported operations are:&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;code&gt;SET&lt;/code&gt;: sets the field with the given values. If value is set to &lt;code&gt;null&lt;/code&gt;, the field will be removed.&lt;/li&gt;&lt;li&gt;&lt;code&gt;ADD&lt;/code&gt;: adds the given values to the field.&lt;/li&gt;&lt;li&gt;&lt;code&gt;REMOVE&lt;/code&gt;: removes the given values from the field.&lt;/li&gt;&lt;/ul&gt;&lt;div&gt;Note the following:&lt;/div&gt;&lt;ul&gt;&lt;li&gt;Same items are not added and removed at the same time.&lt;/li&gt;&lt;li&gt;For a given field, only &lt;code&gt;ADD&lt;/code&gt;/&lt;code&gt;REMOVE&lt;/code&gt; or &lt;code&gt;SET&lt;/code&gt; operations are allowed, not a mix of them.&lt;/li&gt;&lt;li&gt;Only one SET operation is allowed for a given field.&lt;/li&gt;&lt;li&gt;The &lt;code&gt;AGE_BUCKET&lt;/code&gt;, &lt;code&gt;MAXIMUM_AGE&lt;/code&gt;, &lt;code&gt;MINIMUM_AGE&lt;/code&gt; and &lt;code&gt;SHOPPING_RETARGETING&lt;/code&gt; fields only support the &lt;code&gt;SET&lt;/code&gt; operation.&lt;/li&gt;&lt;/ul&gt;</summary>
+        /// <summary>Targeting spec operations define modifications to apply to the targeting spec.**NOTE:** The `targeting_spec` and `targeting_spec_operations` cannot be sent at the same time.The supported operations are:- `SET`: sets the field with the given values. If value is set to `null`, the field will be removed.- `ADD`: adds the given values to the field.- `REMOVE`: removes the given values from the field.Note the following:- Same items are not added and removed at the same time.- For a given field, only `ADD`/`REMOVE` or `SET` operations are allowed, not a mix of them.- Only one SET operation is allowed for a given field.- The `AGE_BUCKET`, `MAXIMUM_AGE`, `MINIMUM_AGE` and `SHOPPING_RETARGETING` fields only support the `SET` operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations>? TargetingSpecOperations { get; set; }
@@ -128,7 +128,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> TargetingTemplateIds { get; set; }
 #endif
-        /// <summary>Third-party tracking URLs.&lt;br&gt; JSON object with the format: {&quot;&lt;a href=&quot;/docs/redoc/#section/Tracking-URL-event&quot;&gt;Tracking event enum&lt;/a&gt;&quot;:[URL string array],...}&lt;br&gt; For example: {&quot;impression&quot;: [&quot;URL1&quot;, &quot;URL2&quot;], &quot;click&quot;: [&quot;URL1&quot;, &quot;URL2&quot;, &quot;URL3&quot;]}.&lt;br&gt;Up to three tracking URLs are supported for each event type. Tracking URLs set at the ad group or ad level can override those set at the campaign level. May be null. Pass in an empty object - EmptyObject - to remove tracking URLs.&lt;br&gt;&lt;br&gt; For more information, see &lt;a href=&quot;https://help.pinterest.com/en/business/article/third-party-and-dynamic-tracking&quot; target=&quot;_blank&quot;&gt;Third-party and dynamic tracking&lt;/a&gt;.</summary>
+        /// <summary>Third-party tracking URLs.JSON object with the format: {&quot;[Tracking event enum](/docs/redoc/#section/Tracking-URL-event)&quot;: [URL string array], ...}For example: {&quot;impression&quot;: [&quot;URL1&quot;, &quot;URL2&quot;], &quot;click&quot;: [&quot;URL1&quot;, &quot;URL2&quot;, &quot;URL3&quot;]}.Up to three tracking URLs are supported for each event type. Tracking URLs set at the ad group or ad level can override those set at the campaign level. May be null. Pass in an empty object - EmptyObject - to remove tracking URLs.For more information, see [Third-party and dynamic tracking](https://help.pinterest.com/en/business/article/third-party-and-dynamic-tracking).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestTrackingUrls? TrackingUrls { get; set; }
@@ -183,7 +183,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "promotion_ids", n => { PromotionIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "start_time", n => { StartTime = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestStatus>(); } },
-                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpec>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpec.CreateFromDiscriminatorValue); } },
+                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal.CreateFromDiscriminatorValue); } },
                 { "targeting_spec_operations", n => { TargetingSpecOperations = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeting_template_ids", n => { TargetingTemplateIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tracking_urls", n => { TrackingUrls = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestTrackingUrls>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestTrackingUrls.CreateFromDiscriminatorValue); } },
@@ -217,7 +217,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("promotion_ids", PromotionIds);
             writer.WriteLongValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpec>("targeting_spec", TargetingSpec);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>("targeting_spec", TargetingSpec);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOperations>("targeting_spec_operations", TargetingSpecOperations);
             writer.WriteCollectionOfPrimitiveValues<string>("targeting_template_ids", TargetingTemplateIds);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestTrackingUrls>("tracking_urls", TrackingUrls);
