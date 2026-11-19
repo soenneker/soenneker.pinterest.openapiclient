@@ -9,11 +9,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ItemAttributesRequest : IAdditionalDataHolder, IParsable
+    public partial class ItemAttributesRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&lt;= 2000 characters The links to additional images for your product. Up to ten additional images can be used to show a product from different angles or to show different stages. Must begin with http:// or https://.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -519,6 +517,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The destinations where this item should NOT appear. Each value must be one of the following (upper or lowercase): &apos;shopping_ads&apos;, &apos;local_inventory_ads&apos;, &apos;free_listings&apos;, &apos;free_local_listings&apos;. Invalid values are dropped during ingestion. Currently only &apos;shopping_ads&apos; and &apos;free_listings&apos; take effect; other values are accepted but have no effect. This feature is only available for allowlisted merchants. Please contact your account manager to enable this feature.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludedDestination { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludedDestination { get; set; }
+#endif
         /// <summary>The item is free to ship.</summary>
         public bool? FreeShippingLabel { get; set; }
         /// <summary>The minimum order purchase necessary for the customer to get free shipping. Only relevant if free shipping is offered.</summary>
@@ -815,7 +821,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// </summary>
         public ItemAttributesRequest()
         {
-            AdditionalData = new Dictionary<string, object>();
             SavePinDisabled = false;
         }
         /// <summary>
@@ -905,6 +910,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "custom_number_3", n => { CustomNumber3 = n.GetLongValue(); } },
                 { "custom_number_4", n => { CustomNumber4 = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "excluded_destination", n => { ExcludedDestination = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "free_shipping_label", n => { FreeShippingLabel = n.GetBoolValue(); } },
                 { "free_shipping_limit", n => { FreeShippingLimit = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
@@ -1023,6 +1029,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteLongValue("custom_number_3", CustomNumber3);
             writer.WriteIntValue("custom_number_4", CustomNumber4);
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfPrimitiveValues<string>("excluded_destination", ExcludedDestination);
             writer.WriteBoolValue("free_shipping_label", FreeShippingLabel);
             writer.WriteStringValue("free_shipping_limit", FreeShippingLimit);
             writer.WriteStringValue("gender", Gender);
@@ -1063,7 +1070,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("variant_names", VariantNames);
             writer.WriteCollectionOfPrimitiveValues<string>("variant_values", VariantValues);
             writer.WriteStringValue("video_link", VideoLink);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

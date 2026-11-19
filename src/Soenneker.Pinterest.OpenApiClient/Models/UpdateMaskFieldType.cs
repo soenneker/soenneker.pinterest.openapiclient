@@ -87,6 +87,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         Description,
         #pragma warning restore CS1591
+        [EnumMember(Value = "excluded_destination")]
+        #pragma warning disable CS1591
+        ExcludedDestination,
+        #pragma warning restore CS1591
         [EnumMember(Value = "free_shipping_label")]
         #pragma warning disable CS1591
         FreeShippingLabel,

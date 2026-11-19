@@ -13,13 +13,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CatalogsRetailBatchRequestItemsItemsCatalogsUpdateRetailItem : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems, IParsable
     {
-        /// <summary>The attributes property</summary>
+        /// <summary>The attributes of an item to be updated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.UpdatableItemAttributes? Attributes { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpdateRequest? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.UpdatableItemAttributes Attributes { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpdateRequest Attributes { get; set; }
 #endif
         /// <summary>The catalog item id in the merchant namespace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdatableItemAttributes>(global::Soenneker.Pinterest.OpenApiClient.Models.UpdatableItemAttributes.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpdateRequest>(global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpdateRequest.CreateFromDiscriminatorValue); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "update_mask", n => { UpdateMask = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.UpdateMaskFieldType>()?.AsList(); } },
             };
@@ -68,7 +68,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UpdatableItemAttributes>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpdateRequest>("attributes", Attributes);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.UpdateMaskFieldType>("update_mask", UpdateMask);
         }

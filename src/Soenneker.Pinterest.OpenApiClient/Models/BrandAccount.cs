@@ -12,6 +12,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     public partial class BrandAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Brand Account about information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? About { get; set; }
+#nullable restore
+#else
+        public string About { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The brand_account_id property</summary>
@@ -21,6 +29,74 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public string BrandAccountId { get; private set; }
+#endif
+        /// <summary>Public contact email shown on the business profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContactEmail { get; set; }
+#nullable restore
+#else
+        public string ContactEmail { get; set; }
+#endif
+        /// <summary>Public contact phone number shown on the business profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContactPhone { get; set; }
+#nullable restore
+#else
+        public string ContactPhone { get; set; }
+#endif
+        /// <summary>ISO country code (e.g. &quot;US&quot;) of the public contact phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContactPhoneCountry { get; set; }
+#nullable restore
+#else
+        public string ContactPhoneCountry { get; set; }
+#endif
+        /// <summary>Country ID from ISO 3166-1 alpha-2.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.Country? Country { get; set; }
+        /// <summary>Whether the retail-location address is shown on the public business profile.</summary>
+        public bool? EnableProfileAddress { get; set; }
+        /// <summary>Impressum URL (legal ownership statement, required in DE/AT/CH).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImpressumUrl { get; set; }
+#nullable restore
+#else
+        public string ImpressumUrl { get; set; }
+#endif
+        /// <summary>Brand Account name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Retail-location address, shown on the public business profile when enable_profile_address is true.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccountProfilePlaceComposed? ProfilePlace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccountProfilePlaceComposed ProfilePlace { get; set; }
+#endif
+        /// <summary>Brand Account username</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Username { get; set; }
+#nullable restore
+#else
+        public string Username { get; set; }
+#endif
+        /// <summary>Brand Account website</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Website { get; set; }
+#nullable restore
+#else
+        public string Website { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccount"/> and sets the default values.
@@ -47,7 +123,18 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "about", n => { About = n.GetStringValue(); } },
                 { "brand_account_id", n => { BrandAccountId = n.GetStringValue(); } },
+                { "contact_email", n => { ContactEmail = n.GetStringValue(); } },
+                { "contact_phone", n => { ContactPhone = n.GetStringValue(); } },
+                { "contact_phone_country", n => { ContactPhoneCountry = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>(); } },
+                { "enable_profile_address", n => { EnableProfileAddress = n.GetBoolValue(); } },
+                { "impressum_url", n => { ImpressumUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "profile_place", n => { ProfilePlace = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccountProfilePlaceComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccountProfilePlaceComposed.CreateFromDiscriminatorValue); } },
+                { "username", n => { Username = n.GetStringValue(); } },
+                { "website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +144,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("about", About);
+            writer.WriteStringValue("contact_email", ContactEmail);
+            writer.WriteStringValue("contact_phone", ContactPhone);
+            writer.WriteStringValue("contact_phone_country", ContactPhoneCountry);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("country", Country);
+            writer.WriteBoolValue("enable_profile_address", EnableProfileAddress);
+            writer.WriteStringValue("impressum_url", ImpressumUrl);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BrandAccountProfilePlaceComposed>("profile_place", ProfilePlace);
+            writer.WriteStringValue("username", Username);
+            writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

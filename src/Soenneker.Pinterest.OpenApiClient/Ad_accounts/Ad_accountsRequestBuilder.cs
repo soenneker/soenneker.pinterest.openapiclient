@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Entity_history;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item;
 using Soenneker.Pinterest.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ad_accountsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The entity_history property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Entity_history.Entity_historyRequestBuilder Entity_history
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Entity_history.Entity_historyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Pinterest.OpenApiClient.ad_accounts.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.WithAdAccountItemRequestBuilder"/></returns>

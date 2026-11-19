@@ -41,7 +41,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/partners{?assets_summary*,bookmark*,page_size*,partner_ids*,partner_type*,sort_ascending*,start_index*}", pathParameters)
+        public PartnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/partners{?assets_summary*,bookmark*,business_partner_type*,page_size*,partner_ids*,partner_type*,sort_ascending*,start_index*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PartnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/partners{?assets_summary*,bookmark*,page_size*,partner_ids*,partner_type*,sort_ascending*,start_index*}", rawUrl)
+        public PartnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/partners{?assets_summary*,bookmark*,business_partner_type*,page_size*,partner_ids*,partner_type*,sort_ascending*,start_index*}", rawUrl)
         {
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
         /// <summary>
         /// Get all partners of the specified business.If the assets_summary=TRUE and:- partner_type=INTERNAL, the business assets returned are your business assets the partner has access to.- partner_type=EXTERNAL, the business assets returned are your partner&apos;s business assets the partner has granted you  access to.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GetBusinessPartners200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 400 status code</exception>
@@ -93,11 +93,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.GetBusinessPartners200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnersGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.GetBusinessPartners200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnersGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.PartnersRequestBuilder.PartnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -110,7 +110,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.GetBusinessPartners200Response>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.GetBusinessPartners200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnersGetResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Terminate partnerships between the specified partners and your business.Note: You may only batch terminate partners of the same partner type.
@@ -181,6 +181,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners
             [QueryParameter("bookmark")]
             public string Bookmark { get; set; }
 #endif
+            /// <summary>Specifies whether to fetch regular or RMN partners.</summary>
+            [QueryParameter("business_partner_type")]
+            public global::Soenneker.Pinterest.OpenApiClient.Models.BusinessPartnerType? BusinessPartnerType { get; set; }
             /// <summary>Maximum number of items to include in a single page.See documentation on [Pagination](/docs/reference/pagination/) for more information.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

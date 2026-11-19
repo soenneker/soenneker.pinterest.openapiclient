@@ -35,7 +35,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/assets{?asset_group_id*,asset_type*,bookmark*,child_asset_id*,page_size*,permissions*,start_index*}", pathParameters)
+        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/assets{?asset_group_id*,asset_type*,bookmark*,child_asset_id*,page_size*,permissions*,search_by*,search_value*,sort_ascending*,sort_by*,start_index*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,13 +43,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/assets{?asset_group_id*,asset_type*,bookmark*,child_asset_id*,page_size*,permissions*,start_index*}", rawUrl)
+        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businesses/{businessId}/assets{?asset_group_id*,asset_type*,bookmark*,child_asset_id*,page_size*,permissions*,search_by*,search_value*,sort_ascending*,sort_by*,start_index*}", rawUrl)
         {
         }
         /// <summary>
         /// Get all the assets the requesting business has access to. This includes assets the business owns and assets the business has access to through partnerships.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGet200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 400 status code</exception>
@@ -60,11 +60,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGet200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGet200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets.AssetsRequestBuilder.AssetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,7 +77,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
                 { "429", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
                 { "XXX", global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGet200Response>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGet200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGetResponse>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAssetsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all the assets the requesting business has access to. This includes assets the business owns and assets the business has access to through partnerships.
@@ -125,7 +125,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
 #endif
             /// <summary>A resource type to filter the assets by. Only assets of the specified type will be returned.</summary>
             [QueryParameter("asset_type")]
-            public global::Soenneker.Pinterest.OpenApiClient.Models.QueryResourceType? AssetType { get; set; }
+            public global::Soenneker.Pinterest.OpenApiClient.Models.QueryResourceTypeInternal? AssetType { get; set; }
             /// <summary>Cursor used to fetch the next page of items</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,6 +159,25 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets
             [QueryParameter("permissions")]
             public global::Soenneker.Pinterest.OpenApiClient.Models.PermissionsWithOwner[] Permissions { get; set; }
 #endif
+            /// <summary>The field to search member assets by</summary>
+            [QueryParameter("search_by")]
+            public global::Soenneker.Pinterest.OpenApiClient.Models.AssetSearchBy? SearchBy { get; set; }
+            /// <summary>The value to search for</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search_value")]
+            public string? SearchValue { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search_value")]
+            public string SearchValue { get; set; }
+#endif
+            /// <summary>Sort assets in ascending order</summary>
+            [QueryParameter("sort_ascending")]
+            public bool? SortAscending { get; set; }
+            /// <summary>The field to sort member assets by</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Pinterest.OpenApiClient.Models.AssetSortBy? SortBy { get; set; }
             /// <summary>An index to start fetching the results from. Only the results starting from this index will be returned.</summary>
             [QueryParameter("start_index")]
             public int? StartIndex { get; set; }

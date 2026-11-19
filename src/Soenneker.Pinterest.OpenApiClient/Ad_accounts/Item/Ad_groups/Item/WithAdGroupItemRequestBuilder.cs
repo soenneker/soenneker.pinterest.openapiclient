@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Dynamic_titles;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Publisher_blocklists;
 using Soenneker.Pinterest.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Dynamic_titles.Dynamic_titlesRequestBuilder Dynamic_titles
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Dynamic_titles.Dynamic_titlesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The publisher_blocklists property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Publisher_blocklists.Publisher_blocklistsRequestBuilder Publisher_blocklists
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.Publisher_blocklists.Publisher_blocklistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Item.WithAdGroupItemRequestBuilder"/> and sets the default values.

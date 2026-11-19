@@ -28,7 +28,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Product_tagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags", pathParameters)
+        public Product_tagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags{?ad_account_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Product_tagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags", rawUrl)
+        public Product_tagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags{?ad_account_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -53,11 +53,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -86,11 +86,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse?> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsResponse> PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -112,11 +112,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -132,11 +132,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkAddRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder.Product_tagsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -154,6 +154,40 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags
         public global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.Product_tagsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieve all product tags for a pin.- Returns an empty array if the pin has no product tags.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Product_tagsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Unique identifier of an ad account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ad_account_id")]
+            public string? AdAccountId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ad_account_id")]
+            public string AdAccountId { get; set; }
+#endif
+        }
+        /// <summary>
+        /// Add product tags to a pin. Product tags allow you to tag product pins onto a hero pin.- Maximum 24 product tags can be added in a single request.- Duplicate pin_ids in the request will result in an error.- If any product tag fails eligibility check, the entire request fails (all-or-nothing).- If a product tag is already tagged on the pin, it is treated as a no-op success.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Product_tagsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Unique identifier of an ad account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ad_account_id")]
+            public string? AdAccountId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ad_account_id")]
+            public string AdAccountId { get; set; }
+#endif
         }
     }
 }

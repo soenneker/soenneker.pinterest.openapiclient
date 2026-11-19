@@ -15,7 +15,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The budget value of the point.</summary>
+        /// <summary>The budget value of the point. Null for budget-recommendation points, whose budget is on the parent recommendation.</summary>
         public int? Budget { get; set; }
         /// <summary>Y value as a decimal.</summary>
         public double? DoubleY { get; set; }

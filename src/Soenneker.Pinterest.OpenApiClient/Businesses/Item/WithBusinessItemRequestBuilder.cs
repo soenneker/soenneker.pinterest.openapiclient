@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Ad_account_requests;
+using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Analytics;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Asset_groups;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Assets;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Audiences;
@@ -9,6 +11,7 @@ using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Invites;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Members;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Requests;
+using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Rmn;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.System_users;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +25,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithBusinessItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The ad_account_requests property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Ad_account_requests.Ad_account_requestsRequestBuilder Ad_account_requests
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Ad_account_requests.Ad_account_requestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The analytics property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Analytics.AnalyticsRequestBuilder Analytics
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The asset_groups property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Asset_groups.Asset_groupsRequestBuilder Asset_groups
         {
@@ -56,6 +69,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item
         public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Requests.RequestsRequestBuilder Requests
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rmn property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Rmn.RmnRequestBuilder Rmn
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Rmn.RmnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The system_users property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.System_users.System_usersRequestBuilder System_users

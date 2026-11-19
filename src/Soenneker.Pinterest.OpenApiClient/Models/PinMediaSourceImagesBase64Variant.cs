@@ -13,7 +13,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PinMediaSourceImagesBase64Variant : global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource, IParsable
     {
-        /// <summary>The index property</summary>
+        /// <summary>Zero-based index of the carousel card that should appear first when the Pin is shown.Allows advertisers to pick any card (1st, 2nd, 3rd, etc.) as the default start point.Primary use case is starting on the middle card so Pinners can swipe either directionto explore a spectrum.</summary>
         public int? Index { get; set; }
         /// <summary>Array with image objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

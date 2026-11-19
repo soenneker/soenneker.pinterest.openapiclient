@@ -11,7 +11,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     /// Base filter keys shared across catalog filtering
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CatalogsBaseFilterKeys : IAdditionalDataHolder, IParsable
+    public partial class CatalogsBaseFilterKeys : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,6 +23,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria AVAILABILITY { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AvailabilityFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AvailabilityFilter? AvailabilityFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AvailabilityFilter AvailabilityFilter { get; set; }
+#endif
         /// <summary>The BRAND property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +38,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria BRAND { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BrandFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BrandFilter? BrandFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BrandFilter BrandFilter { get; set; }
 #endif
         /// <summary>The CONDITION property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,6 +55,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria CONDITION { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ConditionFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ConditionFilter? ConditionFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ConditionFilter ConditionFilter { get; set; }
+#endif
         /// <summary>A currency filter. This filter cannot be negated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +70,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupCurrencyCriteria CURRENCY { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CurrencyFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CurrencyFilter? CurrencyFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CurrencyFilter CurrencyFilter { get; set; }
 #endif
         /// <summary>The CUSTOM_LABEL_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +87,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria CUSTOMLABEL0 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel0Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel0Filter? CustomLabel0Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel0Filter CustomLabel0Filter { get; set; }
+#endif
         /// <summary>The CUSTOM_LABEL_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +102,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria CUSTOMLABEL1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel1Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel1Filter? CustomLabel1Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel1Filter CustomLabel1Filter { get; set; }
 #endif
         /// <summary>The CUSTOM_LABEL_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +119,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria CUSTOMLABEL2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel2Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel2Filter? CustomLabel2Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel2Filter CustomLabel2Filter { get; set; }
+#endif
         /// <summary>The CUSTOM_LABEL_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +134,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria CUSTOMLABEL3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel3Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel3Filter? CustomLabel3Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel3Filter CustomLabel3Filter { get; set; }
 #endif
         /// <summary>The CUSTOM_LABEL_4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +151,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria CUSTOMLABEL4 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel4Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel4Filter? CustomLabel4Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel4Filter CustomLabel4Filter { get; set; }
+#endif
         /// <summary>The CUSTOM_NUMBER_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +166,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria CUSTOMNUMBER0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber0Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber0Filter? CustomNumber0Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber0Filter CustomNumber0Filter { get; set; }
 #endif
         /// <summary>The CUSTOM_NUMBER_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,6 +183,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria CUSTOMNUMBER1 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber1Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber1Filter? CustomNumber1Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber1Filter CustomNumber1Filter { get; set; }
+#endif
         /// <summary>The CUSTOM_NUMBER_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,6 +198,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria CUSTOMNUMBER2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber2Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber2Filter? CustomNumber2Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber2Filter CustomNumber2Filter { get; set; }
 #endif
         /// <summary>The CUSTOM_NUMBER_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,6 +215,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria CUSTOMNUMBER3 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber3Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber3Filter? CustomNumber3Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber3Filter CustomNumber3Filter { get; set; }
+#endif
         /// <summary>The CUSTOM_NUMBER_4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +230,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria CUSTOMNUMBER4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber4Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber4Filter? CustomNumber4Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber4Filter CustomNumber4Filter { get; set; }
 #endif
         /// <summary>The GENDER property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,6 +247,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleGenderCriteria GENDER { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GenderFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GenderFilter? GenderFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GenderFilter GenderFilter { get; set; }
+#endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +262,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory0Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory0Filter? GoogleProductCategory0Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory0Filter GoogleProductCategory0Filter { get; set; }
 #endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,6 +279,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY1 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory1Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory1Filter? GoogleProductCategory1Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory1Filter GoogleProductCategory1Filter { get; set; }
+#endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +294,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory2Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory2Filter? GoogleProductCategory2Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory2Filter GoogleProductCategory2Filter { get; set; }
 #endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,6 +311,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY3 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory3Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory3Filter? GoogleProductCategory3Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory3Filter GoogleProductCategory3Filter { get; set; }
+#endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +326,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY4 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory4Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory4Filter? GoogleProductCategory4Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory4Filter GoogleProductCategory4Filter { get; set; }
 #endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_5 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,6 +343,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY5 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory5Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory5Filter? GoogleProductCategory5Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory5Filter GoogleProductCategory5Filter { get; set; }
+#endif
         /// <summary>The GOOGLE_PRODUCT_CATEGORY_6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,6 +358,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria GOOGLEPRODUCTCATEGORY6 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory6Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory6Filter? GoogleProductCategory6Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory6Filter GoogleProductCategory6Filter { get; set; }
 #endif
         /// <summary>The ITEM_GROUP_ID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,6 +375,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria ITEMGROUPID { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ItemGroupIdFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemGroupIdFilter? ItemGroupIdFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemGroupIdFilter ItemGroupIdFilter { get; set; }
+#endif
         /// <summary>The ITEM_ID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +390,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria ITEMID { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ItemIdFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemIdFilter? ItemIdFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemIdFilter ItemIdFilter { get; set; }
 #endif
         /// <summary>The MAX_PRICE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,6 +407,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria MAXPRICE { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MaxPriceFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MaxPriceFilter? MaxPriceFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MaxPriceFilter MaxPriceFilter { get; set; }
+#endif
         /// <summary>The MEDIA_TYPE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,6 +422,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleMediaTypesCriteria MEDIATYPE { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MediaTypeFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaTypeFilter? MediaTypeFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MediaTypeFilter MediaTypeFilter { get; set; }
 #endif
         /// <summary>The MIN_PRICE property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -231,6 +439,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria MINPRICE { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.MinPriceFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MinPriceFilter? MinPriceFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.MinPriceFilter MinPriceFilter { get; set; }
+#endif
         /// <summary>The PINTEREST_PRODUCT_CATEGORIES property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,6 +454,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultiplePinterestProductCategoryCriteria PINTERESTPRODUCTCATEGORIES { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestProductCategoriesFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PinterestProductCategoriesFilter? PinterestProductCategoriesFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PinterestProductCategoriesFilter PinterestProductCategoriesFilter { get; set; }
 #endif
         /// <summary>The PRODUCT_TYPE_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -247,6 +471,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE0 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ProductType0Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType0Filter? ProductType0Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType0Filter ProductType0Filter { get; set; }
+#endif
         /// <summary>The PRODUCT_TYPE_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -254,6 +486,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ProductType1Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType1Filter? ProductType1Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType1Filter ProductType1Filter { get; set; }
 #endif
         /// <summary>The PRODUCT_TYPE_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -263,6 +503,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ProductType2Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType2Filter? ProductType2Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType2Filter ProductType2Filter { get; set; }
+#endif
         /// <summary>The PRODUCT_TYPE_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +518,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE3 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ProductType3Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType3Filter? ProductType3Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType3Filter ProductType3Filter { get; set; }
 #endif
         /// <summary>The PRODUCT_TYPE_4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -279,6 +535,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria PRODUCTTYPE4 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.ProductType4Filter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType4Filter? ProductType4Filter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductType4Filter ProductType4Filter { get; set; }
+#endif
         /// <summary>The SUPPLEMENTAL_ITEM_SEGMENTS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -287,6 +551,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria SUPPLEMENTALITEMSEGMENTS { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemSegmentsFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemSegmentsFilter? SupplementalItemSegmentsFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemSegmentsFilter SupplementalItemSegmentsFilter { get; set; }
+#endif
         /// <summary>The TITLE_KEYWORDS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -294,6 +566,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria TITLEKEYWORDS { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.TitleKeywordsFilter"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.TitleKeywordsFilter? TitleKeywordsFilter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.TitleKeywordsFilter TitleKeywordsFilter { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsBaseFilterKeys"/> and sets the default values.
@@ -310,7 +590,78 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public static global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsBaseFilterKeys CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsBaseFilterKeys();
+            var result = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsBaseFilterKeys();
+            result.AVAILABILITY = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.AvailabilityFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.AvailabilityFilter();
+            result.BRAND = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.BrandFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.BrandFilter();
+            result.CONDITION = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.ConditionFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.ConditionFilter();
+            result.CURRENCY = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupCurrencyCriteria();
+            result.CurrencyFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.CurrencyFilter();
+            result.CUSTOMLABEL0 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria();
+            result.CustomLabel0Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel0Filter();
+            result.CUSTOMLABEL1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria();
+            result.CustomLabel1Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel1Filter();
+            result.CUSTOMLABEL2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria();
+            result.CustomLabel2Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel2Filter();
+            result.CUSTOMLABEL3 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria();
+            result.CustomLabel3Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel3Filter();
+            result.CUSTOMLABEL4 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria();
+            result.CustomLabel4Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomLabel4Filter();
+            result.CUSTOMNUMBER0 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria();
+            result.CustomNumber0Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber0Filter();
+            result.CUSTOMNUMBER1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria();
+            result.CustomNumber1Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber1Filter();
+            result.CUSTOMNUMBER2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria();
+            result.CustomNumber2Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber2Filter();
+            result.CUSTOMNUMBER3 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria();
+            result.CustomNumber3Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber3Filter();
+            result.CUSTOMNUMBER4 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria();
+            result.CustomNumber4Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.CustomNumber4Filter();
+            result.GENDER = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleGenderCriteria();
+            result.GenderFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.GenderFilter();
+            result.GOOGLEPRODUCTCATEGORY0 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory0Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory0Filter();
+            result.GOOGLEPRODUCTCATEGORY1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory1Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory1Filter();
+            result.GOOGLEPRODUCTCATEGORY2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory2Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory2Filter();
+            result.GOOGLEPRODUCTCATEGORY3 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory3Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory3Filter();
+            result.GOOGLEPRODUCTCATEGORY4 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory4Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory4Filter();
+            result.GOOGLEPRODUCTCATEGORY5 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory5Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory5Filter();
+            result.GOOGLEPRODUCTCATEGORY6 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.GoogleProductCategory6Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.GoogleProductCategory6Filter();
+            result.ITEMGROUPID = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.ItemGroupIdFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.ItemGroupIdFilter();
+            result.ITEMID = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.ItemIdFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.ItemIdFilter();
+            result.MAXPRICE = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria();
+            result.MaxPriceFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.MaxPriceFilter();
+            result.MEDIATYPE = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleMediaTypesCriteria();
+            result.MediaTypeFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.MediaTypeFilter();
+            result.MINPRICE = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria();
+            result.MinPriceFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.MinPriceFilter();
+            result.PINTERESTPRODUCTCATEGORIES = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultiplePinterestProductCategoryCriteria();
+            result.PinterestProductCategoriesFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.PinterestProductCategoriesFilter();
+            result.PRODUCTTYPE0 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.ProductType0Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.ProductType0Filter();
+            result.PRODUCTTYPE1 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.ProductType1Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.ProductType1Filter();
+            result.PRODUCTTYPE2 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.ProductType2Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.ProductType2Filter();
+            result.PRODUCTTYPE3 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.ProductType3Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.ProductType3Filter();
+            result.PRODUCTTYPE4 = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria();
+            result.ProductType4Filter = new global::Soenneker.Pinterest.OpenApiClient.Models.ProductType4Filter();
+            result.SUPPLEMENTALITEMSEGMENTS = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria();
+            result.SupplementalItemSegmentsFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.SupplementalItemSegmentsFilter();
+            result.TITLEKEYWORDS = new global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria();
+            result.TitleKeywordsFilter = new global::Soenneker.Pinterest.OpenApiClient.Models.TitleKeywordsFilter();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -318,44 +669,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AVAILABILITY != null || AvailabilityFilter != null || BRAND != null || BrandFilter != null || CONDITION != null || ConditionFilter != null || CURRENCY != null || CurrencyFilter != null || CUSTOMLABEL0 != null || CustomLabel0Filter != null || CUSTOMLABEL1 != null || CustomLabel1Filter != null || CUSTOMLABEL2 != null || CustomLabel2Filter != null || CUSTOMLABEL3 != null || CustomLabel3Filter != null || CUSTOMLABEL4 != null || CustomLabel4Filter != null || CUSTOMNUMBER0 != null || CustomNumber0Filter != null || CUSTOMNUMBER1 != null || CustomNumber1Filter != null || CUSTOMNUMBER2 != null || CustomNumber2Filter != null || CUSTOMNUMBER3 != null || CustomNumber3Filter != null || CUSTOMNUMBER4 != null || CustomNumber4Filter != null || GENDER != null || GenderFilter != null || GOOGLEPRODUCTCATEGORY0 != null || GoogleProductCategory0Filter != null || GOOGLEPRODUCTCATEGORY1 != null || GoogleProductCategory1Filter != null || GOOGLEPRODUCTCATEGORY2 != null || GoogleProductCategory2Filter != null || GOOGLEPRODUCTCATEGORY3 != null || GoogleProductCategory3Filter != null || GOOGLEPRODUCTCATEGORY4 != null || GoogleProductCategory4Filter != null || GOOGLEPRODUCTCATEGORY5 != null || GoogleProductCategory5Filter != null || GOOGLEPRODUCTCATEGORY6 != null || GoogleProductCategory6Filter != null || ITEMGROUPID != null || ItemGroupIdFilter != null || ITEMID != null || ItemIdFilter != null || MAXPRICE != null || MaxPriceFilter != null || MEDIATYPE != null || MediaTypeFilter != null || MINPRICE != null || MinPriceFilter != null || PINTERESTPRODUCTCATEGORIES != null || PinterestProductCategoriesFilter != null || PRODUCTTYPE0 != null || ProductType0Filter != null || PRODUCTTYPE1 != null || ProductType1Filter != null || PRODUCTTYPE2 != null || ProductType2Filter != null || PRODUCTTYPE3 != null || ProductType3Filter != null || PRODUCTTYPE4 != null || ProductType4Filter != null || SUPPLEMENTALITEMSEGMENTS != null || SupplementalItemSegmentsFilter != null || TITLEKEYWORDS != null || TitleKeywordsFilter != null)
             {
-                { "AVAILABILITY", n => { AVAILABILITY = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-                { "BRAND", n => { BRAND = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-                { "CONDITION", n => { CONDITION = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-                { "CURRENCY", n => { CURRENCY = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupCurrencyCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupCurrencyCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_LABEL_0", n => { CUSTOMLABEL0 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_LABEL_1", n => { CUSTOMLABEL1 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_LABEL_2", n => { CUSTOMLABEL2 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_LABEL_3", n => { CUSTOMLABEL3 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_LABEL_4", n => { CUSTOMLABEL4 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_NUMBER_0", n => { CUSTOMNUMBER0 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_NUMBER_1", n => { CUSTOMNUMBER1 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_NUMBER_2", n => { CUSTOMNUMBER2 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_NUMBER_3", n => { CUSTOMNUMBER3 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria.CreateFromDiscriminatorValue); } },
-                { "CUSTOM_NUMBER_4", n => { CUSTOMNUMBER4 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria.CreateFromDiscriminatorValue); } },
-                { "GENDER", n => { GENDER = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleGenderCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleGenderCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_0", n => { GOOGLEPRODUCTCATEGORY0 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_1", n => { GOOGLEPRODUCTCATEGORY1 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_2", n => { GOOGLEPRODUCTCATEGORY2 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_3", n => { GOOGLEPRODUCTCATEGORY3 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_4", n => { GOOGLEPRODUCTCATEGORY4 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_5", n => { GOOGLEPRODUCTCATEGORY5 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "GOOGLE_PRODUCT_CATEGORY_6", n => { GOOGLEPRODUCTCATEGORY6 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "ITEM_GROUP_ID", n => { ITEMGROUPID = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-                { "ITEM_ID", n => { ITEMID = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-                { "MAX_PRICE", n => { MAXPRICE = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria.CreateFromDiscriminatorValue); } },
-                { "MEDIA_TYPE", n => { MEDIATYPE = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleMediaTypesCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleMediaTypesCriteria.CreateFromDiscriminatorValue); } },
-                { "MIN_PRICE", n => { MINPRICE = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria.CreateFromDiscriminatorValue); } },
-                { "PINTEREST_PRODUCT_CATEGORIES", n => { PINTERESTPRODUCTCATEGORIES = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultiplePinterestProductCategoryCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultiplePinterestProductCategoryCriteria.CreateFromDiscriminatorValue); } },
-                { "PRODUCT_TYPE_0", n => { PRODUCTTYPE0 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "PRODUCT_TYPE_1", n => { PRODUCTTYPE1 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "PRODUCT_TYPE_2", n => { PRODUCTTYPE2 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "PRODUCT_TYPE_3", n => { PRODUCTTYPE3 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "PRODUCT_TYPE_4", n => { PRODUCTTYPE4 = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria.CreateFromDiscriminatorValue); } },
-                { "SUPPLEMENTAL_ITEM_SEGMENTS", n => { SUPPLEMENTALITEMSEGMENTS = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria.CreateFromDiscriminatorValue); } },
-                { "TITLE_KEYWORDS", n => { TITLEKEYWORDS = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria.CreateFromDiscriminatorValue); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AVAILABILITY, AvailabilityFilter, BRAND, BrandFilter, CONDITION, ConditionFilter, CURRENCY, CurrencyFilter, CUSTOMLABEL0, CustomLabel0Filter, CUSTOMLABEL1, CustomLabel1Filter, CUSTOMLABEL2, CustomLabel2Filter, CUSTOMLABEL3, CustomLabel3Filter, CUSTOMLABEL4, CustomLabel4Filter, CUSTOMNUMBER0, CustomNumber0Filter, CUSTOMNUMBER1, CustomNumber1Filter, CUSTOMNUMBER2, CustomNumber2Filter, CUSTOMNUMBER3, CustomNumber3Filter, CUSTOMNUMBER4, CustomNumber4Filter, GENDER, GenderFilter, GOOGLEPRODUCTCATEGORY0, GoogleProductCategory0Filter, GOOGLEPRODUCTCATEGORY1, GoogleProductCategory1Filter, GOOGLEPRODUCTCATEGORY2, GoogleProductCategory2Filter, GOOGLEPRODUCTCATEGORY3, GoogleProductCategory3Filter, GOOGLEPRODUCTCATEGORY4, GoogleProductCategory4Filter, GOOGLEPRODUCTCATEGORY5, GoogleProductCategory5Filter, GOOGLEPRODUCTCATEGORY6, GoogleProductCategory6Filter, ITEMGROUPID, ItemGroupIdFilter, ITEMID, ItemIdFilter, MAXPRICE, MaxPriceFilter, MEDIATYPE, MediaTypeFilter, MINPRICE, MinPriceFilter, PINTERESTPRODUCTCATEGORIES, PinterestProductCategoriesFilter, PRODUCTTYPE0, ProductType0Filter, PRODUCTTYPE1, ProductType1Filter, PRODUCTTYPE2, ProductType2Filter, PRODUCTTYPE3, ProductType3Filter, PRODUCTTYPE4, ProductType4Filter, SUPPLEMENTALITEMSEGMENTS, SupplementalItemSegmentsFilter, TITLEKEYWORDS, TitleKeywordsFilter);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -364,41 +682,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("AVAILABILITY", AVAILABILITY);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("BRAND", BRAND);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("CONDITION", CONDITION);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupCurrencyCriteria>("CURRENCY", CURRENCY);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>("CUSTOM_LABEL_0", CUSTOMLABEL0);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>("CUSTOM_LABEL_1", CUSTOMLABEL1);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>("CUSTOM_LABEL_2", CUSTOMLABEL2);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>("CUSTOM_LABEL_3", CUSTOMLABEL3);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupFilterOperatorTypeCriteria>("CUSTOM_LABEL_4", CUSTOMLABEL4);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>("CUSTOM_NUMBER_0", CUSTOMNUMBER0);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>("CUSTOM_NUMBER_1", CUSTOMNUMBER1);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>("CUSTOM_NUMBER_2", CUSTOMNUMBER2);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>("CUSTOM_NUMBER_3", CUSTOMNUMBER3);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupUint32Criteria>("CUSTOM_NUMBER_4", CUSTOMNUMBER4);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleGenderCriteria>("GENDER", GENDER);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_0", GOOGLEPRODUCTCATEGORY0);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_1", GOOGLEPRODUCTCATEGORY1);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_2", GOOGLEPRODUCTCATEGORY2);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_3", GOOGLEPRODUCTCATEGORY3);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_4", GOOGLEPRODUCTCATEGORY4);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_5", GOOGLEPRODUCTCATEGORY5);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("GOOGLE_PRODUCT_CATEGORY_6", GOOGLEPRODUCTCATEGORY6);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("ITEM_GROUP_ID", ITEMGROUPID);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("ITEM_ID", ITEMID);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria>("MAX_PRICE", MAXPRICE);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleMediaTypesCriteria>("MEDIA_TYPE", MEDIATYPE);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupPricingCriteria>("MIN_PRICE", MINPRICE);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultiplePinterestProductCategoryCriteria>("PINTEREST_PRODUCT_CATEGORIES", PINTERESTPRODUCTCATEGORIES);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_0", PRODUCTTYPE0);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_1", PRODUCTTYPE1);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_2", PRODUCTTYPE2);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_3", PRODUCTTYPE3);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringListCriteria>("PRODUCT_TYPE_4", PRODUCTTYPE4);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleSupplementalItemSegmentsCriteria>("SUPPLEMENTAL_ITEM_SEGMENTS", SUPPLEMENTALITEMSEGMENTS);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>("TITLE_KEYWORDS", TITLEKEYWORDS);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsProductGroupMultipleStringCriteria>(null, AVAILABILITY, AvailabilityFilter, BRAND, BrandFilter, CONDITION, ConditionFilter, CURRENCY, CurrencyFilter, CUSTOMLABEL0, CustomLabel0Filter, CUSTOMLABEL1, CustomLabel1Filter, CUSTOMLABEL2, CustomLabel2Filter, CUSTOMLABEL3, CustomLabel3Filter, CUSTOMLABEL4, CustomLabel4Filter, CUSTOMNUMBER0, CustomNumber0Filter, CUSTOMNUMBER1, CustomNumber1Filter, CUSTOMNUMBER2, CustomNumber2Filter, CUSTOMNUMBER3, CustomNumber3Filter, CUSTOMNUMBER4, CustomNumber4Filter, GENDER, GenderFilter, GOOGLEPRODUCTCATEGORY0, GoogleProductCategory0Filter, GOOGLEPRODUCTCATEGORY1, GoogleProductCategory1Filter, GOOGLEPRODUCTCATEGORY2, GoogleProductCategory2Filter, GOOGLEPRODUCTCATEGORY3, GoogleProductCategory3Filter, GOOGLEPRODUCTCATEGORY4, GoogleProductCategory4Filter, GOOGLEPRODUCTCATEGORY5, GoogleProductCategory5Filter, GOOGLEPRODUCTCATEGORY6, GoogleProductCategory6Filter, ITEMGROUPID, ItemGroupIdFilter, ITEMID, ItemIdFilter, MAXPRICE, MaxPriceFilter, MEDIATYPE, MediaTypeFilter, MINPRICE, MinPriceFilter, PINTERESTPRODUCTCATEGORIES, PinterestProductCategoriesFilter, PRODUCTTYPE0, ProductType0Filter, PRODUCTTYPE1, ProductType1Filter, PRODUCTTYPE2, ProductType2Filter, PRODUCTTYPE3, ProductType3Filter, PRODUCTTYPE4, ProductType4Filter, SUPPLEMENTALITEMSEGMENTS, SupplementalItemSegmentsFilter, TITLEKEYWORDS, TitleKeywordsFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

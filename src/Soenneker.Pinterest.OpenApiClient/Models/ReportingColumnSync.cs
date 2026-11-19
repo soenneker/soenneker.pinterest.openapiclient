@@ -243,9 +243,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalImpressionUser,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_IMPRESSION_HOUSEHOLD_USER")]
+        #pragma warning disable CS1591
+        TotalImpressionHouseholdUser,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_IMPRESSION_FREQUENCY")]
         #pragma warning disable CS1591
         TotalImpressionFrequency,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_IMPRESSION_HOUSEHOLD_FREQUENCY")]
+        #pragma warning disable CS1591
+        TotalImpressionHouseholdFrequency,
         #pragma warning restore CS1591
         [EnumMember(Value = "COST_PER_OUTBOUND_CLICK_IN_DOLLAR")]
         #pragma warning disable CS1591
@@ -263,9 +271,81 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalEngagementCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalEngagementAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalEngagementAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalEngagementInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalEngagementSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalEngagementViewContent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_ENGAGEMENT_LEAD")]
         #pragma warning disable CS1591
         TotalEngagementLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_CONTACT")]
+        #pragma warning disable CS1591
+        TotalEngagementContact,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SCHEDULE")]
+        #pragma warning disable CS1591
+        TotalEngagementSchedule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_FIND_LOCATION")]
+        #pragma warning disable CS1591
+        TotalEngagementFindLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_CUSTOMIZE_PRODUCT")]
+        #pragma warning disable CS1591
+        TotalEngagementCustomizeProduct,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SUBMIT_APPLICATION")]
+        #pragma warning disable CS1591
+        TotalEngagementSubmitApplication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_START_TRIAL")]
+        #pragma warning disable CS1591
+        TotalEngagementStartTrial,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_APP_OPEN")]
+        #pragma warning disable CS1591
+        TotalEngagementAppOpen,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalEngagementAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_APP_INSTALL")]
+        #pragma warning disable CS1591
+        TotalEngagementAppInstall,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalEngagementPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SEARCH")]
+        #pragma warning disable CS1591
+        TotalEngagementSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalEngagementViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalEngagementWatchVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CLICK_SIGNUP")]
         #pragma warning disable CS1591
@@ -275,6 +355,26 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalClickCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalClickAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalClickAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalClickInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalClickSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalClickViewContent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CLICK_ADD_TO_CART")]
         #pragma warning disable CS1591
         TotalClickAddToCart,
@@ -282,6 +382,54 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "TOTAL_CLICK_LEAD")]
         #pragma warning disable CS1591
         TotalClickLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_CONTACT")]
+        #pragma warning disable CS1591
+        TotalClickContact,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SCHEDULE")]
+        #pragma warning disable CS1591
+        TotalClickSchedule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_FIND_LOCATION")]
+        #pragma warning disable CS1591
+        TotalClickFindLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_CUSTOMIZE_PRODUCT")]
+        #pragma warning disable CS1591
+        TotalClickCustomizeProduct,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SUBMIT_APPLICATION")]
+        #pragma warning disable CS1591
+        TotalClickSubmitApplication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_START_TRIAL")]
+        #pragma warning disable CS1591
+        TotalClickStartTrial,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_APP_OPEN")]
+        #pragma warning disable CS1591
+        TotalClickAppOpen,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_APP_INSTALL")]
+        #pragma warning disable CS1591
+        TotalClickAppInstall,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalClickPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SEARCH")]
+        #pragma warning disable CS1591
+        TotalClickSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalClickViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalClickWatchVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_VIEW_SIGNUP")]
         #pragma warning disable CS1591
@@ -291,6 +439,26 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalViewCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalViewAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalViewAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalViewInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalViewSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalViewViewContent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_VIEW_ADD_TO_CART")]
         #pragma warning disable CS1591
         TotalViewAddToCart,
@@ -299,9 +467,61 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalViewLead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CONTACT")]
+        #pragma warning disable CS1591
+        TotalViewContact,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SCHEDULE")]
+        #pragma warning disable CS1591
+        TotalViewSchedule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_FIND_LOCATION")]
+        #pragma warning disable CS1591
+        TotalViewFindLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CUSTOMIZE_PRODUCT")]
+        #pragma warning disable CS1591
+        TotalViewCustomizeProduct,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SUBMIT_APPLICATION")]
+        #pragma warning disable CS1591
+        TotalViewSubmitApplication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_START_TRIAL")]
+        #pragma warning disable CS1591
+        TotalViewStartTrial,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_APP_OPEN")]
+        #pragma warning disable CS1591
+        TotalViewAppOpen,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_APP_INSTALL")]
+        #pragma warning disable CS1591
+        TotalViewAppInstall,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalViewPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SEARCH")]
+        #pragma warning disable CS1591
+        TotalViewSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalViewViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalViewWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CONVERSIONS")]
         #pragma warning disable CS1591
         TotalConversions,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "COST_PER_CONVERSION_IN_DOLLAR")]
+        #pragma warning disable CS1591
+        CostPerConversionInDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_ENGAGEMENT_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
@@ -311,6 +531,54 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalEngagementCheckoutValueInMicroDollar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_APP_INSTALL_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementAppInstallValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ENGAGEMENT_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalEngagementWatchVideoValueInMicroDollar,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CLICK_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalClickSignupValueInMicroDollar,
@@ -319,6 +587,54 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalClickCheckoutValueInMicroDollar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_APP_INSTALL_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickAppInstallValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CLICK_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalClickWatchVideoValueInMicroDollar,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_VIEW_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalViewSignupValueInMicroDollar,
@@ -326,6 +642,54 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "TOTAL_VIEW_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalViewCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_APP_INSTALL_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewAppInstallValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_SESSIONS")]
         #pragma warning disable CS1591
@@ -343,21 +707,21 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         AdName,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CAMPAIGN_LIFETIME_SPEND_CAP")]
-        #pragma warning disable CS1591
-        CampaignLifetimeSpendCap,
-        #pragma warning restore CS1591
         [EnumMember(Value = "AD_GROUP_OPTIMIZATION")]
         #pragma warning disable CS1591
         AdGroupOptimization,
         #pragma warning restore CS1591
-        [EnumMember(Value = "CAMPAIGN_DAILY_SPEND_CAP")]
-        #pragma warning disable CS1591
-        CampaignDailySpendCap,
-        #pragma warning restore CS1591
         [EnumMember(Value = "CAMPAIGN_BUDGET_OPTIMIZATION")]
         #pragma warning disable CS1591
         CampaignBudgetOptimization,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAMPAIGN_BUDGET_TYPE")]
+        #pragma warning disable CS1591
+        CampaignBudgetType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAMPAIGN_BUDGET_IN_LOCAL_CURRENCY")]
+        #pragma warning disable CS1591
+        CampaignBudgetInLocalCurrency,
         #pragma warning restore CS1591
         [EnumMember(Value = "IS_PREMIERE_CAMPAIGN")]
         #pragma warning disable CS1591
@@ -375,6 +739,18 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalViewContent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CUSTOM")]
         #pragma warning disable CS1591
         TotalCustom,
@@ -382,6 +758,34 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "TOTAL_LEAD")]
         #pragma warning disable CS1591
         TotalLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CONTACT")]
+        #pragma warning disable CS1591
+        TotalContact,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SCHEDULE")]
+        #pragma warning disable CS1591
+        TotalSchedule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_FIND_LOCATION")]
+        #pragma warning disable CS1591
+        TotalFindLocation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CUSTOMIZE_PRODUCT")]
+        #pragma warning disable CS1591
+        TotalCustomizeProduct,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SUBMIT_APPLICATION")]
+        #pragma warning disable CS1591
+        TotalSubmitApplication,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_START_TRIAL")]
+        #pragma warning disable CS1591
+        TotalStartTrial,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_APP_OPEN")]
+        #pragma warning disable CS1591
+        TotalAppOpen,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_ADD_TO_WISHLIST")]
         #pragma warning disable CS1591
@@ -391,6 +795,22 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalSubscribe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SEARCH")]
+        #pragma warning disable CS1591
+        TotalSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalSignupValueInMicroDollar,
@@ -399,9 +819,49 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalCheckoutValueInMicroDollar,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_CUSTOM_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalCustomValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "PAGE_VISIT_COST_PER_ACTION")]
         #pragma warning disable CS1591
@@ -414,6 +874,26 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "CHECKOUT_ROAS")]
         #pragma warning disable CS1591
         CheckoutRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ADD_PAYMENT_INFO_ROAS")]
+        #pragma warning disable CS1591
+        AddPaymentInfoRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ADD_TO_WISHLIST_ROAS")]
+        #pragma warning disable CS1591
+        AddToWishlistRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INITIATE_CHECKOUT_ROAS")]
+        #pragma warning disable CS1591
+        InitiateCheckoutRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SUBSCRIBE_ROAS")]
+        #pragma warning disable CS1591
+        SubscribeRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VIEW_CONTENT_ROAS")]
+        #pragma warning disable CS1591
+        ViewContentRoas,
         #pragma warning restore CS1591
         [EnumMember(Value = "CUSTOM_ROAS")]
         #pragma warning disable CS1591
@@ -547,49 +1027,593 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         WebCheckoutCostPerAction,
         #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_PAYMENT_INFO_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebAddPaymentInfoCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_TO_WISHLIST_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebAddToWishlistCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_INITIATE_CHECKOUT_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebInitiateCheckoutCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SUBSCRIBE_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebSubscribeCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_VIEW_CONTENT_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebViewContentCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_TO_CART_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebAddToCartCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_LEAD_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebLeadCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_PAGE_VISIT_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebPageVisitCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SEARCH_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebSearchCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SIGNUP_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebSignupCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_VIEW_CATEGORY_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebViewCategoryCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_WATCH_VIDEO_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        WebWatchVideoCostPerAction,
+        #pragma warning restore CS1591
         [EnumMember(Value = "WEB_CHECKOUT_ROAS")]
         #pragma warning disable CS1591
         WebCheckoutRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_PAYMENT_INFO_ROAS")]
+        #pragma warning disable CS1591
+        WebAddPaymentInfoRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_TO_WISHLIST_ROAS")]
+        #pragma warning disable CS1591
+        WebAddToWishlistRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_INITIATE_CHECKOUT_ROAS")]
+        #pragma warning disable CS1591
+        WebInitiateCheckoutRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SUBSCRIBE_ROAS")]
+        #pragma warning disable CS1591
+        WebSubscribeRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_VIEW_CONTENT_ROAS")]
+        #pragma warning disable CS1591
+        WebViewContentRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_ADD_TO_CART_ROAS")]
+        #pragma warning disable CS1591
+        WebAddToCartRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_LEAD_ROAS")]
+        #pragma warning disable CS1591
+        WebLeadRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_PAGE_VISIT_ROAS")]
+        #pragma warning disable CS1591
+        WebPageVisitRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SEARCH_ROAS")]
+        #pragma warning disable CS1591
+        WebSearchRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_SIGNUP_ROAS")]
+        #pragma warning disable CS1591
+        WebSignupRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_VIEW_CATEGORY_ROAS")]
+        #pragma warning disable CS1591
+        WebViewCategoryRoas,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WEB_WATCH_VIDEO_ROAS")]
+        #pragma warning disable CS1591
+        WebWatchVideoRoas,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_CHECKOUT")]
         #pragma warning disable CS1591
         TotalWebCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalWebAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalWebAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalWebInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalWebSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalWebViewContent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalWebAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_LEAD")]
+        #pragma warning disable CS1591
+        TotalWebLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalWebPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SEARCH")]
+        #pragma warning disable CS1591
+        TotalWebSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SIGNUP")]
+        #pragma warning disable CS1591
+        TotalWebSignup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalWebViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalWebWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalWebCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebSignupValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_CLICK_CHECKOUT")]
         #pragma warning disable CS1591
         TotalWebClickCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalWebClickAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalWebClickAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalWebClickInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalWebClickSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalWebClickViewContent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalWebClickAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_LEAD")]
+        #pragma warning disable CS1591
+        TotalWebClickLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalWebClickPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SEARCH")]
+        #pragma warning disable CS1591
+        TotalWebClickSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SIGNUP")]
+        #pragma warning disable CS1591
+        TotalWebClickSignup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalWebClickViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalWebClickWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_CLICK_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalWebClickCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickSignupValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_CLICK_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebClickWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_CHECKOUT")]
         #pragma warning disable CS1591
         TotalWebEngagementCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalWebEngagementInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalWebEngagementViewContent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_LEAD")]
+        #pragma warning disable CS1591
+        TotalWebEngagementLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalWebEngagementPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SEARCH")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SIGNUP")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSignup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalWebEngagementViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalWebEngagementWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalWebEngagementCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementSignupValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_ENGAGEMENT_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebEngagementWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_VIEW_CHECKOUT")]
         #pragma warning disable CS1591
         TotalWebViewCheckout,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalWebViewAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalWebViewAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalWebViewInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalWebViewSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalWebViewViewContent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_TO_CART")]
+        #pragma warning disable CS1591
+        TotalWebViewAddToCart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_LEAD")]
+        #pragma warning disable CS1591
+        TotalWebViewLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_PAGE_VISIT")]
+        #pragma warning disable CS1591
+        TotalWebViewPageVisit,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SEARCH")]
+        #pragma warning disable CS1591
+        TotalWebViewSearch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SIGNUP")]
+        #pragma warning disable CS1591
+        TotalWebViewSignup,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_VIEW_CATEGORY")]
+        #pragma warning disable CS1591
+        TotalWebViewViewCategory,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_WATCH_VIDEO")]
+        #pragma warning disable CS1591
+        TotalWebViewWatchVideo,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_WEB_VIEW_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         TotalWebViewCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_PAYMENT_INFO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewAddPaymentInfoValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_TO_WISHLIST_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewAddToWishlistValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_INITIATE_CHECKOUT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewInitiateCheckoutValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SUBSCRIBE_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewSubscribeValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_VIEW_CONTENT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewViewContentValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_ADD_TO_CART_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewAddToCartValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_LEAD_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewLeadValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_PAGE_VISIT_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewPageVisitValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SEARCH_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewSearchValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_SIGNUP_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewSignupValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_VIEW_CATEGORY_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewViewCategoryValueInMicroDollar,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_WEB_VIEW_WATCH_VIDEO_VALUE_IN_MICRO_DOLLAR")]
+        #pragma warning disable CS1591
+        TotalWebViewWatchVideoValueInMicroDollar,
         #pragma warning restore CS1591
         [EnumMember(Value = "INAPP_CHECKOUT_COST_PER_ACTION")]
         #pragma warning disable CS1591
         InappCheckoutCostPerAction,
         #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_ADD_PAYMENT_INFO_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappAddPaymentInfoCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_ADD_TO_WISHLIST_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappAddToWishlistCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_INITIATE_CHECKOUT_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappInitiateCheckoutCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_SUBSCRIBE_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappSubscribeCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_VIEW_CONTENT_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappViewContentCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_ADD_TO_CART_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappAddToCartCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_APP_INSTALL_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappAppInstallCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_SEARCH_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappSearchCostPerAction,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INAPP_SIGNUP_COST_PER_ACTION")]
+        #pragma warning disable CS1591
+        InappSignupCostPerAction,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_OFFLINE_CHECKOUT")]
         #pragma warning disable CS1591
         TotalOfflineCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_ADD_PAYMENT_INFO")]
+        #pragma warning disable CS1591
+        TotalOfflineAddPaymentInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_ADD_TO_WISHLIST")]
+        #pragma warning disable CS1591
+        TotalOfflineAddToWishlist,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_INITIATE_CHECKOUT")]
+        #pragma warning disable CS1591
+        TotalOfflineInitiateCheckout,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_SUBSCRIBE")]
+        #pragma warning disable CS1591
+        TotalOfflineSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_VIEW_CONTENT")]
+        #pragma warning disable CS1591
+        TotalOfflineViewContent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_LEAD")]
+        #pragma warning disable CS1591
+        TotalOfflineLead,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_OFFLINE_SIGNUP")]
+        #pragma warning disable CS1591
+        TotalOfflineSignup,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_APP_INSTALL_CONVERSION_RATE")]
         #pragma warning disable CS1591
@@ -695,6 +1719,26 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         TotalCheckoutConversionRate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_PAYMENT_INFO_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalAddPaymentInfoConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_ADD_TO_WISHLIST_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalAddToWishlistConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_INITIATE_CHECKOUT_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalInitiateCheckoutConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SUBSCRIBE_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalSubscribeConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_VIEW_CONTENT_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalViewContentConversionRate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_VIEW_CATEGORY_CONVERSION_RATE")]
         #pragma warning disable CS1591
         TotalViewCategoryConversionRate,
@@ -714,6 +1758,34 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "TOTAL_LEAD_CONVERSION_RATE")]
         #pragma warning disable CS1591
         TotalLeadConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CONTACT_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalContactConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SCHEDULE_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalScheduleConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_FIND_LOCATION_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalFindLocationConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_CUSTOMIZE_PRODUCT_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalCustomizeProductConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_SUBMIT_APPLICATION_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalSubmitApplicationConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_START_TRIAL_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalStartTrialConversionRate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TOTAL_APP_OPEN_CONVERSION_RATE")]
+        #pragma warning disable CS1591
+        TotalAppOpenConversionRate,
         #pragma warning restore CS1591
         [EnumMember(Value = "TOTAL_SEARCH_CONVERSION_RATE")]
         #pragma warning disable CS1591

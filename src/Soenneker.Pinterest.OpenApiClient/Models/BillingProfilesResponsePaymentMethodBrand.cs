@@ -43,5 +43,45 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         CarteBancaire,
         #pragma warning restore CS1591
+        [EnumMember(Value = "JCB")]
+        #pragma warning disable CS1591
+        Jcb,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ACCEL")]
+        #pragma warning disable CS1591
+        Accel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "STAR")]
+        #pragma warning disable CS1591
+        Star,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PULSE")]
+        #pragma warning disable CS1591
+        Pulse,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "NYCE")]
+        #pragma warning disable CS1591
+        Nyce,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PIX")]
+        #pragma warning disable CS1591
+        Pix,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PAYBYBANK")]
+        #pragma warning disable CS1591
+        Paybybank,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MAESTRO")]
+        #pragma warning disable CS1591
+        Maestro,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "APPLE")]
+        #pragma warning disable CS1591
+        Apple,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PAYPAL")]
+        #pragma warning disable CS1591
+        Paypal,
+        #pragma warning restore CS1591
     }
 }

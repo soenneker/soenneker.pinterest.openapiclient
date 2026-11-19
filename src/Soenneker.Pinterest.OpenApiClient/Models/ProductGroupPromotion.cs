@@ -22,6 +22,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string AdGroupId { get; set; }
 #endif
+        /// <summary>The ID of the Performance+ base product group promotion that this product group promotion was duplicated from in its managed set. Read-only output; set by Pinterest when a Performance+ managed set is created. Setting this field on a request has no effect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BaseProductGroupPromotionId { get; private set; }
+#nullable restore
+#else
+        public string BaseProductGroupPromotionId { get; private set; }
+#endif
         /// <summary>The bid in micro currency.</summary>
         public int? BidInMicroCurrency { get; set; }
         /// <summary>ID of the catalogs product group that this product group promotion references (required for create operations)</summary>
@@ -66,6 +74,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Ad creative type enum.**Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType? CreativeType { get; set; }
+        /// <summary>List of CTA types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType?>? CtaTypes { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType?> CtaTypes { get; set; }
+#endif
         /// <summary>Select a call to action (CTA) to display below your ad. CTA options for catalog sales campaigns are SHOP_NOW, BOOK_NOW, ON_SALE, GET_DEAL, BUY_ONLINE_PICKUP_IN_STORE</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType? CustomizableCtaType { get; set; }
         /// <summary>The full product group definition path</summary>
@@ -75,6 +91,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public string Definition { get; set; }
+#endif
+        /// <summary>A field to determine the approval type for dynamic titles</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionDynamicTitlesApprovalType? DynamicTitlesApprovalType { get; set; }
+        /// <summary>The generated background styles allowed for this product group promotion when `is_generate_background` is enabled. `BASIC` = solid/gradient backgrounds; `LIFESTYLE` = agentic lifestyle scene backgrounds. `LIFESTYLE` requires `BASIC`: valid values are `[&quot;BASIC&quot;]` or `[&quot;BASIC&quot;, &quot;LIFESTYLE&quot;]`; `[&quot;LIFESTYLE&quot;]` alone is rejected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.GeneratedBackgroundStyle?>? GeneratedBackgroundStyles { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.GeneratedBackgroundStyle?> GeneratedBackgroundStyles { get; set; }
 #endif
         /// <summary>Where a user is taken after clicking on an ad in grid.**Note:**  This parameter is read-only and is set to `DIRECT_TO_DESTINATION` by default for direct links supported ads. `grid_click_type` values provided will be ignored.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.GridClickType? GridClickType { get; set; }
@@ -88,6 +114,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>True if the group is BIDDABLE, false if it should be EXCLUDED from serving ads.</summary>
         public bool? Included { get; set; }
+        /// <summary>Whether the ad uses dynamic CTA selection.</summary>
+        public bool? IsDynamicCta { get; set; }
+        /// <summary>Set to `TRUE` to enable dynamic title optimization for this product group. When enabled, Pinterest will generate alternative titles for your shopping catalog ads.</summary>
+        public bool? IsDynamicTitles { get; set; }
         /// <summary>Enable generate backgrounds for the product group, default value is FALSE. When enabled, Pinterest will use generative AI to apply backgrounds for your product images that help drive user inspiration and engagement.</summary>
         public bool? IsGenerateBackground { get; set; }
         /// <summary>Set to `TRUE` to automatically resize your product images with generative AI. This ensures that images have optimal appearance for better performance.</summary>
@@ -186,6 +216,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ad_group_id", n => { AdGroupId = n.GetStringValue(); } },
+                { "base_product_group_promotion_id", n => { BaseProductGroupPromotionId = n.GetStringValue(); } },
                 { "bid_in_micro_currency", n => { BidInMicroCurrency = n.GetIntValue(); } },
                 { "catalog_product_group_id", n => { CatalogProductGroupId = n.GetStringValue(); } },
                 { "catalog_product_group_name", n => { CatalogProductGroupName = n.GetStringValue(); } },
@@ -193,11 +224,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "collections_hero_destination_url", n => { CollectionsHeroDestinationUrl = n.GetStringValue(); } },
                 { "collections_hero_pin_id", n => { CollectionsHeroPinId = n.GetStringValue(); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>(); } },
+                { "cta_types", n => { CtaTypes = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType>()?.AsList(); } },
                 { "customizable_cta_type", n => { CustomizableCtaType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType>(); } },
                 { "definition", n => { Definition = n.GetStringValue(); } },
+                { "dynamic_titles_approval_type", n => { DynamicTitlesApprovalType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionDynamicTitlesApprovalType>(); } },
+                { "generated_background_styles", n => { GeneratedBackgroundStyles = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.GeneratedBackgroundStyle>()?.AsList(); } },
                 { "grid_click_type", n => { GridClickType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.GridClickType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "included", n => { Included = n.GetBoolValue(); } },
+                { "is_dynamic_cta", n => { IsDynamicCta = n.GetBoolValue(); } },
+                { "is_dynamic_titles", n => { IsDynamicTitles = n.GetBoolValue(); } },
                 { "is_generate_background", n => { IsGenerateBackground = n.GetBoolValue(); } },
                 { "is_image_auto_resizing", n => { IsImageAutoResizing = n.GetBoolValue(); } },
                 { "is_mdl", n => { IsMdl = n.GetBoolValue(); } },
@@ -227,11 +263,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("collections_hero_destination_url", CollectionsHeroDestinationUrl);
             writer.WriteStringValue("collections_hero_pin_id", CollectionsHeroPinId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>("creative_type", CreativeType);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType>("cta_types", CtaTypes);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionCustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
             writer.WriteStringValue("definition", Definition);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ProductGroupPromotionDynamicTitlesApprovalType>("dynamic_titles_approval_type", DynamicTitlesApprovalType);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.GeneratedBackgroundStyle>("generated_background_styles", GeneratedBackgroundStyles);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.GridClickType>("grid_click_type", GridClickType);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("included", Included);
+            writer.WriteBoolValue("is_dynamic_cta", IsDynamicCta);
+            writer.WriteBoolValue("is_dynamic_titles", IsDynamicTitles);
             writer.WriteBoolValue("is_generate_background", IsGenerateBackground);
             writer.WriteBoolValue("is_image_auto_resizing", IsImageAutoResizing);
             writer.WriteBoolValue("is_mdl", IsMdl);

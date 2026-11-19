@@ -339,6 +339,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         CampaignObjectiveType,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CAMPAIGN_IS_MIXED_OPTIMIZATION")]
+        #pragma warning disable CS1591
+        CampaignIsMixedOptimization,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CPM_IN_MICRO_DOLLAR")]
         #pragma warning disable CS1591
         CpmInMicroDollar,
@@ -11750,6 +11754,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "TOTAL_OFFLINE_APP_OPEN_CONVERSION_PRODUCT_VALUE_IN_MICRO_USD")]
         #pragma warning disable CS1591
         TotalOfflineAppOpenConversionProductValueInMicroUsd,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAMPAIGN_BUDGET_TYPE")]
+        #pragma warning disable CS1591
+        CampaignBudgetType,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAMPAIGN_BUDGET_IN_LOCAL_CURRENCY")]
+        #pragma warning disable CS1591
+        CampaignBudgetInLocalCurrency,
         #pragma warning restore CS1591
     }
 }

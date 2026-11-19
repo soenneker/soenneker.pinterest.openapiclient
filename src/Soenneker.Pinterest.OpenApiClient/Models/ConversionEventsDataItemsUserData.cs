@@ -55,6 +55,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> Ct { get; set; }
 #endif
+        /// <summary>Customer type</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsUserDataPropertiesCustomerType? CustomerType { get; set; }
         /// <summary>Sha256 hashes of user&apos;s date of birthday, given as year, month, and day. The string should be in the UTF-8 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,6 +175,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "client_user_agent", n => { ClientUserAgent = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ct", n => { Ct = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "customer_type", n => { CustomerType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsUserDataPropertiesCustomerType>(); } },
                 { "db", n => { Db = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "em", n => { Em = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "external_id", n => { ExternalId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -198,6 +201,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("client_user_agent", ClientUserAgent);
             writer.WriteCollectionOfPrimitiveValues<string>("country", Country);
             writer.WriteCollectionOfPrimitiveValues<string>("ct", Ct);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ConversionEventsUserDataPropertiesCustomerType>("customer_type", CustomerType);
             writer.WriteCollectionOfPrimitiveValues<string>("db", Db);
             writer.WriteCollectionOfPrimitiveValues<string>("em", Em);
             writer.WriteCollectionOfPrimitiveValues<string>("external_id", ExternalId);

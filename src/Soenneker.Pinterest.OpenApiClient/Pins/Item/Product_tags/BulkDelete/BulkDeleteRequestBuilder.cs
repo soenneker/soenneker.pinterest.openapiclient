@@ -22,7 +22,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkDeleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags/bulk-delete", pathParameters)
+        public BulkDeleteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags/bulk-delete{?ad_account_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BulkDeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags/bulk-delete", rawUrl)
+        public BulkDeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/pins/{pinId}/product_tags/bulk-delete{?ad_account_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -47,11 +47,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete
         /// <exception cref="global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder.BulkDeleteRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PostAsync(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder.BulkDeleteRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -75,11 +75,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder.BulkDeleteRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Pinterest.OpenApiClient.Models.ProductTagsBulkDeleteRequest body, Action<RequestConfiguration<global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder.BulkDeleteRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -97,6 +97,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete
         public global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Pinterest.OpenApiClient.Pins.Item.Product_tags.BulkDelete.BulkDeleteRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Delete product tags from a pin.- If a product tag is not found on the pin, it is treated as a no-op success.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BulkDeleteRequestBuilderPostQueryParameters 
+        {
+            /// <summary>Unique identifier of an ad account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ad_account_id")]
+            public string? AdAccountId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ad_account_id")]
+            public string AdAccountId { get; set; }
+#endif
         }
     }
 }

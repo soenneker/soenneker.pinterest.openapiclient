@@ -12,11 +12,15 @@ using Soenneker.Pinterest.OpenApiClient.Boards;
 using Soenneker.Pinterest.OpenApiClient.Business_access;
 using Soenneker.Pinterest.OpenApiClient.Businesses;
 using Soenneker.Pinterest.OpenApiClient.Catalogs;
+using Soenneker.Pinterest.OpenApiClient.Collaborative_catalogs;
 using Soenneker.Pinterest.OpenApiClient.Integrations;
 using Soenneker.Pinterest.OpenApiClient.Media;
+using Soenneker.Pinterest.OpenApiClient.Media_library;
 using Soenneker.Pinterest.OpenApiClient.Merchant;
 using Soenneker.Pinterest.OpenApiClient.Notifications;
 using Soenneker.Pinterest.OpenApiClient.Oauth;
+using Soenneker.Pinterest.OpenApiClient.Overlay_assignment_rules;
+using Soenneker.Pinterest.OpenApiClient.Overlays;
 using Soenneker.Pinterest.OpenApiClient.Pins;
 using Soenneker.Pinterest.OpenApiClient.Resources;
 using Soenneker.Pinterest.OpenApiClient.Search;
@@ -66,6 +70,11 @@ namespace Soenneker.Pinterest.OpenApiClient
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The collaborative_catalogs property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Collaborative_catalogs.Collaborative_catalogsRequestBuilder Collaborative_catalogs
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Collaborative_catalogs.Collaborative_catalogsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The integrations property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Integrations.IntegrationsRequestBuilder Integrations
         {
@@ -75,6 +84,11 @@ namespace Soenneker.Pinterest.OpenApiClient
         public global::Soenneker.Pinterest.OpenApiClient.Media.MediaRequestBuilder Media
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The media_library property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Media_library.Media_libraryRequestBuilder Media_library
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Media_library.Media_libraryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The merchant property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Merchant.MerchantRequestBuilder Merchant
@@ -90,6 +104,16 @@ namespace Soenneker.Pinterest.OpenApiClient
         public global::Soenneker.Pinterest.OpenApiClient.Oauth.OauthRequestBuilder Oauth
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Oauth.OauthRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The overlay_assignment_rules property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Overlay_assignment_rules.Overlay_assignment_rulesRequestBuilder Overlay_assignment_rules
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Overlay_assignment_rules.Overlay_assignment_rulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The overlays property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Overlays.OverlaysRequestBuilder Overlays
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Overlays.OverlaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pins property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Pins.PinsRequestBuilder Pins

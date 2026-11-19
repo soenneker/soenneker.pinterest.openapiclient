@@ -24,6 +24,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Audience type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AudienceAudienceType? AudienceType { get; set; }
+        /// <summary>Audience category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Category { get; set; }
+#nullable restore
+#else
+        public string Category { get; set; }
+#endif
         /// <summary>The company that created this audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,6 +42,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Creation time. Unix timestamp in seconds.</summary>
         public int? CreatedTimestamp { get; set; }
+        /// <summary>Audience data source.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AudienceDataSource? DataSource { get; set; }
         /// <summary>Audience description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +51,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public string Description { get; set; }
+#endif
+        /// <summary>Audience geography as ISO 3166-1 alpha-2 country codes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.Country?>? Geography { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.Country?> Geography { get; set; }
 #endif
         /// <summary>Audience ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,6 +78,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Audience refresh cadence.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRefreshCadence? RefreshCadence { get; set; }
         /// <summary>JSON object defining targeted audience users. Example rule formats per audience type:CUSTOMER_LIST: { &quot;customer_list_id&quot;: &quot;&amp;lt;customer list ID&amp;gt;&quot;}ACTALIKE: { &quot;seed_id&quot;: [&quot;&amp;lt;audience ID&amp;gt;&quot;], &quot;country&quot;: &quot;US&quot;, &quot;percentage&quot;: &quot;10&quot; }(Valid countries include: &quot;US&quot;, &quot;CA&quot;, and &quot;GB&quot;. Percentage should be 1-10.The targeted audience should be this % size across Pinterest.)VISITOR: { &quot;visitor_source_id&quot;: [&quot;&amp;lt;conversion tag ID&amp;gt;&quot;], &quot;retention_days&quot;: &quot;180&quot;, &quot;event_source&quot;: {&quot;=&quot;: [&quot;web&quot;, &quot;mobile&quot;]}, &quot;ingestion_source&quot;: {&quot;=&quot;: [&quot;tag&quot;]}}(Retention days should be 1-540. Retention applies to specific customers.)ENGAGEMENT: {&quot;engagement_domain&quot;: [&quot;www.example.com&quot;], &quot;engager_type&quot;: 1}Learn more about [engagement audiences](/docs/work-with-targets-and-audiences/create-audiences/#engagement-audience).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +102,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Last update time. Unix timestamp in seconds.</summary>
         public int? UpdatedTimestamp { get; set; }
+        /// <summary>Audience vertical.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AudienceVertical? Vertical { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.Audience"/> and sets the default values.
         /// </summary>
@@ -109,17 +131,22 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
                 { "audience_type", n => { AudienceType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceAudienceType>(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
                 { "created_by_company_name", n => { CreatedByCompanyName = n.GetStringValue(); } },
                 { "created_timestamp", n => { CreatedTimestamp = n.GetIntValue(); } },
+                { "data_source", n => { DataSource = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceDataSource>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "geography", n => { Geography = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.Country>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_nca", n => { IsNca = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "refresh_cadence", n => { RefreshCadence = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRefreshCadence>(); } },
                 { "rule", n => { Rule = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRule>(global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRule.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceStatusComposed>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_timestamp", n => { UpdatedTimestamp = n.GetIntValue(); } },
+                { "vertical", n => { Vertical = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceVertical>(); } },
             };
         }
         /// <summary>
@@ -131,17 +158,22 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceAudienceType>("audience_type", AudienceType);
+            writer.WriteStringValue("category", Category);
             writer.WriteStringValue("created_by_company_name", CreatedByCompanyName);
             writer.WriteIntValue("created_timestamp", CreatedTimestamp);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceDataSource>("data_source", DataSource);
             writer.WriteStringValue("description", Description);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.Country>("geography", Geography);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_nca", IsNca);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRefreshCadence>("refresh_cadence", RefreshCadence);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceRule>("rule", Rule);
             writer.WriteIntValue("size", Size);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceStatusComposed>("status", Status);
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("updated_timestamp", UpdatedTimestamp);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AudienceVertical>("vertical", Vertical);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

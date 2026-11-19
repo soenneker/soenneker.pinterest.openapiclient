@@ -519,6 +519,32 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The enhanced description generated for this product. Present only for eligible merchants and supported enhancement statuses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnhancedDescription { get; set; }
+#nullable restore
+#else
+        public string EnhancedDescription { get; set; }
+#endif
+        /// <summary>The enhanced title generated for this product. Present only for eligible merchants and supported enhancement statuses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnhancedTitle { get; set; }
+#nullable restore
+#else
+        public string EnhancedTitle { get; set; }
+#endif
+        /// <summary>Shared lifecycle status of a catalog item&apos;s enhanced title and description.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesEnhancedTitleDescStatus? EnhancedTitleDescStatus { get; set; }
+        /// <summary>The destinations where this item should NOT appear. Each value must be one of the following (upper or lowercase): &apos;shopping_ads&apos;, &apos;local_inventory_ads&apos;, &apos;free_listings&apos;, &apos;free_local_listings&apos;. Invalid values are dropped during ingestion. Currently only &apos;shopping_ads&apos; and &apos;free_listings&apos; take effect; other values are accepted but have no effect. This feature is only available for allowlisted merchants. Please contact your account manager to enable this feature.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludedDestination { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludedDestination { get; set; }
+#endif
         /// <summary>The item is free to ship.</summary>
         public bool? FreeShippingLabel { get; set; }
         /// <summary>The minimum order purchase necessary for the customer to get free shipping. Only relevant if free shipping is offered.</summary>
@@ -902,6 +928,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "custom_number_3", n => { CustomNumber3 = n.GetLongValue(); } },
                 { "custom_number_4", n => { CustomNumber4 = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "enhanced_description", n => { EnhancedDescription = n.GetStringValue(); } },
+                { "enhanced_title", n => { EnhancedTitle = n.GetStringValue(); } },
+                { "enhanced_title_desc_status", n => { EnhancedTitleDescStatus = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesEnhancedTitleDescStatus>(); } },
+                { "excluded_destination", n => { ExcludedDestination = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "free_shipping_label", n => { FreeShippingLabel = n.GetBoolValue(); } },
                 { "free_shipping_limit", n => { FreeShippingLimit = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
@@ -1019,6 +1049,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteLongValue("custom_number_3", CustomNumber3);
             writer.WriteIntValue("custom_number_4", CustomNumber4);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("enhanced_description", EnhancedDescription);
+            writer.WriteStringValue("enhanced_title", EnhancedTitle);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesEnhancedTitleDescStatus>("enhanced_title_desc_status", EnhancedTitleDescStatus);
+            writer.WriteCollectionOfPrimitiveValues<string>("excluded_destination", ExcludedDestination);
             writer.WriteBoolValue("free_shipping_label", FreeShippingLabel);
             writer.WriteStringValue("free_shipping_limit", FreeShippingLimit);
             writer.WriteStringValue("gender", Gender);

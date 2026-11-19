@@ -11,6 +11,7 @@ using Soenneker.Pinterest.OpenApiClient.Catalogs.Processing_results;
 using Soenneker.Pinterest.OpenApiClient.Catalogs.Product_groups;
 using Soenneker.Pinterest.OpenApiClient.Catalogs.Products;
 using Soenneker.Pinterest.OpenApiClient.Catalogs.Reports;
+using Soenneker.Pinterest.OpenApiClient.Catalogs.Supplemental_feeds;
 using Soenneker.Pinterest.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -60,8 +61,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Catalogs
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Catalogs.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The supplemental_feeds property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Catalogs.Supplemental_feeds.Supplemental_feedsRequestBuilder Supplemental_feeds
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Catalogs.Supplemental_feeds.Supplemental_feedsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Pinterest.OpenApiClient.catalogs.item collection</summary>
-        /// <param name="position">Unique identifier of a catalog.</param>
+        /// <param name="position">ID of the catalog entity.</param>
         /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.WithCatalogItemRequestBuilder"/></returns>
         public global::Soenneker.Pinterest.OpenApiClient.Catalogs.Item.WithCatalogItemRequestBuilder this[string position]
         {

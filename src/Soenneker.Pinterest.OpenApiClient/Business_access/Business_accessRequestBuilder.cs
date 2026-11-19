@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Pinterest.OpenApiClient.Business_access.Business_hierarchy;
+using Soenneker.Pinterest.OpenApiClient.Business_access.Business_rmn_invites;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Business_access
         public global::Soenneker.Pinterest.OpenApiClient.Business_access.Business_hierarchy.Business_hierarchyRequestBuilder Business_hierarchy
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Business_access.Business_hierarchy.Business_hierarchyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The business_rmn_invites property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Business_access.Business_rmn_invites.Business_rmn_invitesRequestBuilder Business_rmn_invites
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Business_access.Business_rmn_invites.Business_rmn_invitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Business_access.Business_accessRequestBuilder"/> and sets the default values.

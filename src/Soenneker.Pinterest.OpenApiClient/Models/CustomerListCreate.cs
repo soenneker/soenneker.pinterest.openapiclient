@@ -27,7 +27,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Records list. Can be any combination of emails, MAIDs, or IDFAs. Emails must be lowercase and can be plain text or hashed using SHA1, SHA256, or MD5. MAIDs and IDFAs must be hashed with SHA1, SHA256, or MD5.</summary>
+        /// <summary>Records list. Can be any combination of emails, MAIDs, or IDFAs. Emails must be lowercase and can be plain text or hashed using SHA1, SHA256, or MD5. MAIDs and IDFAs must be hashed with SHA1, SHA256, or MD5.Provide exactly one of `records` or `records_v2`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Records { get; set; }
@@ -35,7 +35,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Records { get; set; }
 #endif
-        /// <summary>Multi-field record format. Array of objects with optional email, maid, ip_address, user_agent, external_id, hashed_pinner_id, hashed_phone_number, and liveramp_envelope per row. Provide exactly one of records or records_v2.</summary>
+        /// <summary>[**Restricted**](/docs/getting-started/using-beta-and-restricted-features/) Multi-field record format. Array of objects with optional `email`, `maid`, `ip_address`, `user_agent`, `external_id`, `hashed_pinner_id`, `hashed_phone_number`, and `liveramp_envelope` per row. Provide exactly one of `records` or `records_v2`. This parameter is supported only if `is_nca` is set to `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.CustomerListRecordRow>? RecordsV2 { get; set; }

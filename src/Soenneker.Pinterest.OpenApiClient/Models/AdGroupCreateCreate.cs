@@ -51,6 +51,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string CustomerSegmentId { get; set; }
 #endif
+        /// <summary>Whether offsite ad delivery (audience extension) is enabled for this ad group.</summary>
+        public bool? EnableOffsitePlacement { get; set; }
         /// <summary>Timestamp in Unix format for scheduling when ads in the ad group stop appearing. If not specified, ads run indefinitely unless you update the ad group by changing their status to `paused`. Cannot occur after `end_time` for parent campaign (if specified). Learn about [scheduling ads](https://help.pinterest.com/en/business/article/ads-manager-schedule-ads). For certain organizations ([Closed beta](https://help.pinterest.com/en/business/article/beta-features)): Supported for campaigns with Campaign Budget Optimization (CBO). For all organizations: Supported for campaigns without CBO.</summary>
         public int? EndTime { get; set; }
         /// <summary>The ext_features property</summary>
@@ -75,7 +77,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public bool? IsLocalInventory { get; set; }
         /// <summary>Set a limit to the number of times a promoted pin from this campaign can be impressed by a pinner within the past rolling 30 days. Only available for CPM (cost per mille (1000 impressions))  ad groups. A CPM ad group has an IMPRESSION [billable_event](https://help.pinterest.com/en/business/article/billable-events) value. This field **REQUIRES** the `end_time` field.</summary>
         public int? LifetimeFrequencyCap { get; set; }
-        /// <summary>The targeting radius of the local inventory ads in miles.</summary>
+        /// <summary>The targeting radius of local ads in miles. Preferred over local_inventory_radius_in_miles.</summary>
+        public double? LocalAdRadiusInMiles { get; set; }
+        /// <summary>Deprecated: use `local_ad_radius_in_miles` instead.Legacy alias kept for compatibility. Same Pepsi field as `local_ad_radius_in_miles`.</summary>
+        [Obsolete("")]
         public double? LocalInventoryRadiusInMiles { get; set; }
         /// <summary>Ad group name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,6 +98,24 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOptimizationGoalMetadata OptimizationGoalMetadata { get; set; }
 #endif
+        /// <summary>How creative overlays apply to an ad group&apos;s products: `NONE` (no overlays), `AD_GROUP` (the ad group&apos;s overlay applies to every eligible product based on aspect ratio), or `ITEM` (the overlay comes from overlay assignment rules or the product feed overlay).</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlayApplicationLevel? OverlayApplicationLevel { get; set; }
+        /// <summary>IDs of the creative overlays applied at the ad group level. For ad group level overlays, an ad group can have at most one overlay, and `overlay_application_level` must be `AD_GROUP`.The overlay needs to belong to the ad account owner.To remove the overlay from an existing ad group, send an empty list and set `overlay_application_level` to `NONE`. If you omit this field, the current overlay is kept.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? OverlayIds { get; set; }
+#nullable restore
+#else
+        public List<string> OverlayIds { get; set; }
+#endif
+        /// <summary>Smart adjust settings for creative overlay. Currently, `smart_resize_enabled` and `smart_layout_enabled` must be both on or both off. If not set, smart adjust is off. If you omit this field when updating an ad group, the current settings are kept.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlaySmartAdjustSettings? OverlaySmartAdjustSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlaySmartAdjustSettings OverlaySmartAdjustSettings { get; set; }
+#endif
         /// <summary>Ad group pacing delivery type. With ACCELERATED, an ad group budget is spent as fast as possible. With STANDARD, an ad group budget is spent smoothly over a day. When using CBO, only the STANDARD pacing delivery type is allowed.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePacingDeliveryType? PacingDeliveryType { get; set; }
         /// <summary>Pinterest Performance+ campaign settings.</summary>
@@ -102,6 +125,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePerformancePlusCampaignSettings PerformancePlusCampaignSettings { get; set; }
+#endif
+        /// <summary>Performance+ value strategies to apply to this ad group. Currently only a single value strategy is supported at a time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PerformancePlusValueStrategy?>? PerformancePlusValueStrategies { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.PerformancePlusValueStrategy?> PerformancePlusValueStrategies { get; set; }
 #endif
         /// <summary>Campaign placement group type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementGroup? PlacementGroup { get; set; }
@@ -165,6 +196,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupTrackingUrLs TrackingUrls { get; set; }
 #endif
+        /// <summary>Whether this Performance+ ad group uses Performance+ dynamic retargeting. Defaults to true; set to false to opt out of dynamic retargeting duplication.</summary>
+        public bool? UsePerformancePlusDynamicRetargeting { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreate"/> and sets the default values.
         /// </summary>
@@ -200,17 +233,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "budget_type", n => { BudgetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateBudgetType>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "customer_segment_id", n => { CustomerSegmentId = n.GetStringValue(); } },
+                { "enable_offsite_placement", n => { EnableOffsitePlacement = n.GetBoolValue(); } },
                 { "end_time", n => { EndTime = n.GetIntValue(); } },
                 { "ext_features", n => { ExtFeatures = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdgroupTrackingFeatures>(global::Soenneker.Pinterest.OpenApiClient.Models.AdgroupTrackingFeatures.CreateFromDiscriminatorValue); } },
                 { "feed_profile_id", n => { FeedProfileId = n.GetStringValue(); } },
                 { "is_creative_optimization", n => { IsCreativeOptimization = n.GetBoolValue(); } },
                 { "is_local_inventory", n => { IsLocalInventory = n.GetBoolValue(); } },
                 { "lifetime_frequency_cap", n => { LifetimeFrequencyCap = n.GetIntValue(); } },
+                { "local_ad_radius_in_miles", n => { LocalAdRadiusInMiles = n.GetDoubleValue(); } },
                 { "local_inventory_radius_in_miles", n => { LocalInventoryRadiusInMiles = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "optimization_goal_metadata", n => { OptimizationGoalMetadata = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOptimizationGoalMetadata>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOptimizationGoalMetadata.CreateFromDiscriminatorValue); } },
+                { "overlay_application_level", n => { OverlayApplicationLevel = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlayApplicationLevel>(); } },
+                { "overlay_ids", n => { OverlayIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "overlay_smart_adjust_settings", n => { OverlaySmartAdjustSettings = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlaySmartAdjustSettings>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlaySmartAdjustSettings.CreateFromDiscriminatorValue); } },
                 { "pacing_delivery_type", n => { PacingDeliveryType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePacingDeliveryType>(); } },
                 { "performance_plus_campaign_settings", n => { PerformancePlusCampaignSettings = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePerformancePlusCampaignSettings>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePerformancePlusCampaignSettings.CreateFromDiscriminatorValue); } },
+                { "performance_plus_value_strategies", n => { PerformancePlusValueStrategies = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.PerformancePlusValueStrategy>()?.AsList(); } },
                 { "placement_group", n => { PlacementGroup = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementGroup>(); } },
                 { "placement_traffic_type", n => { PlacementTrafficType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementTrafficType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementTrafficType.CreateFromDiscriminatorValue); } },
                 { "promotion_application_level", n => { PromotionApplicationLevel = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePromotionApplicationLevel>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePromotionApplicationLevel.CreateFromDiscriminatorValue); } },
@@ -221,6 +260,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal.CreateFromDiscriminatorValue); } },
                 { "targeting_template_ids", n => { TargetingTemplateIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tracking_urls", n => { TrackingUrls = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupTrackingUrLs>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupTrackingUrLs.CreateFromDiscriminatorValue); } },
+                { "use_performance_plus_dynamic_retargeting", n => { UsePerformancePlusDynamicRetargeting = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -239,17 +279,23 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateBudgetType>("budget_type", BudgetType);
             writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteStringValue("customer_segment_id", CustomerSegmentId);
+            writer.WriteBoolValue("enable_offsite_placement", EnableOffsitePlacement);
             writer.WriteIntValue("end_time", EndTime);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdgroupTrackingFeatures>("ext_features", ExtFeatures);
             writer.WriteStringValue("feed_profile_id", FeedProfileId);
             writer.WriteBoolValue("is_creative_optimization", IsCreativeOptimization);
             writer.WriteBoolValue("is_local_inventory", IsLocalInventory);
             writer.WriteIntValue("lifetime_frequency_cap", LifetimeFrequencyCap);
+            writer.WriteDoubleValue("local_ad_radius_in_miles", LocalAdRadiusInMiles);
             writer.WriteDoubleValue("local_inventory_radius_in_miles", LocalInventoryRadiusInMiles);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOptimizationGoalMetadata>("optimization_goal_metadata", OptimizationGoalMetadata);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlayApplicationLevel>("overlay_application_level", OverlayApplicationLevel);
+            writer.WriteCollectionOfPrimitiveValues<string>("overlay_ids", OverlayIds);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreateOverlaySmartAdjustSettings>("overlay_smart_adjust_settings", OverlaySmartAdjustSettings);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePacingDeliveryType>("pacing_delivery_type", PacingDeliveryType);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePerformancePlusCampaignSettings>("performance_plus_campaign_settings", PerformancePlusCampaignSettings);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.PerformancePlusValueStrategy>("performance_plus_value_strategies", PerformancePlusValueStrategies);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementGroup>("placement_group", PlacementGroup);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePlacementTrafficType>("placement_traffic_type", PlacementTrafficType);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupCreateCreatePromotionApplicationLevel>("promotion_application_level", PromotionApplicationLevel);
@@ -260,6 +306,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>("targeting_spec", TargetingSpec);
             writer.WriteCollectionOfPrimitiveValues<string>("targeting_template_ids", TargetingTemplateIds);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupTrackingUrLs>("tracking_urls", TrackingUrls);
+            writer.WriteBoolValue("use_performance_plus_dynamic_retargeting", UsePerformancePlusDynamicRetargeting);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

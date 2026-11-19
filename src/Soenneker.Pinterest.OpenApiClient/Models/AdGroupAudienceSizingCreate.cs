@@ -25,6 +25,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreativeTypes?> CreativeTypes { get; set; }
 #endif
+        /// <summary>Specifies the intended promotion type for the campaign.Note: This field is immutable unless the campaign is in draft status.**STANDARD_AD**- For ads derived from Pins.- Supported for all objective types except for current CATALOG\_SALES and WEB\_CONVERSION, which are being deprecated.- For simplified objective types.**CATALOG**- For creating product group promotions.- Supported for CONSIDERATION and SALES objective types.- For simplified objective types.**LEGACY**- Intended only for maintaining backward compatibility.- Must be used for CATALOG\_SALES and WEB\_CONVERSION.- Supported for CATALOG\_SALES and WEB\_CONVERSION objective types.**If you do not provide this parameter, the default is:**- LEGACY for CATALOG\_SALES and WEB\_CONVERSION- STANDARD_AD for other objective types</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateIntendedPromotionType? IntendedPromotionType { get; set; }
         /// <summary>Array of keyword objects. If the keywords field is missing, all keywords will be targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +35,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingKeyword> Keywords { get; set; }
 #endif
+        /// <summary>Objective type for delivery estimates.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateObjectiveType? ObjectiveType { get; set; }
         /// <summary>Campaign placement group type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreatePlacementGroup? PlacementGroup { get; set; }
         /// <summary>Targeted product group IDs. **Note:** This can only be combined with shopping/catalog sales campaigns. For more information, [click here](https://help.pinterest.com/en/business/article/shopping-ads#section-14571). SHOPPING_RETARGETING must be included in targeting_spec object or this field will be ignored.</summary>
@@ -43,13 +47,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> ProductGroupIds { get; set; }
 #endif
-        /// <summary>The targeting_spec property</summary>
+        /// <summary>Targeting spec for delivery estimates and audience sizing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal? TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec? TargetingSpec { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec TargetingSpec { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreate"/> and sets the default values.
@@ -79,10 +83,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "auto_targeting_enabled", n => { AutoTargetingEnabled = n.GetBoolValue(); } },
                 { "creative_types", n => { CreativeTypes = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreativeTypes>()?.AsList(); } },
+                { "intended_promotion_type", n => { IntendedPromotionType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateIntendedPromotionType>(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingKeyword>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingKeyword.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "objective_type", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateObjectiveType>(); } },
                 { "placement_group", n => { PlacementGroup = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreatePlacementGroup>(); } },
                 { "product_group_ids", n => { ProductGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal.CreateFromDiscriminatorValue); } },
+                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec>(global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,10 +100,12 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_targeting_enabled", AutoTargetingEnabled);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreativeTypes>("creative_types", CreativeTypes);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateIntendedPromotionType>("intended_promotion_type", IntendedPromotionType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingKeyword>("keywords", Keywords);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreateObjectiveType>("objective_type", ObjectiveType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreatePlacementGroup>("placement_group", PlacementGroup);
             writer.WriteCollectionOfPrimitiveValues<string>("product_group_ids", ProductGroupIds);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>("targeting_spec", TargetingSpec);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec>("targeting_spec", TargetingSpec);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

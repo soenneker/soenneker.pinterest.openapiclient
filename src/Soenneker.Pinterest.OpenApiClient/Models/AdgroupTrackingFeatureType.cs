@@ -24,5 +24,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         AdRotation,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MEDIA_PLANNER")]
+        #pragma warning disable CS1591
+        MediaPlanner,
+        #pragma warning restore CS1591
     }
 }

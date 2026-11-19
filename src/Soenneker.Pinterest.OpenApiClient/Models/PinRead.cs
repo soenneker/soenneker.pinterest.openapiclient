@@ -88,6 +88,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public bool? IsOwner { get; private set; }
         /// <summary>Whether the Pin is a product Pin.</summary>
         public bool? IsProduct { get; private set; }
+        /// <summary>If you set it to `true`, the Pin becomes ad-only and is automatically added to an &quot;Ad-only Pins&quot; board; so, you do not have to specify a `board_id`.**Note:** Ad-only pins cannot be repinned.</summary>
+        public bool? IsRemovable { get; set; }
         /// <summary>Whether the Pin is standard or not. See documentation on [Changes to Pin creation](/docs/api-features/content-overview/) for more information.</summary>
         public bool? IsStandard { get; private set; }
         /// <summary>The link property</summary>
@@ -168,6 +170,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_owner", n => { IsOwner = n.GetBoolValue(); } },
                 { "is_product", n => { IsProduct = n.GetBoolValue(); } },
+                { "is_removable", n => { IsRemovable = n.GetBoolValue(); } },
                 { "is_standard", n => { IsStandard = n.GetBoolValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia>(global::Soenneker.Pinterest.OpenApiClient.Models.AggregatedPinCommentMedia.CreateFromDiscriminatorValue); } },
@@ -190,6 +193,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dominant_color", DominantColor);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_removable", IsRemovable);
             writer.WriteStringValue("link", Link);
             writer.WriteStringValue("parent_pin_id", ParentPinId);
             writer.WriteStringValue("title", Title);

@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_request;
+using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_requests;
 using Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Assets;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +17,16 @@ namespace Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPartnerItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The ad_account_request property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_request.Ad_account_requestRequestBuilder Ad_account_request
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_request.Ad_account_requestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ad_account_requests property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_requests.Ad_account_requestsRequestBuilder Ad_account_requests
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Ad_account_requests.Ad_account_requestsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The assets property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Businesses.Item.Partners.Item.Assets.AssetsRequestBuilder Assets
         {

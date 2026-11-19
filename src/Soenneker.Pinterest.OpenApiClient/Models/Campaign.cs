@@ -32,6 +32,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Platform of the mobile app for an `APP_INSTALL` campaign.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAppPlatform? AppPlatform { get; set; }
+        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Skan version of the iOS mobile app for `APP_INSTALL` campaigns. Must be 3.0 or 4.0.</summary>
+        public double? AppSkanVersion { get; set; }
         /// <summary>[Restricted](/docs/getting-started/using-beta-and-restricted-features/)Object describing the campaign level bid multipliers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,8 +84,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Campaign objective type. If set as one of [&quot;AWARENESS&quot;, &quot;CONSIDERATION&quot;, &quot;WEB_CONVERSION&quot;, &quot;CATALOG_SALES&quot;, &quot;VIDEO_COMPLETION&quot;, &quot;CTV_CONSIDERATION&quot;] the campaign is considered as a Campaign Budget Optimization (CBO) campaign, meaning budget needs to be set at the campaign level rather than at the ad group level. [&quot;WEB_SESSIONS&quot;] is DEPRECATED. `VIDEO_VIEW` is deprecated; use `VIDEO_COMPLETION` instead. `CTV_CONSIDERATION` is in BETA. For update, only draft campaigns may update objective type.</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType? ObjectiveType { get; set; }
+        /// <summary>Campaign objective type. If set as one of [&quot;AWARENESS&quot;, &quot;CONSIDERATION&quot;, &quot;WEB_CONVERSION&quot;, &quot;CATALOG_SALES&quot;, &quot;VIDEO_COMPLETION&quot;, &quot;CTV_CONSIDERATION&quot;] the campaign is considered as a Campaign Budget Optimization (CBO) campaign, meaning budget needs to be set at the campaign level rather than at the ad group level. [&quot;WEB_SESSIONS&quot;] is DEPRECATED. `VIDEO_VIEW` is deprecated; use `VIDEO_COMPLETION` instead. `CTV_CONSIDERATION` is in BETA. `AWARENESS_RESERVED` and `ENGAGEMENT` are DEPRECATED and only returned for existing campaigns; they cannot be used to create or update a campaign. For update, only draft campaigns may update objective type.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveTypeRead? ObjectiveType { get; set; }
         /// <summary>Note: To clear this field on update, set the order line ID to 0.Order line ID that appears on the invoice. The order line must not be expired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +154,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
                 { "app_id", n => { AppId = n.GetStringValue(); } },
                 { "app_platform", n => { AppPlatform = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAppPlatform>(); } },
+                { "app_skan_version", n => { AppSkanVersion = n.GetDoubleValue(); } },
                 { "bid_options", n => { BidOptions = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsComposed>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsComposed.CreateFromDiscriminatorValue); } },
                 { "created_time", n => { CreatedTime = n.GetIntValue(); } },
                 { "daily_spend_cap", n => { DailySpendCap = n.GetIntValue(); } },
@@ -168,7 +171,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "is_top_of_search", n => { IsTopOfSearch = n.GetBoolValue(); } },
                 { "lifetime_spend_cap", n => { LifetimeSpendCap = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "objective_type", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType>(); } },
+                { "objective_type", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveTypeRead>(); } },
                 { "order_line_id", n => { OrderLineId = n.GetStringValue(); } },
                 { "performance_plus_campaign_settings", n => { PerformancePlusCampaignSettings = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignPerformancePlusCampaignSettings>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignPerformancePlusCampaignSettings.CreateFromDiscriminatorValue); } },
                 { "start_time", n => { StartTime = n.GetIntValue(); } },
@@ -189,6 +192,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("app_id", AppId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignAppPlatform>("app_platform", AppPlatform);
+            writer.WriteDoubleValue("app_skan_version", AppSkanVersion);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBidOptionsComposed>("bid_options", BidOptions);
             writer.WriteIntValue("daily_spend_cap", DailySpendCap);
             writer.WriteIntValue("default_ad_group_budget_in_micro_currency", DefaultAdGroupBudgetInMicroCurrency);
@@ -203,7 +207,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("is_top_of_search", IsTopOfSearch);
             writer.WriteIntValue("lifetime_spend_cap", LifetimeSpendCap);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType>("objective_type", ObjectiveType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveTypeRead>("objective_type", ObjectiveType);
             writer.WriteStringValue("order_line_id", OrderLineId);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignPerformancePlusCampaignSettings>("performance_plus_campaign_settings", PerformancePlusCampaignSettings);
             writer.WriteIntValue("start_time", StartTime);

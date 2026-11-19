@@ -15,6 +15,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Business partner type when available.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.UserSingleAssetBindingBusinessPartnerType? BusinessPartnerType { get; set; }
         /// <summary>Permission levels member or partner has on an asset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "business_partner_type", n => { BusinessPartnerType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserSingleAssetBindingBusinessPartnerType>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAccessUserSummary>(global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAccessUserSummary.CreateFromDiscriminatorValue); } },
             };
@@ -67,6 +70,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserSingleAssetBindingBusinessPartnerType>("business_partner_type", BusinessPartnerType);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BusinessAccessUserSummary>("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -27,5 +27,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         MaxWidthRegularCollection,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CTV_VIDEO")]
+        #pragma warning disable CS1591
+        CtvVideo,
+        #pragma warning restore CS1591
     }
 }

@@ -67,5 +67,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         CtvVideo,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SEARCH_TEXT_AD")]
+        #pragma warning disable CS1591
+        SearchTextAd,
+        #pragma warning restore CS1591
     }
 }

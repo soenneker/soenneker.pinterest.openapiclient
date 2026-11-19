@@ -24,7 +24,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.MatchTypeResponse MatchType { get; set; }
 #endif
-        /// <summary>Keyword value (120 chars max).</summary>
+        /// <summary>Keyword value (120 characters maximum). Set the match type to choose the match behavior. Omit Ads Manager&apos;s leading hyphen (-), double quotes (&quot; &quot;), and square brackets ([ ]) from the value. Broad negative keywords support up to 10 tokens. Each sequence of ASCII letters or digits counts as one token. Spaces and special characters separate tokens. For example, &quot;summer&apos;s t-shirts&quot; counts as 4 tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

@@ -22,6 +22,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingAssetsSummary AssetsSummary { get; set; }
 #endif
+        /// <summary>Business partner type. This can be REGULAR, RMN, or UNDEFINED.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessPartnerType { get; set; }
+#nullable restore
+#else
+        public string BusinessPartnerType { get; set; }
+#endif
         /// <summary>The access level a user has on the business. This can be EMPLOYEE, BIZ_ADMIN, or PARTNER.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +100,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assets_summary", n => { AssetsSummary = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingAssetsSummary>(global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingAssetsSummary.CreateFromDiscriminatorValue); } },
+                { "business_partner_type", n => { BusinessPartnerType = n.GetStringValue(); } },
                 { "business_roles", n => { BusinessRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "created_by_business", n => { CreatedByBusiness = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByBusiness>(global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByBusiness.CreateFromDiscriminatorValue); } },
                 { "created_by_user", n => { CreatedByUser = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByUser>(global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByUser.CreateFromDiscriminatorValue); } },
@@ -109,6 +118,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingAssetsSummary>("assets_summary", AssetsSummary);
+            writer.WriteStringValue("business_partner_type", BusinessPartnerType);
             writer.WriteCollectionOfPrimitiveValues<string>("business_roles", BusinessRoles);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByBusiness>("created_by_business", CreatedByBusiness);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.UserBusinessRoleBindingCreatedByUser>("created_by_user", CreatedByUser);

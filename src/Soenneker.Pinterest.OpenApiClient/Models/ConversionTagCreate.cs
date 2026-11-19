@@ -19,7 +19,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public bool? AemDbEnabled { get; set; }
         /// <summary>Whether Automatic Enhanced Match email is enabled. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for more information.</summary>
         public bool? AemEnabled { get; set; }
-        /// <summary>Whether Automatic Enhanced Match location is enabled. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for more information.</summary>
+        /// <summary>Whether Automatic Enhanced Match external ID is enabled. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for more information.</summary>
         public bool? AemExternalIdEnabled { get; set; }
         /// <summary>Whether Automatic Enhanced Match name is enabled. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for more information.</summary>
         public bool? AemFnlnEnabled { get; set; }
@@ -29,6 +29,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public bool? AemLocEnabled { get; set; }
         /// <summary>Whether Automatic Enhanced Match phone is enabled. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for more information.</summary>
         public bool? AemPhEnabled { get; set; }
+        /// <summary>Whether Automatic Enhanced Match product metadata is enabled. Product metadata may include details such as product ID, product category, order value, and order ID. See [Enhanced match](https://help.pinterest.com/en/business/article/enhanced-match) for the current list and more information.</summary>
+        public bool? AemProductMetadataEnabled { get; set; }
         /// <summary>Metadata ingestion frequency.</summary>
         public double? MdFrequency { get; set; }
         /// <summary>Conversion tag name.</summary>
@@ -45,13 +47,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public ConversionTagCreate()
         {
             AdditionalData = new Dictionary<string, object>();
-            AemDbEnabled = false;
-            AemEnabled = false;
-            AemExternalIdEnabled = false;
-            AemFnlnEnabled = false;
-            AemGeEnabled = false;
-            AemLocEnabled = false;
-            AemPhEnabled = false;
             MdFrequency = 1;
         }
         /// <summary>
@@ -79,6 +74,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "aem_ge_enabled", n => { AemGeEnabled = n.GetBoolValue(); } },
                 { "aem_loc_enabled", n => { AemLocEnabled = n.GetBoolValue(); } },
                 { "aem_ph_enabled", n => { AemPhEnabled = n.GetBoolValue(); } },
+                { "aem_product_metadata_enabled", n => { AemProductMetadataEnabled = n.GetBoolValue(); } },
                 { "md_frequency", n => { MdFrequency = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -97,6 +93,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("aem_ge_enabled", AemGeEnabled);
             writer.WriteBoolValue("aem_loc_enabled", AemLocEnabled);
             writer.WriteBoolValue("aem_ph_enabled", AemPhEnabled);
+            writer.WriteBoolValue("aem_product_metadata_enabled", AemProductMetadataEnabled);
             writer.WriteDoubleValue("md_frequency", MdFrequency);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

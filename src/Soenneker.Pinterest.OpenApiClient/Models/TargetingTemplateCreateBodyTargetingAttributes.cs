@@ -55,7 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecGender?> GENDER { get; set; }
 #endif
-        /// <summary>Region codes or postal codes to include for targeting.Region codes represent broader geographical areas. Example: `US-CA` is the region code for California in the United States.Postal codes represent more granular, specific areas. Example: `94103` is a postal code for a specifc area in San Francisco, California, U.S.A.For each ad group, use only one of these methods, depending on which fits your targeting needs. Do not use both. For example, either specify a broader region code like `US-CA` or a more granular postal code within that regon, such as `94103`.You can specify multiple region codes or postal codes in an array, depending on which method you choose.Precede a region code array with the `region_codes` key and a postal code value with the `postal_codes` key. Examples:```&quot;geo&quot;: {  &quot;region_codes&quot;: [&quot;US-CA&quot;]}``````&quot;geo&quot;: {  &quot;postal_codes&quot;: [&quot;94103&quot;]}```For each ad group, specify at least one `GEO` or `LOCATION`.If you do not specifiy a `GEO` code, only `LOCATION` values will be targeted (See `LOCATION` parameter in this targeting spec.).Learn how to [get a current, complete list of codes](/docs/analytics-and-reports/ads-reporting/#get-all-available-codes-and-zones).</summary>
+        /// <summary>Region codes or postal codes to include for targeting.Region codes represent broader geographical areas. Example: `US-CA` is the region code for California in the United States.Postal codes represent more granular, specific areas. Postal codes must be prefixed with the ISO-Alpha-2, two-letter country code and a colon. Example: `US:94103` is the postal code for a specific area in San Francisco, California, U.S.A.For each ad group, use only one of these methods, depending on which fits your targeting needs. Do not use both. For example, either specify a broader region code like `US-CA` or a more granular postal code within that region, such as `US:94103`.You can specify multiple region codes or postal codes in an array, depending on which method you choose. Examples:```&quot;GEO&quot;: [&quot;US-CA&quot;, &quot;US-NY&quot;]``````&quot;GEO&quot;: [&quot;US:94103&quot;, &quot;US:10001&quot;]```For each ad group, specify at least one `GEO` or `LOCATION`.If you do not specify a `GEO` code, only `LOCATION` values will be targeted (See `LOCATION` parameter in this targeting spec.).Learn how to [get a current, complete list of codes](/docs/analytics-and-reports/ads-reporting/#get-all-available-codes-and-zones).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GEO { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> GEO { get; set; }
 #endif
-        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Region codes or postal codes to exclude from the targeting inclusion area.See `GEO` parameter in this targeting spec for rules, syntax, and other information.</summary>
+        /// <summary>Region codes or postal codes to exclude from the targeting inclusion area.See `GEO` parameter in this targeting spec for rules, syntax, and other information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GEOEXCLUDE { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> LOCATION { get; set; }
 #endif
-        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Metropolitan codes and/or ISO-Alpha-2, two-letter country codes to exclude from targeting.See `LOCATION` parameter in this targeting spec for rules, syntax, and other information.</summary>
+        /// <summary>Metropolitan codes and/or ISO-Alpha-2, two-letter country codes to exclude from targeting.See `LOCATION` parameter in this targeting spec for rules, syntax, and other information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LOCATIONEXCLUDE { get; set; }

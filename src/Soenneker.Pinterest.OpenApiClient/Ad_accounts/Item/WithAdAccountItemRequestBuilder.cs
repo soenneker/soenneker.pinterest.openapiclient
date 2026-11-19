@@ -3,11 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ab_tests;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_previews;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ads;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ads_credit;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Advertiser_defined_events;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Allowed_domains;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Analytics;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Audience_insights;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Audiences;
@@ -20,6 +22,7 @@ using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Campaign_ad_preview;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Campaigns;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_deletion_requests;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_eqs;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_segments;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_tags;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Customer_lists;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Customer_segments;
@@ -38,6 +41,7 @@ using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Product_group_promotion
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Product_groups;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Promotion_applied_entities;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Promotions;
+using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Publisher_blocklists;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Reports;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Sandbox;
 using Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Schedules;
@@ -60,6 +64,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAdAccountItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The ab_tests property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ab_tests.Ab_testsRequestBuilder Ab_tests
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ab_tests.Ab_testsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ad_groups property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Ad_groupsRequestBuilder Ad_groups
         {
@@ -84,6 +93,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Advertiser_defined_events.Advertiser_defined_eventsRequestBuilder Advertiser_defined_events
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Advertiser_defined_events.Advertiser_defined_eventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The allowed_domains property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Allowed_domains.Allowed_domainsRequestBuilder Allowed_domains
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Allowed_domains.Allowed_domainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analytics property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Analytics.AnalyticsRequestBuilder Analytics
@@ -144,6 +158,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_eqs.Conversion_eqsRequestBuilder Conversion_eqs
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_eqs.Conversion_eqsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The conversion_segments property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_segments.Conversion_segmentsRequestBuilder Conversion_segments
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_segments.Conversion_segmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The conversion_tags property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Conversion_tags.Conversion_tagsRequestBuilder Conversion_tags
@@ -234,6 +253,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Promotions.PromotionsRequestBuilder Promotions
         {
             get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Promotions.PromotionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The publisher_blocklists property</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Publisher_blocklists.Publisher_blocklistsRequestBuilder Publisher_blocklists
+        {
+            get => new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Publisher_blocklists.Publisher_blocklistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reports property</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Reports.ReportsRequestBuilder Reports

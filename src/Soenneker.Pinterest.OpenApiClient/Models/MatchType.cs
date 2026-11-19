@@ -27,5 +27,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         PhraseNegative,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BROAD_NEGATIVE")]
+        #pragma warning disable CS1591
+        BroadNegative,
+        #pragma warning restore CS1591
     }
 }

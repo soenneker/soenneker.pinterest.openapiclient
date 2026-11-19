@@ -16,8 +16,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Numeric value.</summary>
         public double? Amount { get; set; }
-        /// <summary>Currency Codes from ISO 4217</summary>
-        public global::Soenneker.Pinterest.OpenApiClient.Models.Currency? CurrencyCode { get; set; }
+        /// <summary>Currency shown with a promotion amount. Matches the Ads Manager promotion currency list.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PromotionCurrency? CurrencyCode { get; set; }
         /// <summary>Custom text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +54,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetDoubleValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Currency>(); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PromotionCurrency>(); } },
                 { "custom_text", n => { CustomText = n.GetStringValue(); } },
                 { "percent", n => { Percent = n.GetDoubleValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("amount", Amount);
-            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.Currency>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PromotionCurrency>("currency_code", CurrencyCode);
             writer.WriteStringValue("custom_text", CustomText);
             writer.WriteDoubleValue("percent", Percent);
             writer.WriteAdditionalData(AdditionalData);

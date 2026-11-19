@@ -40,5 +40,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         #pragma warning disable CS1591
         Idea,
         #pragma warning restore CS1591
+        [EnumMember(Value = "MAX_WIDTH_REGULAR_COLLECTION")]
+        #pragma warning disable CS1591
+        MaxWidthRegularCollection,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MAX_WIDTH_VIDEO_COLLECTION")]
+        #pragma warning disable CS1591
+        MaxWidthVideoCollection,
+        #pragma warning restore CS1591
     }
 }

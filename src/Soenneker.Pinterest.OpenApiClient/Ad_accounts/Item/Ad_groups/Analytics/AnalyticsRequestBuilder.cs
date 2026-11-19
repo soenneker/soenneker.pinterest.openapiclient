@@ -139,7 +139,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Ad_groups.Analytics
             /// <summary>  TOTAL - metrics are aggregated over the specified date range.  DAY - metrics are broken down daily.  HOUR - metrics are broken down hourly.  WEEK - metrics are broken down weekly.  MONTH - metrics are broken down monthly</summary>
             [QueryParameter("granularity")]
             public global::Soenneker.Pinterest.OpenApiClient.Models.Granularity? Granularity { get; set; }
-            /// <summary>Specify the timezone to be applied for the reporting. This feature is currently in BETA and is not available to all users.</summary>
+            /// <summary>Specify the timezone to be applied for the reporting. Defaults to PINTEREST_TIME_ZONE (UTC). AD_ACCOUNT_TIME_ZONE requires the ad account to have a time_zone configured; otherwise the request fails with a 400.</summary>
             [QueryParameter("reporting_timezone")]
             public global::Soenneker.Pinterest.OpenApiClient.Models.ReportingTimeZone? ReportingTimezone { get; set; }
             /// <summary>Metric report start date (UTC). Format: YYYY-MM-DD. Cannot be more than 90 days back from today.</summary>

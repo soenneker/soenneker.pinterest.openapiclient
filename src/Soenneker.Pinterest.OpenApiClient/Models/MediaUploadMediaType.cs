@@ -8,9 +8,9 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     public enum MediaUploadMediaType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "image")]
+        [EnumMember(Value = "tvsci_ads_video")]
         #pragma warning disable CS1591
-        Image,
+        TvsciAdsVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "video")]
         #pragma warning disable CS1591
@@ -23,6 +23,18 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         [EnumMember(Value = "video_latent_disclosure")]
         #pragma warning disable CS1591
         VideoLatentDisclosure,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "video_long_form")]
+        #pragma warning disable CS1591
+        VideoLongForm,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "media_library_image")]
+        #pragma warning disable CS1591
+        MediaLibraryImage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "media_library_video")]
+        #pragma warning disable CS1591
+        MediaLibraryVideo,
         #pragma warning restore CS1591
     }
 }

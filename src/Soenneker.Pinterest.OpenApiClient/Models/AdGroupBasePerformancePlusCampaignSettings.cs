@@ -15,9 +15,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether to boost prospecting ad group bid.</summary>
+        /// <summary>Whether to boost prospecting ad group bid. This field is deprecated.</summary>
+        [Obsolete("")]
         public bool? BoostProspectingAdGroupBid { get; set; }
-        /// <summary>List of campaign-level exclusion pinner list IDs.</summary>
+        /// <summary>List of campaign-level exclusion pinner list IDs. This field is deprecated.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PinnerListExclusions { get; set; }

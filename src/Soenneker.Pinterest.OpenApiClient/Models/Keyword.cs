@@ -16,6 +16,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The archived property</summary>
         public bool? Archived { get; set; }
+        /// <summary>The ID of the Performance+ base keyword that this keyword was duplicated from in its managed set. Read-only output; set by Pinterest when a Performance+ managed set is created. Setting this field on a request has no effect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BaseKeywordId { get; private set; }
+#nullable restore
+#else
+        public string BaseKeywordId { get; private set; }
+#endif
         /// <summary>**Note:** bid field has been deprecated. Input will not be set and field will return null. Keyword custom bid in microcurrency - null if inherited from parent ad group.</summary>
         public int? Bid { get; set; }
         /// <summary>Keyword ID .</summary>
@@ -52,7 +60,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string Type { get; private set; }
 #endif
-        /// <summary>Keyword value (120 chars max).</summary>
+        /// <summary>Keyword value (120 characters maximum). Set the match type to choose the match behavior. Omit Ads Manager&apos;s leading hyphen (-), double quotes (&quot; &quot;), and square brackets ([ ]) from the value. Broad negative keywords support up to 10 tokens. Each sequence of ASCII letters or digits counts as one token. Spaces and special characters separate tokens. For example, &quot;summer&apos;s t-shirts&quot; counts as 4 tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -86,6 +94,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "base_keyword_id", n => { BaseKeywordId = n.GetStringValue(); } },
                 { "bid", n => { Bid = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "match_type", n => { MatchType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.KeywordMatchType>(); } },

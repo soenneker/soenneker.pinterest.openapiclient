@@ -34,7 +34,7 @@ namespace Soenneker.Pinterest.OpenApiClient.User_account.Following.Item
         {
         }
         /// <summary>
-        /// **This endpoint is currently in beta and not available to all apps. [Learn more](/docs/getting-started/using-beta-and-restricted-features/).**Use this request, as a signed-in user, to follow another user.
+        /// Use this request, as a signed-in user, to follow another user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.FollowUser"/></returns>
         /// <param name="body">Resource create operation model.</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Pinterest.OpenApiClient.User_account.Following.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.FollowUser>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.FollowUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **This endpoint is currently in beta and not available to all apps. [Learn more](/docs/getting-started/using-beta-and-restricted-features/).**Use this request, as a signed-in user, to follow another user.
+        /// Use this request, as a signed-in user, to follow another user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Resource create operation model.</param>

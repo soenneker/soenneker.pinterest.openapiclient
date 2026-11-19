@@ -100,7 +100,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Keywords.Metrics
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Two letter country code (ISO 3166-1 alpha-2)</summary>
+            /// <summary>Two letter ISO 3166-1 alpha-2 country code. Supported values: `AU`, `CA`, `GB`, `IE`, `NZ`, and `US`. Other codes are not currently supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("country_code")]

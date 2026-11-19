@@ -14,13 +14,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
+        /// <summary>Ad group data in a batch write response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroup? Data { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBatchResponseData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroup Data { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBatchResponseData Data { get; set; }
 #endif
         /// <summary>The exceptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroup>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroup.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBatchResponseData>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBatchResponseData.CreateFromDiscriminatorValue); } },
                 { "exceptions", n => { Exceptions = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibBatchItemException>(global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibBatchItemException.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroup>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupBatchResponseData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.PinterestLibBatchItemException>("exceptions", Exceptions);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -11,12 +11,20 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     /// Ad group configuration for delivery estimates.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class AdGroupDeliveryEstimates : IAdditionalDataHolder, IParsable
+    public partial class AdGroupDeliveryEstimates : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The auto_targeting_enabled property</summary>
         public bool? AutoTargetingEnabled { get; set; }
+        /// <summary>Bid strategy type. For Campaigns with Video Completion objectives, the only supported bid strategy type is AUTOMATIC_BID, also known as &quot;Pinterest Performance+ bidding&quot;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType? BidStrategyType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType BidStrategyType { get; set; }
+#endif
+        /// <summary>Budget type. If DAILY, an ad group&apos;s daily spend will not exceed the budget parameter value. If LIFETIME, the end_time parameter is **REQUIRED**, and the ad group spend is spread evenly between the ad group `start_time` and `end_time` range. A CBO campaign automatically generates ad group budgets from its campaign budget to maximize campaign outcome. For CBO campaigns, only &quot;CBO_ADGROUP&quot; is allowed. For WEB_SESSIONS campaigns, only &quot;LIFETIME&quot; is allowed. For update, only draft ad groups may update budget type.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType? BudgetType { get; set; }
         /// <summary>Pin creative types filter. **Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +53,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Optimization type for ad group delivery estimates. Supported types vary by objective.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesOptimizationType? OptimizationType { get; set; }
+        /// <summary>Ad group pacing delivery type. With ACCELERATED, an ad group budget is spent as fast as possible. With STANDARD, an ad group budget is spent smoothly over a day. When using CBO, only the STANDARD pacing delivery type is allowed.</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType? PacingDeliveryType { get; set; }
         /// <summary>Campaign placement group type</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.PlacementGroupType? PlacementGroup { get; set; }
         /// <summary>[Targeted product group IDs](/docs/redoc/#section/AdGroup-Audience-Sizing) **Note:** This can only be combined with shopping/catalog sales campaigns.</summary>
@@ -55,21 +65,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> ProductGroupIds { get; set; }
 #endif
-        /// <summary>The targeting_spec property</summary>
+        /// <summary>Targeting spec for delivery estimates and audience sizing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal? TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec? TargetingSpec { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal TargetingSpec { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec TargetingSpec { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimates"/> and sets the default values.
-        /// </summary>
-        public AdGroupDeliveryEstimates()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -89,14 +92,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auto_targeting_enabled", n => { AutoTargetingEnabled = n.GetBoolValue(); } },
+                { "bid_strategy_type", n => { BidStrategyType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>(global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType.CreateFromDiscriminatorValue); } },
+                { "budget_type", n => { BudgetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>(); } },
                 { "creative_types", n => { CreativeTypes = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreativeTypes>()?.AsList(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItems>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItems.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "monthly_frequency_cap", n => { MonthlyFrequencyCap = n.GetIntValue(); } },
                 { "optimization_goal_metadata", n => { OptimizationGoalMetadata = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.OptimizationGoalMetadata>(global::Soenneker.Pinterest.OpenApiClient.Models.OptimizationGoalMetadata.CreateFromDiscriminatorValue); } },
                 { "optimization_type", n => { OptimizationType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesOptimizationType>(); } },
+                { "pacing_delivery_type", n => { PacingDeliveryType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>(); } },
                 { "placement_group", n => { PlacementGroup = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlacementGroupType>(); } },
                 { "product_group_ids", n => { ProductGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>(global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal.CreateFromDiscriminatorValue); } },
+                { "targeting_spec", n => { TargetingSpec = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec>(global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -107,15 +113,17 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_targeting_enabled", AutoTargetingEnabled);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.BidStrategyType>("bid_strategy_type", BidStrategyType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>("budget_type", BudgetType);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupAudienceSizingCreativeTypes>("creative_types", CreativeTypes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesKeywordsItems>("keywords", Keywords);
             writer.WriteIntValue("monthly_frequency_cap", MonthlyFrequencyCap);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.OptimizationGoalMetadata>("optimization_goal_metadata", OptimizationGoalMetadata);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimatesOptimizationType>("optimization_type", OptimizationType);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PacingDeliveryType>("pacing_delivery_type", PacingDeliveryType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlacementGroupType>("placement_group", PlacementGroup);
             writer.WriteCollectionOfPrimitiveValues<string>("product_group_ids", ProductGroupIds);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.TargetingSpecOptimal>("targeting_spec", TargetingSpec);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PlanningTargetingSpec>("targeting_spec", TargetingSpec);
         }
     }
 }

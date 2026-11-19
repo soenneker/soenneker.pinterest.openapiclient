@@ -8,45 +8,25 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     public enum ConversionEvent
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "PAGE_VISIT")]
+        [EnumMember(Value = "APP_INSTALL")]
         #pragma warning disable CS1591
-        PageVisit,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SIGNUP")]
-        #pragma warning disable CS1591
-        Signup,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CHECKOUT")]
-        #pragma warning disable CS1591
-        Checkout,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CUSTOM")]
-        #pragma warning disable CS1591
-        Custom,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "VIEW_CATEGORY")]
-        #pragma warning disable CS1591
-        ViewCategory,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SEARCH")]
-        #pragma warning disable CS1591
-        Search,
+        AppInstall,
         #pragma warning restore CS1591
         [EnumMember(Value = "ADD_TO_CART")]
         #pragma warning disable CS1591
         AddToCart,
         #pragma warning restore CS1591
-        [EnumMember(Value = "WATCH_VIDEO")]
+        [EnumMember(Value = "CHECKOUT")]
         #pragma warning disable CS1591
-        WatchVideo,
+        Checkout,
         #pragma warning restore CS1591
         [EnumMember(Value = "LEAD")]
         #pragma warning disable CS1591
         Lead,
         #pragma warning restore CS1591
-        [EnumMember(Value = "APP_INSTALL")]
+        [EnumMember(Value = "SIGNUP")]
         #pragma warning disable CS1591
-        AppInstall,
+        Signup,
         #pragma warning restore CS1591
     }
 }

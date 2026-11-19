@@ -13,13 +13,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CatalogsRetailBatchRequestItemsItemsCatalogsUpsertRetailItem : global::Soenneker.Pinterest.OpenApiClient.Models.CatalogsRetailBatchRequestItemsItems, IParsable
     {
-        /// <summary>The attributes property</summary>
+        /// <summary>The attributes of an item to be upserted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesRequest? Attributes { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpsertRequest? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesRequest Attributes { get; set; }
+        public global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpsertRequest Attributes { get; set; }
 #endif
         /// <summary>The catalog item id in the merchant namespace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesRequest>(global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesRequest.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpsertRequest>(global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpsertRequest.CreateFromDiscriminatorValue); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
             };
         }
@@ -59,7 +59,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesRequest>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.ItemAttributesUpsertRequest>("attributes", Attributes);
             writer.WriteStringValue("item_id", ItemId);
         }
     }

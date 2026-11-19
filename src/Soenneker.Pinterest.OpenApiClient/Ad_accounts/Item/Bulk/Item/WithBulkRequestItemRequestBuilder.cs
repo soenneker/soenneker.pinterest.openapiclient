@@ -34,7 +34,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Item
         {
         }
         /// <summary>
-        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, or keywords).
+        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, keywords) or entity change history.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BulkJobData"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BulkJobData>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BulkJobData.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, or keywords).
+        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, keywords) or entity change history.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Item
             return new global::Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Item.WithBulkRequestItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, or keywords).
+        /// Get the status of a bulk request by `request_id`, along with a download URL that will allow you to download thenew or updated entity data (campaigns, ad groups, product groups, ads, schedules, keywords) or entity change history.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithBulkRequestItemRequestBuilderGetQueryParameters 

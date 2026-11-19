@@ -11,10 +11,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
     /// Campaign configuration for delivery estimates.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CampaignDeliveryEstimatesCampaign : IAdditionalDataHolder, IParsable
+    public partial class CampaignDeliveryEstimatesCampaign : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ad_groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +23,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Budget duration type for delivery estimates.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignBudgetDurationType? BudgetDurationType { get; set; }
+        /// <summary>Optional id of an existing campaign in this ad account. A published (ACTIVE or PAUSED) campaign&apos;s id is forwarded to the estimate; any other status is estimated as a new campaign. An id that is not a campaign in this ad account is rejected with a 400.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CampaignId { get; set; }
+#nullable restore
+#else
+        public string CampaignId { get; set; }
+#endif
         /// <summary>Campaign daily spend cap. When the budget_duration_type is FIXED_DAILY or FLEXIBLE_DAILY, this field is required.</summary>
         public int? DailySpendCap { get; set; }
         /// <summary>End date of the date range for an ad campaign, pattern YYYY-MM-DD. Required when budget_duration_type is LIFETIME.</summary>
@@ -35,6 +41,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string EndDate { get; set; }
 #endif
+        /// <summary>Specifies the intended promotion type for the campaign.Note: This field is immutable unless the campaign is in draft status.**STANDARD_AD**- For ads derived from Pins.- Supported for all objective types except for current CATALOG\_SALES and WEB\_CONVERSION, which are being deprecated.- For simplified objective types.**CATALOG**- For creating product group promotions.- Supported for CONSIDERATION and SALES objective types.- For simplified objective types.**LEGACY**- Intended only for maintaining backward compatibility.- Must be used for CATALOG\_SALES and WEB\_CONVERSION.- Supported for CATALOG\_SALES and WEB\_CONVERSION objective types.**If you do not provide this parameter, the default is:**- LEGACY for CATALOG\_SALES and WEB\_CONVERSION- STANDARD_AD for other objective types</summary>
+        public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignIntendedPromotionType? IntendedPromotionType { get; set; }
         /// <summary>Campaign total spending cap. When the budget_duration_type is LIFETIME, this field is required. The end date field is also required for lifetime spending.</summary>
         public int? LifetimeSpendCap { get; set; }
         /// <summary>Objective type for delivery estimates.</summary>
@@ -47,13 +55,6 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string StartDate { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaign"/> and sets the default values.
-        /// </summary>
-        public CampaignDeliveryEstimatesCampaign()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,8 +75,10 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             {
                 { "ad_groups", n => { AdGroups = n.GetCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimates>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimates.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "budget_duration_type", n => { BudgetDurationType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignBudgetDurationType>(); } },
+                { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
                 { "daily_spend_cap", n => { DailySpendCap = n.GetIntValue(); } },
                 { "end_date", n => { EndDate = n.GetStringValue(); } },
+                { "intended_promotion_type", n => { IntendedPromotionType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignIntendedPromotionType>(); } },
                 { "lifetime_spend_cap", n => { LifetimeSpendCap = n.GetIntValue(); } },
                 { "objective_type", n => { ObjectiveType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeliveryEstimateObjectiveType>(); } },
                 { "start_date", n => { StartDate = n.GetStringValue(); } },
@@ -90,12 +93,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupDeliveryEstimates>("ad_groups", AdGroups);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignBudgetDurationType>("budget_duration_type", BudgetDurationType);
+            writer.WriteStringValue("campaign_id", CampaignId);
             writer.WriteIntValue("daily_spend_cap", DailySpendCap);
             writer.WriteStringValue("end_date", EndDate);
+            writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignDeliveryEstimatesCampaignIntendedPromotionType>("intended_promotion_type", IntendedPromotionType);
             writer.WriteIntValue("lifetime_spend_cap", LifetimeSpendCap);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.DeliveryEstimateObjectiveType>("objective_type", ObjectiveType);
             writer.WriteStringValue("start_date", StartDate);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -80,6 +80,14 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Ad creative type enum.**Note:** SHOP_THE_PIN has been deprecated. Please use COLLECTION instead.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType? CreativeType { get; set; }
+        /// <summary>List of CTA types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CtaTypes { get; set; }
+#nullable restore
+#else
+        public List<string> CtaTypes { get; set; }
+#endif
         /// <summary>Select a call to action (CTA) to display below your ad. Available only for ads with direct links enabled. CTA options for consideration and conversion campaigns are LEARN_MORE, SHOP_NOW, BOOK_NOW, SIGN_UP, VISIT_SITE, BUY_NOW, GET_OFFER, ORDER_NOW, ADD_TO_CART (for conversion campaigns with add to cart conversion events only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +144,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
         public bool? IsCollageAcceptedTerms { get; set; }
         /// <summary>Whether the collage ad has a single destination url override.</summary>
         public bool? IsCollageSingleDestination { get; set; }
+        /// <summary>Whether the ad uses dynamic CTA selection.</summary>
+        public bool? IsDynamicCta { get; set; }
         /// <summary>Is original pin deleted?</summary>
         public bool? IsPinDeleted { get; set; }
         /// <summary>Is pin repinnable?</summary>
@@ -224,6 +234,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "collection_items_destination_url_template", n => { CollectionItemsDestinationUrlTemplate = n.GetStringValue(); } },
                 { "collections_header_type", n => { CollectionsHeaderType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdBatchUpdateCollectionsHeaderType>(global::Soenneker.Pinterest.OpenApiClient.Models.AdBatchUpdateCollectionsHeaderType.CreateFromDiscriminatorValue); } },
                 { "creative_type", n => { CreativeType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>(); } },
+                { "cta_types", n => { CtaTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "customizable_cta_type", n => { CustomizableCtaType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>(global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType.CreateFromDiscriminatorValue); } },
                 { "destination_url", n => { DestinationUrl = n.GetStringValue(); } },
                 { "disclosure_type", n => { DisclosureType = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>(global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType.CreateFromDiscriminatorValue); } },
@@ -234,6 +245,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "is_carting", n => { IsCarting = n.GetBoolValue(); } },
                 { "is_collage_accepted_terms", n => { IsCollageAcceptedTerms = n.GetBoolValue(); } },
                 { "is_collage_single_destination", n => { IsCollageSingleDestination = n.GetBoolValue(); } },
+                { "is_dynamic_cta", n => { IsDynamicCta = n.GetBoolValue(); } },
                 { "is_pin_deleted", n => { IsPinDeleted = n.GetBoolValue(); } },
                 { "is_removable", n => { IsRemovable = n.GetBoolValue(); } },
                 { "lead_form_id", n => { LeadFormId = n.GetStringValue(); } },
@@ -261,6 +273,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("collection_items_destination_url_template", CollectionItemsDestinationUrlTemplate);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdBatchUpdateCollectionsHeaderType>("collections_header_type", CollectionsHeaderType);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CreativeType>("creative_type", CreativeType);
+            writer.WriteCollectionOfPrimitiveValues<string>("cta_types", CtaTypes);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CustomizableCtaType>("customizable_cta_type", CustomizableCtaType);
             writer.WriteStringValue("destination_url", DestinationUrl);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.DisclosureType>("disclosure_type", DisclosureType);
@@ -271,6 +284,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteBoolValue("is_carting", IsCarting);
             writer.WriteBoolValue("is_collage_accepted_terms", IsCollageAcceptedTerms);
             writer.WriteBoolValue("is_collage_single_destination", IsCollageSingleDestination);
+            writer.WriteBoolValue("is_dynamic_cta", IsDynamicCta);
             writer.WriteBoolValue("is_pin_deleted", IsPinDeleted);
             writer.WriteBoolValue("is_removable", IsRemovable);
             writer.WriteStringValue("lead_form_id", LeadFormId);

@@ -42,6 +42,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string CampaignId { get; set; }
 #endif
+        /// <summary>Whether offsite ad delivery (audience extension) is enabled for this ad group.</summary>
+        public bool? EnableOffsitePlacement { get; set; }
         /// <summary>Timestamp in Unix format for scheduling when ads in the ad group stop appearing. If not specified, ads run indefinitely unless you update the ad group by changing their status to `paused`. Cannot occur after `end_time` for parent campaign (if specified). Learn about [scheduling ads](/docs/api-features/managing-ads/#step-2-create-an-ad-group).For certain organizations ([Closed beta](/docs/getting-started/using-beta-and-restricted-features/)): Supported for campaigns with Campaign Budget Optimization (CBO).For all organizations: Supported for campaigns without CBO.</summary>
         public long? EndTime { get; set; }
         /// <summary>Ad group ID.</summary>
@@ -54,6 +56,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>Enable creative optimization for the ad group, default value is FALSE. When enabled, you allow Pinterest to automatically turn your product Pins into ads in different formats (collections and shopping) and deliver those ads to users at scale.</summary>
         public bool? IsCreativeOptimization { get; set; }
+        /// <summary>Whether shopping annotation badges are enabled on promoted Pins in this ad group.</summary>
+        public bool? IsShoppingAnnotationOptIn { get; set; }
         /// <summary>Set a limit to the number of times a promoted pin from this campaign can be impressed by a pinner within the past rolling 30 days. Only available for CPM (cost per mille (1000 impressions))  ad groups. A CPM ad group has an IMPRESSION [billable_event](/docs/redoc/#section/Billable-event) value. This field **REQUIRES** the `end_time` field.</summary>
         public int? LifetimeFrequencyCap { get; set; }
         /// <summary>Ad group name.</summary>
@@ -170,9 +174,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "budget_in_micro_currency", n => { BudgetInMicroCurrency = n.GetIntValue(); } },
                 { "budget_type", n => { BudgetType = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>(); } },
                 { "campaign_id", n => { CampaignId = n.GetStringValue(); } },
+                { "enable_offsite_placement", n => { EnableOffsitePlacement = n.GetBoolValue(); } },
                 { "end_time", n => { EndTime = n.GetLongValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_creative_optimization", n => { IsCreativeOptimization = n.GetBoolValue(); } },
+                { "is_shopping_annotation_opt_in", n => { IsShoppingAnnotationOptIn = n.GetBoolValue(); } },
                 { "lifetime_frequency_cap", n => { LifetimeFrequencyCap = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "optimization_goal_metadata", n => { OptimizationGoalMetadata = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata>(global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata.CreateFromDiscriminatorValue); } },
@@ -204,9 +210,11 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteIntValue("budget_in_micro_currency", BudgetInMicroCurrency);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.BudgetType>("budget_type", BudgetType);
             writer.WriteStringValue("campaign_id", CampaignId);
+            writer.WriteBoolValue("enable_offsite_placement", EnableOffsitePlacement);
             writer.WriteLongValue("end_time", EndTime);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_creative_optimization", IsCreativeOptimization);
+            writer.WriteBoolValue("is_shopping_annotation_opt_in", IsShoppingAnnotationOptIn);
             writer.WriteIntValue("lifetime_frequency_cap", LifetimeFrequencyCap);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.AdGroupUpdateRequestOptimizationGoalMetadata>("optimization_goal_metadata", OptimizationGoalMetadata);

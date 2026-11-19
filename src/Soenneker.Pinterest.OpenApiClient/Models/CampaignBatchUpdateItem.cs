@@ -34,6 +34,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #endif
         /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Platform of the mobile app for an `APP_INSTALL` campaign.</summary>
         public global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemAppPlatform? AppPlatform { get; set; }
+        /// <summary>[Closed beta](/docs/getting-started/using-beta-and-restricted-features/)Skan version of the iOS mobile app for `APP_INSTALL` campaigns. Must be 3.0 or 4.0.</summary>
+        public double? AppSkanVersion { get; set; }
         /// <summary>Object describing an update to the campaign level bid multipliers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +141,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "ad_account_id", n => { AdAccountId = n.GetStringValue(); } },
                 { "app_id", n => { AppId = n.GetStringValue(); } },
                 { "app_platform", n => { AppPlatform = n.GetEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemAppPlatform>(); } },
+                { "app_skan_version", n => { AppSkanVersion = n.GetDoubleValue(); } },
                 { "bid_options", n => { BidOptions = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemBidOptions>(global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemBidOptions.CreateFromDiscriminatorValue); } },
                 { "daily_spend_cap", n => { DailySpendCap = n.GetIntValue(); } },
                 { "default_ad_group_budget_in_micro_currency", n => { DefaultAdGroupBudgetInMicroCurrency = n.GetIntValue(); } },
@@ -171,6 +174,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("ad_account_id", AdAccountId);
             writer.WriteStringValue("app_id", AppId);
             writer.WriteEnumValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemAppPlatform>("app_platform", AppPlatform);
+            writer.WriteDoubleValue("app_skan_version", AppSkanVersion);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignBatchUpdateItemBidOptions>("bid_options", BidOptions);
             writer.WriteIntValue("daily_spend_cap", DailySpendCap);
             writer.WriteIntValue("default_ad_group_budget_in_micro_currency", DefaultAdGroupBudgetInMicroCurrency);

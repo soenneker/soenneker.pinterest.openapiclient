@@ -63,6 +63,8 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public string DominantColor { get; set; }
 #endif
+        /// <summary>If you set it to `true`, the Pin becomes ad-only and is automatically added to an &quot;Ad-only Pins&quot; board; so, you do not have to specify a `board_id`.**Note:** Ad-only pins cannot be repinned.</summary>
+        public bool? IsRemovable { get; set; }
         /// <summary>The link property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +136,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "board_section_id", n => { BoardSectionId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dominant_color", n => { DominantColor = n.GetStringValue(); } },
+                { "is_removable", n => { IsRemovable = n.GetBoolValue(); } },
                 { "link", n => { Link = n.GetStringValue(); } },
                 { "media_source", n => { MediaSource = n.GetObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource>(global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource.CreateFromDiscriminatorValue); } },
                 { "parent_pin_id", n => { ParentPinId = n.GetStringValue(); } },
@@ -154,6 +157,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("board_section_id", BoardSectionId);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dominant_color", DominantColor);
+            writer.WriteBoolValue("is_removable", IsRemovable);
             writer.WriteStringValue("link", Link);
             writer.WriteObjectValue<global::Soenneker.Pinterest.OpenApiClient.Models.PinMediaSource>("media_source", MediaSource);
             writer.WriteStringValue("parent_pin_id", ParentPinId);

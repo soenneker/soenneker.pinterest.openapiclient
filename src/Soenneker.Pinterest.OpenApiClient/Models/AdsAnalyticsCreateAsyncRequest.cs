@@ -78,13 +78,13 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
 #else
         public List<string> CampaignIds { get; set; }
 #endif
-        /// <summary>List of values for filtering. [&quot;WEB_SESSIONS&quot;] is in BETA.</summary>
+        /// <summary>List of values for filtering. [&quot;WEB_SESSIONS&quot;] and [&quot;VIDEO_VIEW&quot;] are DEPRECATED.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CampaignObjectiveTypes { get; set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType?>? CampaignObjectiveTypes { get; set; }
 #nullable restore
 #else
-        public UntypedNode CampaignObjectiveTypes { get; set; }
+        public List<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType?> CampaignObjectiveTypes { get; set; }
 #endif
         /// <summary>List of status values for filtering</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -227,7 +227,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
                 { "campaign_brand_label", n => { CampaignBrandLabel = n.GetStringValue(); } },
                 { "campaign_custom_label", n => { CampaignCustomLabel = n.GetStringValue(); } },
                 { "campaign_ids", n => { CampaignIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "campaign_objective_types", n => { CampaignObjectiveTypes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "campaign_objective_types", n => { CampaignObjectiveTypes = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType>()?.AsList(); } },
                 { "campaign_statuses", n => { CampaignStatuses = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignSummaryStatus>()?.AsList(); } },
                 { "click_window_days", n => { ClickWindowDays = n.GetDoubleValue(); } },
                 { "columns", n => { Columns = n.GetCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.ReportingColumnAsync>()?.AsList(); } },
@@ -267,7 +267,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Models
             writer.WriteStringValue("campaign_brand_label", CampaignBrandLabel);
             writer.WriteStringValue("campaign_custom_label", CampaignCustomLabel);
             writer.WriteCollectionOfPrimitiveValues<string>("campaign_ids", CampaignIds);
-            writer.WriteObjectValue<UntypedNode>("campaign_objective_types", CampaignObjectiveTypes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignObjectiveType>("campaign_objective_types", CampaignObjectiveTypes);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.CampaignSummaryStatus>("campaign_statuses", CampaignStatuses);
             writer.WriteDoubleValue("click_window_days", ClickWindowDays);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Pinterest.OpenApiClient.Models.ReportingColumnAsync>("columns", Columns);

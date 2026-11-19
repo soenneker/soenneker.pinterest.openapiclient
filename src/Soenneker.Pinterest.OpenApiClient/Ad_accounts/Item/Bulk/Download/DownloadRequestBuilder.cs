@@ -34,7 +34,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Download
         {
         }
         /// <summary>
-        /// Create an asynchronous report that may include information on campaigns, ad groups, product groups, ads,keywords, schedules,and/or labels; can filter by campaigns. Though the entities may be active, archived, or paused,only active entities will return data.
+        /// Create an asynchronous report that may include information on campaigns, ad groups, product groups, ads,keywords, schedules, labels, and/or entity change history; can filter by campaigns. Though the entities may beactive, archived, or paused, only active entities will return data. When `ENTITY_HISTORY` is requested, the reportreturns audit-log change events for the ad account regardless of entity status.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Pinterest.OpenApiClient.Models.BulkDownload"/></returns>
         /// <param name="body">Resource create operation model.</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Pinterest.OpenApiClient.Ad_accounts.Item.Bulk.Download
             return await RequestAdapter.SendAsync<global::Soenneker.Pinterest.OpenApiClient.Models.BulkDownload>(requestInfo, global::Soenneker.Pinterest.OpenApiClient.Models.BulkDownload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an asynchronous report that may include information on campaigns, ad groups, product groups, ads,keywords, schedules,and/or labels; can filter by campaigns. Though the entities may be active, archived, or paused,only active entities will return data.
+        /// Create an asynchronous report that may include information on campaigns, ad groups, product groups, ads,keywords, schedules, labels, and/or entity change history; can filter by campaigns. Though the entities may beactive, archived, or paused, only active entities will return data. When `ENTITY_HISTORY` is requested, the reportreturns audit-log change events for the ad account regardless of entity status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Resource create operation model.</param>
